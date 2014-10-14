@@ -1,6 +1,28 @@
 <div class="container">
-  <h2>My todos</h2>
-  <p class="form-group" ng-repeat="todo in todos">
-    <input type="text" ng-model="todo" class="form-control">
-  </p>
+
+
+
+  <ul ng-repeat="dolar in dolares" class="nav nav-pills pull-right">
+    <li ng-class="{ active: dolar.name == dolar_activo}">
+      <a href="#/dolar/{{dolar.name}}">
+        {{dolar.long_name}}
+      </a>
+    </li>
+  </ul>
+
+  <h2 ng-repeat-start="dolar in dolares">
+  {{dolar.long_name}}
+  </h2>
+  <p ng-repeat-end>Venta: {{dolar.venta}}</p>
+
+<!--
+  <ul ng-repeat="dolar in dolares">
+  <li>
+  <h2>{{dolar.long_name}}</h2>
+  <p>Compra: {{dolar.compra}}</p>
+  <p>Intermedio: {{(dolar.compra + dolar.venta) / 2}}</p>
+  <p>Venta: {{dolar.venta}}</p>
+  </li>
+  </ul>
+-->
 </div>
