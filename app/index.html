@@ -2,9 +2,13 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>bluelytics</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/mobile-icon.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/mobile-icon-114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/mobile-icon-72.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="images/mobile-icon-144.png" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -20,14 +24,49 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header" ng-controller="HeaderController"> 
-        <ul class="nav nav-pills pull-right">
-          <li ng-class="{ active: isActive('/')}"><a ng-href="#">Home</a></li>
-          <li ng-class="{ active: isActive('/about')}"><a ng-href="#/about">About</a></li>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="HeaderController">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav_bar_collapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-brand">bluelytics <img src="images/logo.png"></p>
+        </div>
+
+        <div class="collapse navbar-collapse" id="nav_bar_collapsed">
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-class="{ active: isActive('/')}">
+            <a href="#"><span class="glyphicon glyphicon-usd"></span> Cotizacion</a>
+          </li>
+
+
+          <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span> Herramientas <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li ng-class="{ active: isActive('/calculator')}"><a href="#/calculator"><span class="glyphicon glyphicon-transfer"></span> Calculadora</a></li>
+              <li ng-class="{ active: isActive('/gap')}"><a href="#/gap"><span class="glyphicon glyphicon-resize-horizontal"></span> Brecha cambiaria</a></li>
+              <li ng-class="{ active: isActive('/json')}"><a href="#/json"><span class="glyphicon glyphicon-cloud-download"></span> API</a></li>
+            </ul>
+            
+          </li>
+
+          <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th"></span> Analisis <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li ng-class="{ active: isActive('/blue_graph')}"><a href="#/blue_graph"><span class="glyphicon glyphicon-signal"></span> Evolucion</a></li>
+              <li ng-class="{ active: isActive('/wordcloud')}"><a href="#/wordcloud"><span class="glyphicon glyphicon-bullhorn"></span> Cobertura mediática</a></li>
+              <li ng-class="{ active: isActive('/forecast')}"><a href="#/forecast"><span class="glyphicon glyphicon-eye-open"></span> Prediccion</a></li>
+            </ul>
+            
+          </li>
         </ul>
-        <h3 class="text-muted">bluelyticsFrontend</h3>
       </div>
+    </nav>
+
+    <div class="container">
 
       <div ng-view=""></div>
 
@@ -59,6 +98,7 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
@@ -77,6 +117,8 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/rickshaw/rickshaw.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -85,6 +127,12 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/index.js"></script>
+        <script src="scripts/services/valorblue.js"></script>
         <!-- endbuild -->
+
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Ruda&subset=latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab&subset=latin-ext' rel='stylesheet' type='text/css'>
 </body>
 </html>

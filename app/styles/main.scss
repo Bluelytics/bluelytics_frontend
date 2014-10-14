@@ -1,6 +1,6 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
 // endbower
 
 .browsehappy {
@@ -11,10 +11,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 /* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+body { padding-top: 70px; }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -57,6 +54,11 @@ body {
     font-size: 21px;
     padding: 14px 24px;
   }
+
+  h1 {
+    font-family: 'Ruda', sans-serif;
+    color: #229;
+  }
 }
 
 /* Supporting marketing content */
@@ -89,4 +91,66 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+
+div#last_prices div.row div{
+  font-size:1.45em;
+}
+
+div#last_prices div.row div.value{
+  color:#2211cc;
+}
+
+div#last_prices div.row{
+  margin-bottom:10px;
+}
+
+@media (min-width: 996px) {
+  div#last_prices div.row div.name{
+    text-align: right;
+  }
+
+  div#last_prices div.row div.value{
+    text-align: left;
+  }
+}
+
+.navbar-brand {
+  font-family: 'Roboto Slab', serif;
+}
+
+
+div#last_update {
+  margin-top:15px;
+}
+
+div#last_update p {
+  font-size:0.9em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.footer p{
+  float:left;
+}
+.footer > div {
+  float:right;
+}
+
+span.value{
+  font-size: 1.4em;
+  color: #800;
+}
+
+span.perc{
+  font-size: 1.7em;
+  color: #008;
+}
+
+span.decrement{
+  color:#c00;
+}
+span.increment{
+  color:#0c0;
 }

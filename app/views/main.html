@@ -1,28 +1,22 @@
-<div class="container">
+<div class="jumbotron">
 
 
 
-  <ul ng-repeat="dolar in dolares" class="nav nav-pills pull-right">
-    <li ng-class="{ active: dolar.name == dolar_activo}">
-      <a href="#/dolar/{{dolar.name}}">
-        {{dolar.long_name}}
-      </a>
-    </li>
-  </ul>
-
-  <h2 ng-repeat-start="dolar in dolares">
-  {{dolar.long_name}}
-  </h2>
-  <p ng-repeat-end>Venta: {{dolar.venta}}</p>
-
-<!--
-  <ul ng-repeat="dolar in dolares">
-  <li>
-  <h2>{{dolar.long_name}}</h2>
+  <h1>Dolar en Argentina</h1>
+  <div class="row" ng-repeat="dolar in dolares |filter:dolar_activo:true">
+  <h3>
+  Fuente: <b>{{dolar.long_name}}</b>
+  </h3>
   <p>Compra: {{dolar.compra}}</p>
   <p>Intermedio: {{(dolar.compra + dolar.venta) / 2}}</p>
   <p>Venta: {{dolar.venta}}</p>
-  </li>
-  </ul>
--->
+  </div>
+
+  <div class="btn-group" ng-repeat="dolar in dolares">
+      <a class="btn" ng-class="{ 'btn-primary': (dolar.name == dolar_activo)}" href="#/dolar/{{dolar.name}}">
+        {{dolar.long_name}}
+      </a>
+  </div>
+
+
 </div>
