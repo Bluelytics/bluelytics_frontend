@@ -50,11 +50,6 @@ body { padding-top: 70px; }
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-
   h1 {
     font-family: 'Ruda', sans-serif;
     color: #229;
@@ -93,6 +88,19 @@ body { padding-top: 70px; }
   }
 }
 
+/* Responsive: Big screen */
+@media screen and (min-width: 1000px) {
+  .container {
+    max-width: 950px;
+  }
+}
+
+/* Responsive: Wide screen */
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1250px;
+  }
+}
 
 
 div#last_prices div.row {
@@ -156,4 +164,7 @@ span.decrement{
 }
 span.increment{
   color:#0c0;
+}
+span.equal{
+  color:#777;
 }

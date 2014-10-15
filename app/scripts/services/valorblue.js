@@ -12,7 +12,7 @@ angular.module('bluelyticsFrontendApp')
     var valoresBlue = null;
 
     return $resource('http://localhost:8000/api/last_price', {}, {
-      query: {method:'GET', isArray:false, cache:true}
+      query: {method:'GET', isArray:true, cache:true}
     });
 
   }]);
