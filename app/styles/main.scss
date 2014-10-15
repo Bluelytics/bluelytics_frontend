@@ -65,6 +65,14 @@ body { padding-top: 70px; }
   }
 }
 
+
+/* Responsive: Small devices */
+@media (max-width:360px) {
+  body{
+    background:$jumbotron-bg;
+  }
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {

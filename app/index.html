@@ -38,30 +38,21 @@
 
         <div class="collapse navbar-collapse" id="nav_bar_collapsed">
         <ul class="nav navbar-nav navbar-right">
-          <li ng-class="{ active: isActive('/')}">
+          <li ng-class="{ active: anyDolarActive()}">
             <a href="#"><span class="glyphicon glyphicon-usd"></span> Cotizacion</a>
           </li>
 
+          <li ng-class="{ active: isActive('/calculator')}"><a href="#/calculator"><span class="glyphicon glyphicon-transfer"></span> Calculadora</a></li>
+          <li ng-class="{ active: isActive('/gap')}"><a href="#/gap"><span class="glyphicon glyphicon-resize-horizontal"></span> Brecha cambiaria</a></li>
 
-          <li>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span> Herramientas <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li ng-class="{ active: isActive('/calculator')}"><a href="#/calculator"><span class="glyphicon glyphicon-transfer"></span> Calculadora</a></li>
-              <li ng-class="{ active: isActive('/gap')}"><a href="#/gap"><span class="glyphicon glyphicon-resize-horizontal"></span> Brecha cambiaria</a></li>
-              <li ng-class="{ active: isActive('/json')}"><a href="#/json"><span class="glyphicon glyphicon-cloud-download"></span> API</a></li>
-            </ul>
-            
-          </li>
+          <li ng-class="{ active: isActive('/blue_graph')}"><a href="#/blue_graph"><span class="glyphicon glyphicon-signal"></span> Evolucion</a></li>
+          <li ng-class="{ active: isActive('/wordcloud')}"><a href="#/wordcloud"><span class="glyphicon glyphicon-bullhorn"></span> Cobertura mediática</a></li>
+          <li ng-class="{ active: isActive('/forecast')}"><a href="#/forecast"><span class="glyphicon glyphicon-eye-open"></span> Prediccion</a></li>
 
-          <li>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th"></span> Analisis <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li ng-class="{ active: isActive('/blue_graph')}"><a href="#/blue_graph"><span class="glyphicon glyphicon-signal"></span> Evolucion</a></li>
-              <li ng-class="{ active: isActive('/wordcloud')}"><a href="#/wordcloud"><span class="glyphicon glyphicon-bullhorn"></span> Cobertura mediática</a></li>
-              <li ng-class="{ active: isActive('/forecast')}"><a href="#/forecast"><span class="glyphicon glyphicon-eye-open"></span> Prediccion</a></li>
-            </ul>
-            
-          </li>
+          <li ng-class="{ active: isActive('/json')}"><a href="#/json"><span class="glyphicon glyphicon-cloud-download"></span> API</a></li>
+
+          <li ng-class="{ active: isActive('/about')}"><a href="#/about"><span class="glyphicon glyphicon-info-sign"></span> Acerca de</a></li>
+
         </ul>
       </div>
     </nav>

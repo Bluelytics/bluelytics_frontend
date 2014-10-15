@@ -12,4 +12,8 @@ function HeaderController($scope, $location)
     $scope.isActive = function (viewLocation) { 
         return viewLocation === $location.path();
     };
+
+    $scope.anyDolarActive = function () {
+        return $location.path().slice(0, 7) == '/dolar/' || $location.path() == '/';
+    };
 }
