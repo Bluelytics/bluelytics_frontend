@@ -15,9 +15,12 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.select',
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, uiSelectConfig) {
+    uiSelectConfig.theme = 'bootstrap';
+    
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -30,6 +33,10 @@ angular
       .when('/dolar/:dolar_name', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
+      })
+      .when('/calculator', {
+        templateUrl: 'views/calculator.html',
+        controller: 'CalculatorCtrl'
       })
       .otherwise({
         redirectTo: '/'

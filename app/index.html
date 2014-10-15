@@ -12,6 +12,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.min.css">
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -23,39 +24,53 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="HeaderController">
-      <div class="container-fluid">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="HeaderController">
+      <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav_bar_collapsed">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <p class="navbar-brand">bluelytics <img src="images/logo.png"></p>
+          <a class="navbar-brand" href="#">bluelytics <img src="images/logo.png"></a>
         </div>
 
-        <div class="collapse navbar-collapse" id="nav_bar_collapsed">
+        <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li ng-class="{ active: anyDolarActive()}">
             <a href="#"><span class="glyphicon glyphicon-usd"></span> Cotizacion</a>
           </li>
 
-          <li ng-class="{ active: isActive('/calculator')}"><a href="#/calculator"><span class="glyphicon glyphicon-transfer"></span> Calculadora</a></li>
-          <li ng-class="{ active: isActive('/gap')}"><a href="#/gap"><span class="glyphicon glyphicon-resize-horizontal"></span> Brecha cambiaria</a></li>
+          <li ng-class="{ active: isActive('/calculator')}">
+            <a href="#/calculator"><span class="glyphicon glyphicon-transfer"></span> Calculadora</a>
+          </li>
+          <li ng-class="{ active: isActive('/gap')}">
+            <a href="#/gap"><span class="glyphicon glyphicon-resize-horizontal"></span> Brecha cambiaria</a>
+          </li>
 
-          <li ng-class="{ active: isActive('/blue_graph')}"><a href="#/blue_graph"><span class="glyphicon glyphicon-signal"></span> Evolucion</a></li>
-          <li ng-class="{ active: isActive('/wordcloud')}"><a href="#/wordcloud"><span class="glyphicon glyphicon-bullhorn"></span> Cobertura mediática</a></li>
-          <li ng-class="{ active: isActive('/forecast')}"><a href="#/forecast"><span class="glyphicon glyphicon-eye-open"></span> Prediccion</a></li>
+          <li ng-class="{ active: isActive('/blue_graph')}">
+            <a href="#/blue_graph"><span class="glyphicon glyphicon-signal"></span> Evolucion</a>
+          </li>
+          <li ng-class="{ active: isActive('/wordcloud')}">
+            <a href="#/wordcloud"><span class="glyphicon glyphicon-bullhorn"></span> Cobertura mediática</a>
+          </li>
+          <li ng-class="{ active: isActive('/forecast')}">
+            <a href="#/forecast"><span class="glyphicon glyphicon-eye-open"></span> Prediccion</a>
+          </li>
 
-          <li ng-class="{ active: isActive('/json')}"><a href="#/json"><span class="glyphicon glyphicon-cloud-download"></span> API</a></li>
+          <li ng-class="{ active: isActive('/json')}">
+            <a href="#/json"><span class="glyphicon glyphicon-cloud-download"></span> API</a>
+          </li>
 
-          <li ng-class="{ active: isActive('/about')}"><a href="#/about"><span class="glyphicon glyphicon-info-sign"></span> Acerca de</a></li>
+          <li ng-class="{ active: isActive('/about')}">
+            <a href="#/about"><span class="glyphicon glyphicon-info-sign"></span> Acerca de</a>
+          </li>
 
         </ul>
       </div>
-    </nav>
+      </div>
+    </div>
 
     <div class="container">
 
@@ -114,6 +129,8 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/d3/d3.js"></script>
     <script src="bower_components/rickshaw/rickshaw.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular-ui-select/dist/select.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -122,7 +139,8 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/index.js"></script>
-        <script src="scripts/services/valorblue.js"></script>
+        <script src="scripts/services/blueapi.js"></script>
+        <script src="scripts/controllers/calculator.js"></script>
         <!-- endbuild -->
 
 
