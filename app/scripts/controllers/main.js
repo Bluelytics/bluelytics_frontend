@@ -9,12 +9,14 @@
  */
 angular.module('bluelyticsFrontendApp')
   .controller('MainCtrl', ['$scope', '$routeParams', 'valorBlue', function ($scope, $routeParams, valorBlue) {
-  	if ($routeParams.dolar_name){
+    
+    $scope.dolares = valorBlue.query();
+    
+    if ($routeParams.dolar_name){
   		$scope.dolar_activo = $routeParams.dolar_name;
   	}else{
   		$scope.dolar_activo = 'blue';
   	}
 
-    $scope.dolares = valorBlue();
 
   }]);

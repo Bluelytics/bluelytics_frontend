@@ -3,16 +3,26 @@
 
 
   <h1>Dolar en Argentina</h1>
-  <div class="row" ng-repeat="dolar in dolares |filter:dolar_activo:true">
-  <h3>
-  Fuente: <b>{{dolar.long_name}}</b>
-  </h3>
-  <p>Compra: {{dolar.compra}}</p>
-  <p>Intermedio: {{(dolar.compra + dolar.venta) / 2}}</p>
-  <p>Venta: {{dolar.venta}}</p>
+  <div class="row" ng-repeat="dolar in dolares.Today |filter:dolar_activo:true">
+  <div class="row">
+    <div id="last_prices">
+      <div class="row">
+        <div class="col-md-6 name">Compra:</div>
+        <div class="col-md-6 value">{{dolar.compra | number:2}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 name">Intermedio:</div>
+        <div class="col-md-6 value">{{(dolar.compra + dolar.venta) / 2 | number:2}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 name">Venta:</div>
+        <div class="col-md-6 value">{{dolar.venta | number:2}}</div>
+      </div>
+    </div>
+</div>
   </div>
 
-  <div class="btn-group" ng-repeat="dolar in dolares">
+  <div class="btn-group" ng-repeat="dolar in dolares.Today">
       <a class="btn" ng-class="{ 'btn-primary': (dolar.name == dolar_activo)}" href="#/dolar/{{dolar.name}}">
         {{dolar.long_name}}
       </a>

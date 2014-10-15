@@ -94,25 +94,28 @@ body { padding-top: 70px; }
 }
 
 
-div#last_prices div.row div{
-  font-size:1.45em;
-}
 
-div#last_prices div.row div.value{
-  color:#2211cc;
-}
-
-div#last_prices div.row{
+div#last_prices div.row {
   margin-bottom:10px;
+  div{
+    font-size:1.45em;
+  }
+  div.value{
+    color:#2211cc;
+  }
 }
 
 @media (min-width: 996px) {
-  div#last_prices div.row div.name{
-    text-align: right;
+  div#last_prices div.row{
+    div.name{
+      text-align: right;
+    }
   }
 
-  div#last_prices div.row div.value{
-    text-align: left;
+  div#last_prices div.row{
+    div.value{
+      text-align:left;
+    }
   }
 }
 
