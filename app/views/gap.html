@@ -1,1 +1,45 @@
-<p>This is the gap view.</p>
+<div class="jumbotron">
+  <h1 class="blue">Brecha dólar blue</h1>
+    <h2>(Estimación)</h2>
+
+    <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+    <div id="baseform" class="form-group">
+      <label class="control-label" for="valorCompare">¿Cuantos Dólares (USD) utilizar para la comparacion?</label>
+      <input ng-model="valorCompare" id="valorCompare" type="number" value="1" min="1" class="form-control">
+    </div>
+    </div>
+    </div>
+
+
+<h3> Oficial vs Blue </h3>
+<span class="value">AR$ {{valorCompare * gap(valorDolarOficial, valorDolarBlue) |number:2}}</span>
+<span class="perc">({{ percFormat(percGap(valorDolarOficial, valorDolarBlue))  }})</span>
+
+<h3> Ahorro (+20%) vs Blue </h3>
+<span class="value">AR$ {{valorCompare * gap(valorDolarAhorro, valorDolarBlue) |number:2}}</span>
+<span class="perc">({{ percFormat(percGap(valorDolarAhorro, valorDolarBlue))  }})</span>
+
+<h3> Turista (+35%) vs Blue </h3>
+<span class="value">AR$ {{valorCompare * gap(valorDolarTarjeta, valorDolarBlue) |number:2}}</span>
+<span class="perc">({{ percFormat(percGap(valorDolarTarjeta, valorDolarBlue))  }})</span>
+
+
+<h2>Evolucion brecha cambiaria</h2>
+
+<nvd3-line-with-focus-chart
+        data="data"
+        showXAxis="true"
+        showYAxis="true"
+        height="400"
+        tooltips="true"
+        useInteractiveGuideline="true"
+        interactive="true"
+        showLegend="true"
+        xAxisTickFormat="tickX"
+        x2AxisTickFormat="tickX"
+        yAxisTickFormat="tickY"
+        y2AxisTickFormat="tickY">
+    </nvd3-line-with-focus-chart>
+
+</div>

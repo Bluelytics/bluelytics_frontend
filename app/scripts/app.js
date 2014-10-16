@@ -17,7 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.select',
-    'nvd3',
+    'nvd3ChartDirectives',
     'underscore'
   ])
   .config(function ($routeProvider, uiSelectConfig) {
@@ -63,4 +63,14 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  }).run(function($rootScope){
+    $rootScope.$on('$routeChangeStart', function(event, next, current) {
+      if (typeof(current) !== 'undefined'){
+          //destroy d3 stuff 
+          window.nv.charts = {};
+          window.nv.graphs = [];
+          window.nv.logs = {};
+
+      }
+    });
   });

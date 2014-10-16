@@ -7,8 +7,9 @@
  * # HeaderController
  * Controller of the bluelyticsFrontendApp
  */
-function HeaderController($scope, $location) 
-{ 
+ angular.module('bluelyticsFrontendApp')
+  .controller('HeaderController', ['$scope', '$location', function ($scope, $location) {
+    
     $scope.isActive = function (viewLocation) { 
         return viewLocation === $location.path();
     };
@@ -16,4 +17,4 @@ function HeaderController($scope, $location)
     $scope.anyDolarActive = function () {
         return $location.path().slice(0, 7) == '/dolar/' || $location.path() == '/';
     };
-}
+}]);

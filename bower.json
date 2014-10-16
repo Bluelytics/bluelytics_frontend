@@ -13,9 +13,10 @@
     "angular-touch": "1.2.26",
     "angular-route": "1.2.26",
     "angular-ui-select": "0.8.3",
-    "angular-nvd3": "0.0.9",
     "angular-underscore-module": "~1.0.1",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "angularjs-nvd3-directives": "~0.0.7",
+    "wordcloud2.js": "*"
   },
   "devDependencies": {
     "angular-mocks": "1.2.26",
