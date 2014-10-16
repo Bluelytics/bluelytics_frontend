@@ -13,6 +13,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+    <link rel="stylesheet" href="bower_components/nvd3/src/nv.d3.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -39,32 +40,32 @@
         <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li ng-class="{ active: anyDolarActive()}">
-            <a href="#"><span class="glyphicon glyphicon-usd"></span> Cotizacion</a>
+            <a href="#" title="Cotizacion"><span class="glyphicon glyphicon-usd"></span> <span class="hidden-sm">Cotizacion</span></a>
           </li>
 
           <li ng-class="{ active: isActive('/calculator')}">
-            <a href="#/calculator"><span class="glyphicon glyphicon-transfer"></span> Calculadora</a>
+            <a href="#/calculator" title="Calculadora"><span class="glyphicon glyphicon-transfer"></span> <span class="hidden-sm">Calculadora</span></a>
+          </li>
+          <li ng-class="{ active: isActive('/evolution')}">
+            <a href="#/evolution" title="Evolucion"><span class="glyphicon glyphicon-signal"></span> <span class="hidden-sm">Evolucion</span></a>
           </li>
           <li ng-class="{ active: isActive('/gap')}">
-            <a href="#/gap"><span class="glyphicon glyphicon-resize-horizontal"></span> Brecha cambiaria</a>
+            <a href="#/gap" title="Brecha"><span class="glyphicon glyphicon-resize-horizontal"></span> <span class="hidden-sm">Brecha</span></a>
           </li>
 
-          <li ng-class="{ active: isActive('/blue_graph')}">
-            <a href="#/blue_graph"><span class="glyphicon glyphicon-signal"></span> Evolucion</a>
-          </li>
           <li ng-class="{ active: isActive('/wordcloud')}">
-            <a href="#/wordcloud"><span class="glyphicon glyphicon-bullhorn"></span> Cobertura mediática</a>
+            <a href="#/wordcloud" title="Cobertura"><span class="glyphicon glyphicon-bullhorn"></span> <span class="hidden-sm">Cobertura</span></a>
           </li>
           <li ng-class="{ active: isActive('/forecast')}">
-            <a href="#/forecast"><span class="glyphicon glyphicon-eye-open"></span> Prediccion</a>
+            <a href="#/forecast" title="Prediccion"><span class="glyphicon glyphicon-eye-open"></span> <span class="hidden-sm">Prediccion</span></a>
           </li>
 
-          <li ng-class="{ active: isActive('/json')}">
-            <a href="#/json"><span class="glyphicon glyphicon-cloud-download"></span> API</a>
+          <li ng-class="{ active: isActive('/api')}">
+            <a href="#/api" title="API"><span class="glyphicon glyphicon-cloud-download"></span> <span class="hidden-sm">API</span></a>
           </li>
 
           <li ng-class="{ active: isActive('/about')}">
-            <a href="#/about"><span class="glyphicon glyphicon-info-sign"></span> Acerca de</a>
+            <a href="#/about" title="Acerca de"><span class="glyphicon glyphicon-info-sign"></span> <span class="hidden-sm">Acerca de</a>
           </li>
 
         </ul>
@@ -127,9 +128,12 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/d3/d3.js"></script>
-    <script src="bower_components/rickshaw/rickshaw.js"></script>
     <script src="bower_components/angular-ui-select/dist/select.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/nvd3/nv.d3.js"></script>
+    <script src="bower_components/angular-nvd3/dist/angular-nvd3.min.js"></script>
+    <script src="bower_components/angular-underscore-module/angular-underscore-module.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -140,6 +144,11 @@
         <script src="scripts/controllers/index.js"></script>
         <script src="scripts/services/blueapi.js"></script>
         <script src="scripts/controllers/calculator.js"></script>
+        <script src="scripts/controllers/evolution.js"></script>
+        <script src="scripts/controllers/gap.js"></script>
+        <script src="scripts/controllers/wordcloud.js"></script>
+        <script src="scripts/controllers/forecast.js"></script>
+        <script src="scripts/controllers/api.js"></script>
         <!-- endbuild -->
 
 

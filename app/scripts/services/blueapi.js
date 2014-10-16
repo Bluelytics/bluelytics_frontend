@@ -21,9 +21,14 @@ angular.module('bluelyticsFrontendApp')
       query: {method:'GET', isArray:true, cache:true}
     });
 
+    var graph_data_resource = $resource( api_url + 'api/graph_data', {}, {
+      query: {method:'GET', isArray:false, cache:true}
+    });
+
     return {
         'last_price': last_price_resource,
         'all_currencies': all_currencies_resource,
+        'graph_data': graph_data_resource,
         'extended_last_price': function extended_last_price(callback){
             var mycall = callback;
             last_price_resource.query({}, function(value, headers){
