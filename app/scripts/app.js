@@ -32,10 +32,6 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/dolar/:dolar_name', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
       .when('/calculator', {
         templateUrl: 'views/calculator.html',
         controller: 'CalculatorCtrl'

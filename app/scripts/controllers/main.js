@@ -8,17 +8,17 @@
  * Controller of the bluelyticsFrontendApp
  */
 angular.module('bluelyticsFrontendApp')
-  .controller('MainCtrl', ['$scope', '$routeParams', 'blueAPI', function ($scope, $routeParams, blueAPI) {
+  .controller('MainCtrl', function ($scope, $routeParams, $location, blueAPI) {
     
     blueAPI.extended_last_price(function(value){
         $scope.dolares = value;
     });
     
-    if ($routeParams.dolar_name){
-  		$scope.dolar_activo = $routeParams.dolar_name;
-  	}else{
-  		$scope.dolar_activo = 'blue';
-  	}
+  	$scope.dolar_activo = 'blue';
+
+    $scope.cambiarDolar = function (dolar){
+      $scope.dolar_activo = dolar;
+    };
 
 
-  }]);
+  });

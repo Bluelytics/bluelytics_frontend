@@ -4,7 +4,7 @@
 
   <h1>Dolar en Argentina</h1>
 
-<div id="last_prices" ng-repeat="dolar in dolares |filter:dolar_activo:true">
+<div class="prices" ng-repeat="dolar in dolares |filter:dolar_activo:true">
   <div class="row">
     <div class="col-md-5 name">Compra:</div>
     <div class="col-md-6 value">
@@ -44,9 +44,9 @@
 </div>
 
   <div class="btn-group" ng-repeat="dolar in dolares">
-      <a class="btn" role="button" ng-class="{ 'btn-primary': (dolar.name == dolar_activo), 'btn-default': (dolar.name != dolar_activo)}" href="#/dolar/{{dolar.name}}">
+      <button class="btn" role="button" ng-class="{ 'btn-primary': (dolar.name == dolar_activo), 'btn-default': (dolar.name != dolar_activo)}" ng-click="cambiarDolar(dolar.name)">
         {{dolar.long_name}}
-      </a>
+      </button>
   </div>
 
 
