@@ -23,17 +23,32 @@ angular.module('bluelyticsFrontendApp')
 
     blueAPI.forecast_data(function(value){
 
-      var historySeries = _.map(value.history, function(d){
-          return [d.date, d.value];
-        });
-
-      var forecastSeries = [historySeries[historySeries.length-1]].concat(_.map(value.forecast, function(d){
-          return [d.date, d.value];
-        }));
-
       $scope.chartData = [
-        {'values': historySeries, 'key': 'Historico'},
-        {'values': forecastSeries, 'key': 'Prediccion'},
-        ]
+        {
+          'key': 'Predicho minimo',
+          'values': _.map(value.forecast, function(d){
+                        return [d.date, d.low];
+                    })
+        },
+        {
+          'key': 'Predicho promedio',
+          'values': _.map(value.forecast, function(d){
+                        return [d.date, d.value];
+                    })
+        },
+        {
+          'key': 'Predicho maximo',
+          'values': _.map(value.forecast, function(d){
+                        return [d.date, d.high];
+                    })
+        }
+      ]
+
+      $scope.tableData = _.map(value.forecast, function(d){
+          d.date_month = monthFormat(new Date(d.date));
+          return d;
+        });;
     });
+
+
   });

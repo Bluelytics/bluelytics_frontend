@@ -22,7 +22,7 @@ angular.module('bluelyticsFrontendApp')
     blueAPI.graph_evolution_data(function(data){
 
       $scope.data = data;
-
+      console.log($scope.data);
     });
 
   });
