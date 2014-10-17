@@ -19,7 +19,7 @@ angular.module('bluelyticsFrontendApp')
         return (blue - ofi) / ofi;
     }
 
-    var api_url = 'http://localhost:8000/';
+    var api_url = 'http://api.bluelytics.com.ar/';
 
     var last_price_resource = $resource( api_url + 'api/last_price', {}, {
       query: {method:'GET', isArray:true, cache:true}
@@ -29,7 +29,7 @@ angular.module('bluelyticsFrontendApp')
       query: {method:'GET', isArray:true, cache:true}
     });
 
-    var graph_data_resource = $resource( api_url + 'api/graph_data', {}, {
+    var graph_data_resource = $resource( api_url + 'data/graphs/evolution.json', {}, {
       query: {method:'GET', isArray:false, cache:true}
     });
 

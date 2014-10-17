@@ -180,48 +180,18 @@ span.equal{
 }
 
 .prices.ng-enter {
-  -webkit-transition:0.5s linear all;
-  transition:0.5s linear all;
+  animation: lightSpeedIn 0.5s;
 }
 
-.prices.ng-enter {
-  opacity:0;
-}
-.prices.ng-enter.ng-enter-active {
-  opacity:1;
-}
-
-
-.mainContainer {
+.mainContainer{
   position:relative;
-}
-.mainAnimation.ng-enter, .mainAnimation.ng-leave {
-  -webkit-transition:0.5s linear all;
-  transition:0.5s linear all;
-
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:600px;
 }
 
 .mainAnimation.ng-enter {
-  z-index:100;
-  top:600px;
-  opacity:0;
-}
-.mainAnimation.ng-enter.ng-enter-active {
-  top:0;
-  opacity:1;
+  animation: zoomInRight 1s;
 }
 
 .mainAnimation.ng-leave {
-  z-index:101;
-  top:0;
-  opacity:1;
-}
-.mainAnimation.ng-leave.ng-leave-active {
-  top:-600px;
-  opacity:0;
+  animation: zoomOutLeft 1s;
+  float:left;
 }

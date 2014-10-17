@@ -18,13 +18,13 @@ angular.module('bluelyticsFrontendApp')
         if($scope.valor_dolar && $scope.moneda.selected){
             $scope.calculo_ars =  ($scope.calculo_ext / $scope.moneda.selected.value) * $scope.valor_dolar;
         }
-    }
+    };
 
     $scope.update_ext = function update_ext(){
         if($scope.valor_dolar && $scope.moneda.selected){
             $scope.calculo_ext =  ($scope.calculo_ars / $scope.valor_dolar) * $scope.moneda.selected.value;
         }
-    }
+    };
 
     blueAPI.extended_last_price(function(value){
         $scope.dolares = $filter('filter')(value, function(dolar){
@@ -53,7 +53,7 @@ angular.module('bluelyticsFrontendApp')
                 $scope.update_ext();
             }
         }
-    }
+    };
 
 
   }]);
