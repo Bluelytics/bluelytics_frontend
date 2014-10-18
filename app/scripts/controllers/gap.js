@@ -8,7 +8,7 @@
  * Controller of the bluelyticsFrontendApp
  */
 angular.module('bluelyticsFrontendApp')
-  .controller('GapCtrl', function ($scope, blueAPI) {
+  .controller('GapCtrl', function ($scope, blueAPI, $window) {
 
     /* Gap calculator */
 
@@ -64,7 +64,16 @@ angular.module('bluelyticsFrontendApp')
 
     blueAPI.graph_gap_data(function(data){
 
-      $scope.data = data;
+      var evData = data;
+
+      for(var i = 0; i < evData.length; i++){
+        if($window.innerWidth < 768 && evData[i].values.length > 60){
+          evData[i].values.splice(0, evData[i].values.length - 60);
+        }
+      }
+      
+      $scope.data = evData;
+    
 
     });
 

@@ -94,6 +94,24 @@ body { padding-top: 70px; }
   .jumbotron {
     border-bottom: 0;
   }
+
+  /* Animations */
+  .prices.ng-enter {
+    animation: lightSpeedIn 0.5s;
+  }
+
+  .mainContainer{
+    position:relative;
+  }
+
+  .mainAnimation.ng-enter {
+    animation: zoomInRight 1s;
+  }
+
+  .mainAnimation.ng-leave {
+    animation: zoomOutLeft 1s;
+    float:left;
+  }
 }
 
 /* Responsive: Big screen */
@@ -179,19 +197,3 @@ span.equal{
   color:#777;
 }
 
-.prices.ng-enter {
-  animation: lightSpeedIn 0.5s;
-}
-
-.mainContainer{
-  position:relative;
-}
-
-.mainAnimation.ng-enter {
-  animation: zoomInRight 1s;
-}
-
-.mainAnimation.ng-leave {
-  animation: zoomOutLeft 1s;
-  float:left;
-}

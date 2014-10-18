@@ -8,7 +8,7 @@
  * Service in the bluelyticsFrontendApp. - API of bluelytics wrapper
  */
 angular.module('bluelyticsFrontendApp')
-  .service('blueAPI', function blueAPI($resource, $q, _) {
+  .service('blueAPI', function blueAPI($resource, $q, _, backendUrl) {
     var valoresBlue = null;
     var graph_evolution_data = null;
     var graph_gap_data = null;
@@ -19,38 +19,36 @@ angular.module('bluelyticsFrontendApp')
         return (blue - ofi) / ofi;
     }
 
-    var api_url = 'http://api.bluelytics.com.ar/';
-
-    var last_price_resource = $resource( api_url + 'api/last_price', {}, {
+    var last_price_resource = $resource( backendUrl + 'api/last_price', {}, {
       query: {method:'GET', isArray:true, cache:true}
     });
 
-    var all_currencies_resource = $resource( api_url + 'api/all_currencies', {}, {
+    var all_currencies_resource = $resource( backendUrl + 'api/all_currencies', {}, {
       query: {method:'GET', isArray:true, cache:true}
     });
 
-    var graph_data_resource = $resource( api_url + 'data/graphs/evolution.json', {}, {
+    var graph_data_resource = $resource( backendUrl + 'data/graphs/evolution.json', {}, {
       query: {method:'GET', isArray:false, cache:true}
     });
 
-    var wordcloud_oficialistas_resource = $resource( api_url + 'data/words/oficialistas.json', {}, {
+    var wordcloud_oficialistas_resource = $resource( backendUrl + 'data/words/oficialistas.json', {}, {
       query: {method:'GET', isArray:true, cache:true}
     });
 
-    var wordcloud_oposicion_resource = $resource( api_url + 'data/words/oposicion.json', {}, {
+    var wordcloud_oposicion_resource = $resource( backendUrl + 'data/words/oposicion.json', {}, {
       query: {method:'GET', isArray:true, cache:true}
     });
 
-    var forecast_dates = $resource( api_url + 'data/forecast/json_dates_forecasted.json', {}, {
+    var forecast_dates = $resource( backendUrl + 'data/forecast/json_dates_forecasted.json', {}, {
       query: {method:'GET', isArray:true, cache:true}
     });
-    var forecast_values = $resource( api_url + 'data/forecast/json_forecasted.json', {}, {
+    var forecast_values = $resource( backendUrl + 'data/forecast/json_forecasted.json', {}, {
       query: {method:'GET', isArray:false, cache:true}
     });
-    var forecast_dates_history = $resource( api_url + 'data/forecast/json_dates_history.json', {}, {
+    var forecast_dates_history = $resource( backendUrl + 'data/forecast/json_dates_history.json', {}, {
       query: {method:'GET', isArray:true, cache:true}
     });
-    var forecast_values_history = $resource( api_url + 'data/forecast/json_history.json', {}, {
+    var forecast_values_history = $resource( backendUrl + 'data/forecast/json_history.json', {}, {
       query: {method:'GET', isArray:false, cache:true}
     });
 
@@ -167,9 +165,9 @@ angular.module('bluelyticsFrontendApp')
                   var dataByDate = _.groupBy(allData, function(a){return a.datepart;});
 
                   var finalGrouped = _.chain(dataByDate).map(function(d){
-                    var sum_oficial = _.reduce(d, function(memo, sum){
-                      if (sum.source == 'Oficial'){ return memo + sum.value;} else {return memo;}
-                    }, 0);
+                    var max_oficial = _.max(d, function(val){
+                      if (val.source == 'Oficial'){return val.value;} else {return 0;}
+                    }).value;
 
                     var sum_blue = _.reduce(d, function(memo, sum){
                       if (sum.source != 'Oficial'){ return memo + sum.value;} else {return memo;}
@@ -179,10 +177,10 @@ angular.module('bluelyticsFrontendApp')
                       return c.source != 'Oficial';
                     }).size().value();
 
-                    return {'date': _.max(d, function(a){return a.epoch;}).date, 'oficial': sum_oficial, 'blue': sum_blue/count_blue}
+                    return {'date': _.max(d, function(a){return a.epoch;}).date, 'oficial': max_oficial, 'blue': sum_blue/count_blue}
 
                   }).filter(function(d){
-                    return (d.oficial > 0 && d.blue > 0);
+                    return (d.oficial > 0 && d.blue > 0 && (d.oficial - d.blue) != 0);
                   }).map(function(d){
                     return [new Date(d.date), percGap(d.oficial, d.blue)]
                   }).value();

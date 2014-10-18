@@ -9,6 +9,11 @@
 
 module.exports = function (grunt) {
 
+  var env = process.env.ENV || 'development';
+
+  var backend_url =
+  require('./config/' + env + '.json').url;
+
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
@@ -73,7 +78,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          open: true,
+          open: false,
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
@@ -384,9 +389,24 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    'template': {
+      'backendUrl': {
+        'options': {
+          data: {
+            'backendUrl': backend_url
+          }
+        },
+        'files': {
+          '.tmp/scripts/services/backendUrl.js': 
+            ['config/backendUrl.js.tpl']
+        }
+      }
     }
   });
 
+  grunt.loadNpmTasks('grunt-template');
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -396,6 +416,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'wiredep',
+      'template',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -419,6 +440,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
+    'template',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
@@ -438,4 +460,5 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
 };

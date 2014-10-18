@@ -8,7 +8,7 @@
  * Controller of the bluelyticsFrontendApp
  */
 angular.module('bluelyticsFrontendApp')
-  .controller('EvolutionCtrl', function ($scope, blueAPI) {
+  .controller('EvolutionCtrl', function ($scope, blueAPI, $window) {
 
     var dateFormat = d3.time.format("%d/%m/%Y");
 
@@ -21,8 +21,15 @@ angular.module('bluelyticsFrontendApp')
 
     blueAPI.graph_evolution_data(function(data){
 
-      $scope.data = data;
-      console.log($scope.data);
+      var evData = data;
+
+      for(var i = 0; i < evData.length; i++){
+        if($window.innerWidth < 768 && evData[i].values.length > 60){
+          evData[i].values.splice(0, evData[i].values.length - 60);
+        }
+      }
+      
+      $scope.data = evData;
     });
 
   });
