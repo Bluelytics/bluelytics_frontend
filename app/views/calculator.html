@@ -15,7 +15,7 @@
   <div class="col-md-6">
     <label>Moneda extranjera:</label>
 
-    <ui-select ng-model="moneda.selected" ng-disabled="disabled">
+    <ui-select ng-model="moneda.selected" ng-change="update_ext()" ng-disabled="disabled">
         <ui-select-match placeholder="Seleccione la moneda">{{$select.selected.name}}</ui-select-match>
         <ui-select-choices repeat="moneda in monedas | filter: $select.search">
           <div ng-bind-html="moneda.name + ' (' + moneda.code + ')' | highlight: $select.search">
