@@ -105,13 +105,9 @@ body { padding-top: 70px; }
   }
 
   .mainAnimation.ng-enter {
-    animation: zoomInRight 1s;
+    animation: zoomIn 1s;
   }
 
-  .mainAnimation.ng-leave {
-    animation: zoomOutLeft 1s;
-    float:left;
-  }
 }
 
 /* Responsive: Big screen */
