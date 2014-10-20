@@ -40,7 +40,7 @@
     <div class="col-md-4 col-md-offset-4">
       <div class="form-group">
         <label class="control-label" for="currency_ars">Cantidad de pesos argentinos (ARS)</label>
-        <input ng-model="calculo_ars" ng-change="update_ext()" id="currency_ars" type="number" placeholder="Valor ARS" class="form-control">
+        <input ng-model="calculo_ars" ng-change="update_ext()" id="currency_ars" min="0" type="number" placeholder="Valor ARS" class="form-control">
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@
     <div class="col-md-4 col-md-offset-4">
       <div id="extform" class="form-group">
         <label class="control-label" for="currency_ext">Cantidad de moneda extranjera ({{moneda.selected.code}})</label>
-        <input ng-model="calculo_ext" ng-change="update_ars()" id="currency_ext" type="number" placeholder="Valor Moneda Extranjera" class="form-control">
+        <input ng-model="calculo_ext" ng-change="update_ars()" id="currency_ext" min="0" type="number" placeholder="Valor Moneda Extranjera" class="form-control">
       </div>
     </div>
   </div>

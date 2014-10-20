@@ -16,13 +16,13 @@ angular.module('bluelyticsFrontendApp')
 
     $scope.update_ars = function update_ars(){
         if($scope.valor_dolar && $scope.moneda.selected){
-            $scope.calculo_ars =  ($scope.calculo_ext / $scope.moneda.selected.value) * $scope.valor_dolar;
+            $scope.calculo_ars =  parseFloat( (($scope.calculo_ext / $scope.moneda.selected.value) * $scope.valor_dolar).toFixed(2));
         }
     };
 
     $scope.update_ext = function update_ext(){
         if($scope.valor_dolar && $scope.moneda.selected){
-            $scope.calculo_ext =  ($scope.calculo_ars / $scope.valor_dolar) * $scope.moneda.selected.value;
+            $scope.calculo_ext =  parseFloat( (($scope.calculo_ars / $scope.valor_dolar) * $scope.moneda.selected.value).toFixed(2));
         }
     };
 
