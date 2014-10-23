@@ -10,6 +10,7 @@
 angular.module('bluelyticsFrontendApp')
   .controller('GapCtrl', function ($scope, blueAPI, $window) {
 
+    var dateFormat = d3.time.format("%d/%m/%Y");
     /* Gap calculator */
 
     $scope.valorCompare = 1;
@@ -66,14 +67,34 @@ angular.module('bluelyticsFrontendApp')
 
       var evData = data;
 
-      for(var i = 0; i < evData.length; i++){
-        if($window.innerWidth < 768 && evData[i].values.length > 60){
-          evData[i].values.splice(0, evData[i].values.length - 60);
-        }
+      
+      if($window.innerWidth < 768 && evData.length > 60){
+        evData.splice(0, evData.length - 60);
       }
       
       $scope.data = evData;
-    
+        
+
+      $scope.options = {
+        axes: {
+          x: {key: 'date', type: 'date', labelFunction: function(d){return dateFormat(d);}},
+          y: {type: 'linear'},
+        },
+        series: [
+          {y: 'brecha', color: 'red', axis:"y", type: 'line',thickness: "1px", label: 'Brecha'}
+        ],
+        tooltip: {
+          mode: "scrubber",
+          formatter: function (x, y, series) {
+            return dateFormat(x) + ' : ' + $scope.percFormat(y/100);
+          }
+        },
+        stacks: [],
+        lineMode: "linear",
+        drawLegend: true,
+        drawDots: false,
+        columnsHGap: 5
+      }
 
     });
 

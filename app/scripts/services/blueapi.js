@@ -53,6 +53,47 @@ angular.module('bluelyticsFrontendApp')
     });
 
 
+    function groupGraphData(rawData){
+        var allData = [];
+
+        for(var key in rawData){
+            if(rawData.hasOwnProperty(key) && key != '$promise' && key != '$resolved'){
+                var appendData = _.chain(rawData[key]).map(function(b){
+                  var tmp_date = new Date(b.date);
+                  b.epoch = tmp_date.getTime()/1000;
+                  b.datepart = dateFormat(tmp_date);
+                  b.source = key;
+                  return b;
+                }).value();
+                allData = allData.concat(appendData);
+              }
+          }
+          
+
+        var dataByDate = _.groupBy(allData, function(a){return a.datepart;});
+
+        var finalGrouped = _.chain(dataByDate).map(function(d){
+          var max_oficial = _.max(d, function(val){
+            if (val.source == 'Oficial'){return val.value;} else {return 0;}
+          }).value;
+
+          var sum_blue = _.reduce(d, function(memo, sum){
+            if (sum.source != 'Oficial'){ return memo + sum.value;} else {return memo;}
+          }, 0);
+
+          var count_blue = _.chain(d).filter(function(c) {
+            return c.source != 'Oficial';
+          }).size().value();
+
+          return {'date': dateFormat.parse(d[0].datepart), 'oficial': max_oficial, 'blue': sum_blue/count_blue}
+
+        }).filter(function(d){
+          return (d.oficial > 0 && d.blue > 0 && (d.oficial - d.blue) != 0);
+        }).sortBy(function(d){return d.date;}).value();
+
+        return finalGrouped;
+    }
+
     return {
         'last_price': last_price_resource,
         'all_currencies': all_currencies_resource,
@@ -117,22 +158,8 @@ angular.module('bluelyticsFrontendApp')
 
                 var mycall = callback;
                 graph_data_resource.query({}, function(rawData, headers){
-                  var transformData = function transformData(v){
-                    return [new Date(v.date),  v.value];
-                  };
 
-                  var finalData = []
-
-                  for(var key in rawData){
-                    if(rawData.hasOwnProperty(key) && key != '$promise' && key != '$resolved'){
-                      finalData.push({
-                        'values': _.map(rawData[key], transformData),
-                        'key': key
-                      });
-                    }
-                  }
-
-                  graph_evolution_data = finalData;
+                  graph_evolution_data = groupGraphData(rawData);
 
                   mycall(graph_evolution_data);
                 });
@@ -146,51 +173,9 @@ angular.module('bluelyticsFrontendApp')
 
                 var mycall = callback;
                 graph_data_resource.query({}, function(rawData, headers){
-                    var allData = [];
-
-                  for(var key in rawData){
-                      if(rawData.hasOwnProperty(key) && key != '$promise' && key != '$resolved'){
-                          var appendData = _.chain(rawData[key]).map(function(b){
-                            var tmp_date = new Date(b.date);
-                            b.epoch = tmp_date.getTime()/1000;
-                            b.datepart = dateFormat(tmp_date);
-                            b.source = key;
-                            return b;
-                          }).value();
-                          allData = allData.concat(appendData);
-                        }
-                    }
-                    
-
-                  var dataByDate = _.groupBy(allData, function(a){return a.datepart;});
-
-                  var finalGrouped = _.chain(dataByDate).map(function(d){
-                    var max_oficial = _.max(d, function(val){
-                      if (val.source == 'Oficial'){return val.value;} else {return 0;}
-                    }).value;
-
-                    var sum_blue = _.reduce(d, function(memo, sum){
-                      if (sum.source != 'Oficial'){ return memo + sum.value;} else {return memo;}
-                    }, 0);
-
-                    var count_blue = _.chain(d).filter(function(c) {
-                      return c.source != 'Oficial';
-                    }).size().value();
-
-                    return {'date': _.max(d, function(a){return a.epoch;}).date, 'oficial': max_oficial, 'blue': sum_blue/count_blue}
-
-                  }).filter(function(d){
-                    return (d.oficial > 0 && d.blue > 0 && (d.oficial - d.blue) != 0);
-                  }).map(function(d){
-                    return [new Date(d.date), percGap(d.oficial, d.blue)]
+                  graph_gap_data = _.chain(groupGraphData(rawData)).map(function(d){
+                    return {'date': d.date, 'brecha': percGap(d.oficial, d.blue)*100}
                   }).value();
-
-                  var finalData = [{
-                    'values': finalGrouped,
-                    'key': 'Brecha'
-                  }];
-
-                  graph_gap_data = finalData;
 
                   mycall(graph_gap_data);
                 });

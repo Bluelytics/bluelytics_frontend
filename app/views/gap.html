@@ -2,11 +2,13 @@
   <h1 class="blue">Brecha dólar blue</h1>
     <h2>(Estimación)</h2>
 
+    <div class="container">
     <div class="row">
     <div class="col-md-4 col-md-offset-4">
     <div id="baseform" class="form-group">
       <label class="control-label" for="valorCompare">¿Cuantos Dólares (USD) utilizar para la comparacion?</label>
       <input ng-model="valorCompare" id="valorCompare" type="number" value="1" min="1" class="form-control">
+    </div>
     </div>
     </div>
     </div>
@@ -24,20 +26,11 @@
 <span class="value">AR$ {{valorCompare * gap(valorDolarTarjeta, valorDolarBlue) |number:2}}</span>
 <span class="perc">({{ percFormat(percGap(valorDolarTarjeta, valorDolarBlue))  }})</span>
 
-
+<div class="container" style="height:400px;">
+  
 <h2>Evolucion brecha cambiaria</h2>
 
-<nvd3-line-chart
-        data="data"
-        showXAxis="true"
-        showYAxis="true"
-        height="400"
-        tooltips="true"
-        useInteractiveGuideline="true"
-        interactive="true"
-        showLegend="true"
-        xAxisTickFormat="tickX"
-        yAxisTickFormat="tickY">
-    </nvd3-line-chart>
+<linechart data="data" options="options" mode=""></linechart>
+</div>
 
 </div>

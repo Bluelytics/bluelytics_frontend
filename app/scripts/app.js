@@ -17,7 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.select',
-    'nvd3ChartDirectives',
+    'n3-line-chart',
     'underscore'
   ])
   .config(function ($routeProvider, uiSelectConfig) {
