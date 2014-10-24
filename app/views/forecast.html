@@ -3,18 +3,10 @@
 
 
 <h2>Grafico</h2>
-<nvd3-line-chart
-        data="chartData"
-        showXAxis="true"
-        showYAxis="true"
-        height="400"
-        tooltips="true"
-        interactive="true"
-        showLegend="true"
-        interpolate="basis"
-        xAxisTickFormat="tickX"
-        yAxisTickFormat="tickY">
-    </nvd3-line-chart>
+
+<div class="container" style="height:400px;">
+  <linechart data="data" options="options" mode=""></linechart>
+</div>
 
 <h2>Tabla de valores</h2>
 <table class="table" id="table_forecast">

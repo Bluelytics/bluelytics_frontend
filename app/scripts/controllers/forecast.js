@@ -23,26 +23,31 @@ angular.module('bluelyticsFrontendApp')
 
     blueAPI.forecast_data(function(value){
 
-      $scope.chartData = [
-        {
-          'key': 'Predicho minimo',
-          'values': _.map(value.forecast, function(d){
-                        return [d.date, d.low];
-                    })
+      
+      $scope.data = value.forecast
+
+      $scope.options = {
+        axes: {
+          x: {key: 'date', type: 'date', labelFunction: function(d){return monthFormat(d);}},
+          y: {type: 'linear'},
         },
-        {
-          'key': 'Predicho promedio',
-          'values': _.map(value.forecast, function(d){
-                        return [d.date, d.value];
-                    })
+        series: [
+          {y: 'low', color: 'lightblue', axis:"y", type: 'line',thickness: "1px", label: 'Valor min'},
+          {y: 'value', color: 'steelblue', axis:"y", type: 'line',thickness: "3px", label: 'Valor predicho'},
+          {y: 'high', color: 'darkblue', axis:"y",  type: 'line', thickness: "1px", label: 'Valor max'}
+        ],
+        tooltip: {
+          mode: "scrubber",
+          formatter: function (x, y, series) {
+            return monthFormat(x) + ' : ' + y.toFixed(2);
+          }
         },
-        {
-          'key': 'Predicho maximo',
-          'values': _.map(value.forecast, function(d){
-                        return [d.date, d.high];
-                    })
-        }
-      ]
+        stacks: [],
+        lineMode: "linear",
+        drawLegend: true,
+        drawDots: false,
+        columnsHGap: 5
+      }
 
       $scope.tableData = _.map(value.forecast, function(d){
           d.date_month = monthFormat(new Date(d.date));
