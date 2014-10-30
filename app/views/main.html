@@ -43,11 +43,29 @@
   </div>
 </div>
 
-  <div class="btn-group" ng-repeat="dolar in dolares">
-      <button class="btn" role="button" ng-class="{ 'btn-primary': (dolar.name == dolar_activo), 'btn-default': (dolar.name != dolar_activo)}" ng-click="cambiarDolar(dolar.name)">
-        {{dolar.long_name}}
-      </button>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="btn-group" ng-repeat="dolar in dolares | filter:esBlue">
+          <button class="btn" role="button" ng-class="{ 'btn-primary': (dolar.name == dolar_activo), 'btn-default': (dolar.name != dolar_activo)}" ng-click="cambiarDolar(dolar.name)">
+            {{dolar.long_name}}
+          </button>
+      </div>
+    </div>
   </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="btn-group" ng-repeat="dolar in dolares | filter:esOficial">
+          <button class="btn" role="button" ng-class="{ 'btn-success': (dolar.name == dolar_activo), 'btn-default': (dolar.name != dolar_activo)}" ng-click="cambiarDolar(dolar.name)">
+            {{dolar.long_name}}
+          </button>
+      </div>
+    </div>
+  </div>
+  
+
 
 
 </div>

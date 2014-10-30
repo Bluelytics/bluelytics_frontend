@@ -20,5 +20,16 @@ angular.module('bluelyticsFrontendApp')
       $scope.dolar_activo = dolar;
     };
 
+    $scope.esOficial = function(dolar){
+      if (dolar.name.indexOf('oficial') > -1) {
+        return true;
+      }else{
+        return false;
+      }
+    }
+    $scope.esBlue = function(dolar){
+      return !$scope.esOficial(dolar);
+    }
+
 
   });
