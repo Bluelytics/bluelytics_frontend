@@ -19,6 +19,18 @@ angular.module('bluelyticsFrontendApp')
                         return d3.format('.02f')(d);
                     };
 
+
+    $scope.filter = {};
+    $scope.filter.maxValue = 300;
+    $scope.filter.value = [$scope.filter.maxValue - $scope.filter.maxValue/4,$scope.filter.maxValue];
+
+    $scope.filterData = function(){
+      var step = $scope.data.length / $scope.filter.maxValue;
+      var start = Math.floor($scope.filter.value[0] * step);
+      var end = Math.ceil($scope.filter.value[1] * step);
+      $scope.filteredData = $scope.data.slice(start,end+1);
+    }
+
     blueAPI.graph_evolution_data(function(data){
 
       var evData = data;
@@ -28,6 +40,7 @@ angular.module('bluelyticsFrontendApp')
       }
 
       $scope.data = evData;
+      $scope.filterData();
 
       $scope.options = {
         axes: {
@@ -49,7 +62,7 @@ angular.module('bluelyticsFrontendApp')
         drawLegend: true,
         drawDots: false,
         columnsHGap: 5
-      }
+      };
 
     });
 

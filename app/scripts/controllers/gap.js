@@ -40,10 +40,23 @@ angular.module('bluelyticsFrontendApp')
                         return $scope.percFormat(d);
                     };
 
+    /* Range filter */
+
+    $scope.filter = {};
+    $scope.filter.maxValue = 300;
+    $scope.filter.value = [$scope.filter.maxValue - $scope.filter.maxValue/4,$scope.filter.maxValue];
+
+    $scope.filterData = function(){
+      var step = $scope.data.length / $scope.filter.maxValue;
+      var start = Math.floor($scope.filter.value[0] * step);
+      var end = Math.ceil($scope.filter.value[1] * step);
+      $scope.filteredData = $scope.data.slice(start,end+1);
+    }
+
     /* Requests */
 
     blueAPI.extended_last_price(function(dolares){
-                
+
         for(var i = 0; i < dolares.length; i++){
             var dolar = dolares[i];
             switch(dolar.name){
@@ -67,13 +80,14 @@ angular.module('bluelyticsFrontendApp')
 
       var evData = data;
 
-      
+
       if($window.innerWidth < 768 && evData.length > 60){
         evData.splice(0, evData.length - 60);
       }
-      
+
       $scope.data = evData;
-        
+      $scope.filterData();
+
 
       $scope.options = {
         axes: {

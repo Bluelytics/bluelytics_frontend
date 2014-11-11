@@ -1,9 +1,10 @@
     <div class="jumbotron" style="height:600px;">
     <div class="container" style="height:400px;">
-        
+
         <h1>Evolucion Dólar Blue</h1>
 
-        <linechart data="data" options="options" mode=""></linechart>
+        <linechart data="filteredData" options="options" mode=""></linechart>
+        <slider style="width:100%;" ng-model="filter.value" ng-change="filterData()" min="0" step="1" max="{{filter.maxValue}}" range="true" tooltip="hide"></slider>
+
     </div>
 </div>
-

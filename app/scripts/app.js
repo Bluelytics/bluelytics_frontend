@@ -18,11 +18,12 @@ angular
     'ngTouch',
     'ui.select',
     'n3-line-chart',
-    'underscore'
+    'underscore',
+    'ui.bootstrap-slider'
   ])
   .config(function ($routeProvider, uiSelectConfig) {
     uiSelectConfig.theme = 'bootstrap';
-    
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -62,7 +63,7 @@ angular
   }).run(function($rootScope){
     $rootScope.$on('$routeChangeStart', function(event, next, current) {
       if (typeof(current) !== 'undefined'){
-          //destroy d3 stuff 
+          //destroy d3 stuff
           window.nv.charts = {};
           window.nv.graphs = [];
           window.nv.logs = {};

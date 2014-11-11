@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron" style="padding-bottom:100px;">
   <h1 class="blue">Brecha dólar blue</h1>
     <h2>(Estimación)</h2>
 
@@ -27,10 +27,12 @@
 <span class="perc">({{ percFormat(percGap(valorDolarTarjeta, valorDolarBlue))  }})</span>
 
 <div class="container" style="height:400px;">
-  
+
 <h2>Evolucion brecha cambiaria</h2>
 
-<linechart data="data" options="options" mode=""></linechart>
+<linechart data="filteredData" options="options" mode=""></linechart>
+<slider style="width:100%;" ng-model="filter.value" ng-change="filterData()" min="0" step="1" max="{{filter.maxValue}}" range="true" tooltip="hide"></slider>
+<br><br>
 </div>
 
 </div>
