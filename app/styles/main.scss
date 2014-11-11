@@ -193,3 +193,14 @@ span.equal{
   color:#777;
 }
 
+.tooltip.tooltip-info .tooltip-inner {
+background-color: #35a1ff;
+border-color: #005b69;
+color: #ffffff;
+font-size:1.3em;
+font-weight:bold;
+}
+
+.tooltip.tooltip-info.bottom .tooltip-arrow, .tooltip.tooltip-info.bottom-left .tooltip-arrow, .tooltip.tooltip-info.bottom-right .tooltip-arrow {
+border-bottom-color: #35a1ff;
+}

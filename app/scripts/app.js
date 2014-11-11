@@ -19,7 +19,8 @@ angular
     'ui.select',
     'n3-line-chart',
     'underscore',
-    'ui.bootstrap-slider'
+    'ui.bootstrap-slider',
+    'mgcrea.ngStrap'
   ])
   .config(function ($routeProvider, uiSelectConfig) {
     uiSelectConfig.theme = 'bootstrap';
@@ -60,7 +61,15 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).run(function($rootScope){
+  })
+
+  .config(function($tooltipProvider) {
+    angular.extend($tooltipProvider.defaults, {
+      html: true
+    });
+  })
+
+  .run(function($rootScope){
     $rootScope.$on('$routeChangeStart', function(event, next, current) {
       if (typeof(current) !== 'undefined'){
           //destroy d3 stuff
