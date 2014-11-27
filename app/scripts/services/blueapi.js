@@ -9,15 +9,14 @@
  */
 angular.module('bluelyticsFrontendApp')
   .service('blueAPI', function blueAPI($resource, $q, _, backendUrl) {
-    var valoresBlue = null;
     var graph_evolution_data = null;
     var graph_gap_data = null;
 
-    var dateFormat = d3.time.format("%d/%m/%Y");
+    var dateFormat = d3.time.format('%d/%m/%Y');
 
     var percGap = function percGap(ofi, blue){
         return (blue - ofi) / ofi;
-    }
+    };
 
     var last_price_resource = $resource( backendUrl + 'api/last_price', {}, {
       query: {method:'GET', isArray:true, cache:true}
@@ -56,39 +55,42 @@ angular.module('bluelyticsFrontendApp')
     function groupGraphData(rawData){
         var allData = [];
 
+        var transformRawData = function transformRawData(raw){
+          return _.chain(raw).map(function(b){
+            var tmp_date = new Date(b.date);
+            b.epoch = tmp_date.getTime()/1000;
+            b.datepart = dateFormat(tmp_date);
+            b.source = key;
+            return b;
+          }).value();
+        };
+
         for(var key in rawData){
-            if(rawData.hasOwnProperty(key) && key != '$promise' && key != '$resolved'){
-                var appendData = _.chain(rawData[key]).map(function(b){
-                  var tmp_date = new Date(b.date);
-                  b.epoch = tmp_date.getTime()/1000;
-                  b.datepart = dateFormat(tmp_date);
-                  b.source = key;
-                  return b;
-                }).value();
-                allData = allData.concat(appendData);
+            if(rawData.hasOwnProperty(key) && key !== '$promise' && key !== '$resolved'){
+                allData = allData.concat(transformRawData(rawData[key]));
               }
           }
-          
+
 
         var dataByDate = _.groupBy(allData, function(a){return a.datepart;});
 
         var finalGrouped = _.chain(dataByDate).map(function(d){
           var max_oficial = _.max(d, function(val){
-            if (val.source == 'Oficial'){return val.value;} else {return 0;}
+            if (val.source === 'Oficial'){return val.value;} else {return 0;}
           }).value;
 
           var sum_blue = _.reduce(d, function(memo, sum){
-            if (sum.source != 'Oficial'){ return memo + sum.value;} else {return memo;}
+            if (sum.source !== 'Oficial'){ return memo + sum.value;} else {return memo;}
           }, 0);
 
           var count_blue = _.chain(d).filter(function(c) {
-            return c.source != 'Oficial';
+            return c.source !== 'Oficial';
           }).size().value();
 
-          return {'date': dateFormat.parse(d[0].datepart), 'oficial': max_oficial, 'blue': sum_blue/count_blue}
+          return {'date': dateFormat.parse(d[0].datepart), 'oficial': max_oficial, 'blue': sum_blue/count_blue};
 
         }).filter(function(d){
-          return (d.oficial > 0 && d.blue > 0 && (d.oficial - d.blue) != 0);
+          return (d.oficial > 0 && d.blue > 0 && (d.oficial - d.blue) !== 0);
         }).sortBy(function(d){return d.date;}).value();
 
         return finalGrouped;
@@ -106,21 +108,22 @@ angular.module('bluelyticsFrontendApp')
           $q.all([forecast_dates.query().$promise, forecast_values.query().$promise,
             forecast_dates_history.query().$promise, forecast_values_history.query().$promise])
            .then( function(result) {
-             
+
              var reorganized = {};
+             var i;
 
              reorganized.history = [];
-             for(var i = 0; i < result[2].length; i++){
+             for(i = 0; i < result[2].length; i++){
               reorganized.history.push({
-                'date': dateFormat.parse("01/" + result[2][i]),
+                'date': dateFormat.parse('01/' + result[2][i]),
                 'value': result[3].history[i]
               });
              }
 
              reorganized.forecast = [];
-             for(var i = 0; i < result[0].length; i++){
+             for(i = 0; i < result[0].length; i++){
               reorganized.forecast.push({
-                'date': dateFormat.parse("01/" + result[0][i]),
+                'date': dateFormat.parse('01/' + result[0][i]),
                 'value': result[1].mean[i],
                 'low': result[1].lower_80[i],
                 'high': result[1].upper_80[i]
@@ -129,12 +132,12 @@ angular.module('bluelyticsFrontendApp')
 
 
              mycall(reorganized);
-           })
+           });
         },
 
         'extended_last_price': function extended_last_price(callback){
             var mycall = callback;
-            last_price_resource.query({}, function(value, headers){
+            last_price_resource.query({}, function(value){
                 var newDolares = [];
 
                 for(var i = 0; i < value.length;i++){
@@ -152,12 +155,12 @@ angular.module('bluelyticsFrontendApp')
         },
 
         'graph_evolution_data': function (callback){
-            if(graph_evolution_data != null){
+            if(graph_evolution_data !== null){
                 callback(graph_evolution_data);
             }else{
 
                 var mycall = callback;
-                graph_data_resource.query({}, function(rawData, headers){
+                graph_data_resource.query({}, function(rawData){
 
                   graph_evolution_data = groupGraphData(rawData);
 
@@ -167,14 +170,14 @@ angular.module('bluelyticsFrontendApp')
         },
 
         'graph_gap_data': function (callback){
-            if(graph_gap_data != null){
+            if(graph_gap_data !== null){
                 callback(graph_gap_data);
             }else{
 
                 var mycall = callback;
-                graph_data_resource.query({}, function(rawData, headers){
+                graph_data_resource.query({}, function(rawData){
                   graph_gap_data = _.chain(groupGraphData(rawData)).map(function(d){
-                    return {'date': d.date, 'brecha': percGap(d.oficial, d.blue)*100}
+                    return {'date': d.date, 'brecha': percGap(d.oficial, d.blue)*100};
                   }).value();
 
                   mycall(graph_gap_data);

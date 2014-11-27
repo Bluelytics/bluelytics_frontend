@@ -9,12 +9,12 @@
  */
 angular.module('bluelyticsFrontendApp')
   .controller('MainCtrl', function ($scope, $routeParams, $location, blueAPI) {
-    
+
     blueAPI.extended_last_price(function(value){
         $scope.dolares = value;
     });
-    
-  	$scope.dolar_activo = 'blue';
+
+    $scope.dolar_activo = 'blue';
 
     $scope.cambiarDolar = function (dolar){
       $scope.dolar_activo = dolar;
@@ -26,10 +26,11 @@ angular.module('bluelyticsFrontendApp')
       }else{
         return false;
       }
-    }
+    };
+
     $scope.esBlue = function(dolar){
       return !$scope.esOficial(dolar);
-    }
+    };
 
 
   });

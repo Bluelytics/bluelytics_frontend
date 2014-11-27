@@ -10,7 +10,7 @@
 angular.module('bluelyticsFrontendApp')
   .controller('GapCtrl', function ($scope, blueAPI, $window) {
 
-    var dateFormat = d3.time.format("%d/%m/%Y");
+    var dateFormat = d3.time.format('%d/%m/%Y');
     /* Gap calculator */
 
     $scope.valorCompare = 1;
@@ -22,15 +22,15 @@ angular.module('bluelyticsFrontendApp')
 
     $scope.gap = function gap(ofi, blue){
         return blue - ofi;
-    }
+    };
 
     $scope.percGap = function percGap(ofi, blue){
         return (blue - ofi) / ofi;
-    }
+    };
 
     /* Graph */
 
-    $scope.dateFormat = d3.time.format("%d/%m/%Y");
+    $scope.dateFormat = d3.time.format('%d/%m/%Y');
     $scope.percFormat = d3.format('.02%');
 
     $scope.tickX = function(d){
@@ -44,14 +44,14 @@ angular.module('bluelyticsFrontendApp')
 
     $scope.filter = {};
     $scope.filter.maxValue = 300;
-    $scope.filter.value = [$scope.filter.maxValue - $scope.filter.maxValue/4,$scope.filter.maxValue];
+    $scope.filter.value = [$scope.filter.maxValue - $scope.filter.maxValue/3,$scope.filter.maxValue];
 
     $scope.filterData = function(){
       var step = $scope.data.length / $scope.filter.maxValue;
       var start = Math.floor($scope.filter.value[0] * step);
       var end = Math.ceil($scope.filter.value[1] * step);
       $scope.filteredData = $scope.data.slice(start,end+1);
-    }
+    };
 
     /* Requests */
 
@@ -95,20 +95,20 @@ angular.module('bluelyticsFrontendApp')
           y: {type: 'linear'},
         },
         series: [
-          {y: 'brecha', color: 'red', axis:"y", type: 'line',thickness: "1px", label: 'Brecha'}
+          {y: 'brecha', color: 'red', axis:'y', type: 'line',thickness: '1px', label: 'Brecha'}
         ],
         tooltip: {
-          mode: "scrubber",
-          formatter: function (x, y, series) {
+          mode: 'scrubber',
+          formatter: function (x, y) {
             return dateFormat(x) + ' : ' + $scope.percFormat(y/100);
           }
         },
         stacks: [],
-        lineMode: "linear",
+        lineMode: 'linear',
         drawLegend: true,
         drawDots: false,
         columnsHGap: 5
-      }
+      };
 
     });
 

@@ -11,7 +11,7 @@ angular.module('bluelyticsFrontendApp')
   .controller('ForecastCtrl', function ($scope, blueAPI, _) {
 
 
-    var monthFormat = d3.time.format("%m/%Y");
+    var monthFormat = d3.time.format('%m/%Y');
 
     $scope.tickX = function(d){
                         return monthFormat(new Date(d));
@@ -23,8 +23,8 @@ angular.module('bluelyticsFrontendApp')
 
     blueAPI.forecast_data(function(value){
 
-      
-      $scope.data = value.forecast
+
+      $scope.data = value.forecast;
 
       $scope.options = {
         axes: {
@@ -32,27 +32,27 @@ angular.module('bluelyticsFrontendApp')
           y: {type: 'linear'},
         },
         series: [
-          {y: 'low', color: 'lightblue', axis:"y", type: 'line',thickness: "1px", label: 'Valor min'},
-          {y: 'value', color: 'steelblue', axis:"y", type: 'line',thickness: "3px", label: 'Valor predicho'},
-          {y: 'high', color: 'darkblue', axis:"y",  type: 'line', thickness: "1px", label: 'Valor max'}
+          {y: 'low', color: 'lightblue', axis:'y', type: 'line',thickness: '1px', label: 'Valor min'},
+          {y: 'value', color: 'steelblue', axis:'y', type: 'line',thickness: '3px', label: 'Valor predicho'},
+          {y: 'high', color: 'darkblue', axis:'y',  type: 'line', thickness: '1px', label: 'Valor max'}
         ],
         tooltip: {
-          mode: "scrubber",
-          formatter: function (x, y, series) {
+          mode: 'scrubber',
+          formatter: function (x, y) {
             return monthFormat(x) + ' : ' + y.toFixed(2);
           }
         },
         stacks: [],
-        lineMode: "linear",
+        lineMode: 'linear',
         drawLegend: true,
         drawDots: false,
         columnsHGap: 5
-      }
+      };
 
       $scope.tableData = _.map(value.forecast, function(d){
           d.date_month = monthFormat(new Date(d.date));
           return d;
-        });;
+        });
     });
 
 
