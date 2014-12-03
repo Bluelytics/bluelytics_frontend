@@ -32,9 +32,9 @@
         "GAP": "Gap",
         "ABS_VALUE": "Absolute gap in AR$",
         "PERC_VALUE": "Relative gap in percentage",
-        "TITLE": "",
-        "COMPARE": "",
-        "EVOLUTION_TITLE": ""
+        "TITLE": "Gap",
+        "COMPARE": "Dollars to compare",
+        "EVOLUTION_TITLE": "Gap evolution chart"
     },
     "INDEX": {
         "MENU": {

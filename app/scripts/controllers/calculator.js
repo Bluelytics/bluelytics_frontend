@@ -8,7 +8,7 @@
  * Controller of the bluelyticsFrontendApp
  */
 angular.module('bluelyticsFrontendApp')
-  .controller('CalculatorCtrl', ['$scope', '$filter', 'blueAPI', function ($scope, $filter, blueAPI) {
+  .controller('CalculatorCtrl', function ($scope, $filter, blueAPI) {
 
     $scope.moneda = {};
     $scope.calculo_ars = 0;
@@ -39,10 +39,10 @@ angular.module('bluelyticsFrontendApp')
             if($scope.monedas[i].code === 'USD'){
                 $scope.moneda.selected = $scope.monedas[i];
             }
-            
+
         }
     });
-    
+
 
     $scope.cambiarDolar = function cambiarDolar(newVal){
         for(var i = 0; i < $scope.dolares.length; i++){
@@ -56,4 +56,4 @@ angular.module('bluelyticsFrontendApp')
     };
 
 
-  }]);
+  });

@@ -78,8 +78,9 @@ angular
         prefix: 'locale/',
         suffix: '.json'
     })
-    .registerAvailableLanguageKeys(['es_AR', 'en_US'], {'en_*': 'en_US', 'es_*': 'es_AR'})
+    .registerAvailableLanguageKeys(['es_AR', 'en_US'], {'en_*': 'en_US', 'es_*': 'es_AR', 'en': 'en_US', 'es': 'es_AR'})
     .determinePreferredLanguage()
-    .useLocalStorage();
+    .useLocalStorage()
+    .fallbackLanguage(['es_AR', 'en_US']);
   }])
 ;
