@@ -20,7 +20,9 @@ angular
     'n3-line-chart',
     'underscore',
     'ui.bootstrap-slider',
-    'mgcrea.ngStrap'
+    'mgcrea.ngStrap',
+    'angulartics',
+    'angulartics.google.analytics'
   ])
   .config(function ($routeProvider, uiSelectConfig) {
     uiSelectConfig.theme = 'bootstrap';
@@ -68,15 +70,4 @@ angular
       html: true
     });
   })
-
-  .run(function($rootScope){
-    $rootScope.$on('$routeChangeStart', function(event, next, current) {
-      if (typeof(current) !== 'undefined'){
-          //destroy d3 stuff
-          window.nv.charts = {};
-          window.nv.graphs = [];
-          window.nv.logs = {};
-
-      }
-    });
-  });
+;
