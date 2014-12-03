@@ -45,46 +45,46 @@
 
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: anyDolarActive()}">
             <a href="#" data-animation="am-fade-and-scale" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.RATE' | translate}}" data-placement="bottom-left">
-              <span class="glyphicon glyphicon-usd"></span> <span class="hidden-sm hidden-md hidden-lg" translate>INDEX.MENU.RATE</span>
+              <span class="glyphicon glyphicon-usd"></span> <span class="hidden-sm hidden-md hidden-lg">{{'INDEX.MENU.RATE' | translate}}</span>
             </a>
           </li>
 
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/calculator')}">
             <a href="#/calculator" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.CALCULATOR' | translate}}">
-              <span class="glyphicon glyphicon-transfer"></span> <span class="hidden-sm hidden-md hidden-lg" translate>INDEX.MENU.CALCULATOR</span>
+              <span class="glyphicon glyphicon-transfer"></span> <span class="hidden-sm hidden-md hidden-lg"> {{'INDEX.MENU.CALCULATOR' | translate }}</span>
             </a>
           </li>
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/evolution')}">
             <a href="#/evolution" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.EVOLUTION' | translate}}">
-              <span class="glyphicon glyphicon-signal"></span> <span class="hidden-sm hidden-md hidden-lg">Evolucion</span>
+              <span class="glyphicon glyphicon-signal"></span> <span class="hidden-sm hidden-md hidden-lg"> {{'INDEX.MENU.EVOLUTION' | translate }}</span>
               </a>
           </li>
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/gap')}">
             <a href="#/gap" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.GAP' | translate}}">
-              <span class="glyphicon glyphicon-resize-horizontal"></span> <span class="hidden-sm hidden-md hidden-lg">Brecha</span>
+              <span class="glyphicon glyphicon-resize-horizontal"></span> <span class="hidden-sm hidden-md hidden-lg"> {{'INDEX.MENU.GAP' | translate }}</span>
             </a>
           </li>
 
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/wordcloud')}">
             <a href="#/wordcloud" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.COVERAGE' | translate}}">
-              <span class="glyphicon glyphicon-bullhorn"></span> <span class="hidden-sm hidden-md hidden-lg">Cobertura</span>
+              <span class="glyphicon glyphicon-bullhorn"></span> <span class="hidden-sm hidden-md hidden-lg"> {{'INDEX.MENU.COVERAGE' | translate }}</span>
             </a>
           </li>
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/forecast')}">
             <a href="#/forecast" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.PREDICTION' | translate}}">
-              <span class="glyphicon glyphicon-eye-open"></span> <span class="hidden-sm hidden-md hidden-lg">Prediccion</span>
+              <span class="glyphicon glyphicon-eye-open"></span> <span class="hidden-sm hidden-md hidden-lg"> {{'INDEX.MENU.PREDICTION' | translate }}</span>
             </a>
           </li>
 
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/api')}">
             <a href="#/api" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.API' | translate}}">
-              <span class="glyphicon glyphicon-cloud-download"></span> <span class="hidden-sm hidden-md hidden-lg">API</span>
+              <span class="glyphicon glyphicon-cloud-download"></span> <span class="hidden-sm hidden-md hidden-lg"> {{'INDEX.MENU.API' | translate }}</span>
             </a>
           </li>
 
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/about')}">
             <a href="#/about" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.ABOUT' | translate}}">
-              <span class="glyphicon glyphicon-info-sign"></span> <span class="hidden-sm hidden-md hidden-lg">Acerca de
+              <span class="glyphicon glyphicon-info-sign"></span> <span class="hidden-sm hidden-md hidden-lg"> {{'INDEX.MENU.ABOUT' | translate }}</span>
             </a>
           </li>
 
@@ -231,6 +231,7 @@
         <script src="scripts/controllers/forecast.js"></script>
         <script src="scripts/controllers/api.js"></script>
         <script src="scripts/services/backendUrl.js"></script>
+        <script src="scripts/views/templates.js"></script>
         <!-- endbuild -->
 
 

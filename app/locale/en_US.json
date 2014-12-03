@@ -36,22 +36,6 @@
         "COMPARE": "Dollars to compare",
         "EVOLUTION_TITLE": "Gap evolution chart"
     },
-    "INDEX": {
-        "MENU": {
-            "RATE": "Rate",
-            "CALCULATOR": "Calculator",
-            "EVOLUTION": "Evolution",
-            "GAP": "Gap",
-            "COVERAGE": "Media Coverage",
-            "PREDICTION": "Prediction",
-            "API": "API",
-            "ABOUT": "About bluelytics"
-        },
-        "LANGUAGE": "Language",
-        "ANDROIDAPP": "Available on Google Play",
-        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/en_app_rgb_wo_45.png",
-        "CREDIT": "Created by"
-    },
     "ABOUT": {
         "TITLE": "About Bluelytics",
         "DESC_1": "Bluelytics is a tool for live analysis of the Blue Dollar in Argentina.",
@@ -67,9 +51,9 @@
         "WARNING": "If you are a non-technical user, ignore this page.",
         "DESCRIPTION": "The API exposed has no use terms, and doesn't require authentication, it's a simple JSON response.",
         "METHODS": "Methods",
-        "LAST_PRICE": "Last price",
         "BINDINGS": "Bindings",
         "BINDINGS_DESCRIPTION": "The following bindings are available for the Bluelytics API",
+        "LAST_PRICE": "Last price",
         "BINDINGS_TABLE": {
             "LANGUAGE": "Technology",
             "URL": "URL"
@@ -93,5 +77,21 @@
         "OFFICIAL_MEDIA": "Pagina 12 and Diario Registrado",
         "OPPOSING_TITLE": "Antigovernment-biased media",
         "OPPOSING_MEDIA": "Clarin and La Nacion"
+    },
+    "INDEX": {
+        "MENU": {
+            "RATE": "Rate",
+            "CALCULATOR": "Calculator",
+            "EVOLUTION": "Evolution",
+            "GAP": "Gap",
+            "COVERAGE": "Media Coverage",
+            "PREDICTION": "Prediction",
+            "API": "API",
+            "ABOUT": "About bluelytics"
+        },
+        "LANGUAGE": "Language",
+        "ANDROIDAPP": "Available on Google Play",
+        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/en_app_rgb_wo_45.png",
+        "CREDIT": "Created by"
     }
 }

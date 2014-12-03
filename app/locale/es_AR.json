@@ -36,22 +36,6 @@
         "COMPARE": "¿Cuantos Dólares (USD) utilizar para la comparacion?",
         "EVOLUTION_TITLE": "Evolución brecha cambiaria"
     },
-    "INDEX": {
-        "MENU": {
-            "RATE": "Cotización",
-            "CALCULATOR": "Calculadora",
-            "EVOLUTION": "Evolución",
-            "GAP": "Brecha",
-            "COVERAGE": "Cobertura mediatica",
-            "PREDICTION": "Prediccion",
-            "API": "API",
-            "ABOUT": "Acerca de"
-        },
-        "LANGUAGE": "Lenguaje",
-        "ANDROIDAPP": "Disponible en Google Play",
-        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/es-419_generic_rgb_wo_45.png",
-        "CREDIT": "Creado por"
-    },
     "ABOUT": {
         "TITLE": "Acerca de Bluelytics",
         "DESC_1": "Bluelytics es una herramienta de analisis vivo del Dolar Blue.",
@@ -67,9 +51,9 @@
         "WARNING": "Si usted no es un usuario tecnico, ignore esta pagina.",
         "DESCRIPTION": "La API que esta disponible a continuacion es de libre uso, no requiere autenticacion, es un simple JSON.",
         "METHODS": "Metodos",
-        "LAST_PRICE": "Ultimo precio",
         "BINDINGS": "Bindings",
         "BINDINGS_DESCRIPTION": "Estan disponibles los siguientes bindings para utilizar la API de Bluelytics",
+        "LAST_PRICE": "Ultimo precio",
         "BINDINGS_TABLE": {
             "LANGUAGE": "Tecnologia",
             "URL": "URL"
@@ -93,5 +77,21 @@
         "OFFICIAL_MEDIA": "Pagina 12 y Diario Registrado",
         "OPPOSING_TITLE": "Medios opositores",
         "OPPOSING_MEDIA": "Clarin y La Nacion"
+    },
+    "INDEX": {
+        "MENU": {
+            "RATE": "Cotización",
+            "CALCULATOR": "Calculadora",
+            "EVOLUTION": "Evolución",
+            "GAP": "Brecha",
+            "COVERAGE": "Cobertura mediatica",
+            "PREDICTION": "Prediccion",
+            "API": "API",
+            "ABOUT": "Acerca de"
+        },
+        "LANGUAGE": "Lenguaje",
+        "ANDROIDAPP": "Disponible en Google Play",
+        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/es-419_generic_rgb_wo_45.png",
+        "CREDIT": "Creado por"
     }
 }
