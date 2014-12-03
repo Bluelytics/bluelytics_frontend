@@ -1,0 +1,97 @@
+{
+    "COMMON": {
+        "DOLARES": {
+            "blue": "Blue Dollar",
+            "oficial": "Official",
+            "oficial_20": "Official +20%",
+            "oficial_35": "Official +35%",
+            "dolarblue": {
+                "net": "DolarBlue.net"
+            },
+            "ambito_financiero": "Ambito Financiero",
+            "la_nacion": "La Nacion"
+        }
+    },
+    "FORECAST": {
+        "CHART": {
+            "MIN": "Min value",
+            "AVG": "Predicted value",
+            "MAX": "Max value",
+            "TITLE": "Chart"
+        },
+        "TITLE": "Blue Dollar prediction",
+        "TABLE": {
+            "TITLE": "Table",
+            "MONTH": "Month",
+            "MIN": "Minimun predicted",
+            "AVG": "Predicted value",
+            "MAX": "Maximum predicted"
+        }
+    },
+    "GAP": {
+        "GAP": "Gap",
+        "ABS_VALUE": "Absolute gap in AR$",
+        "PERC_VALUE": "Relative gap in percentage",
+        "TITLE": "",
+        "COMPARE": "",
+        "EVOLUTION_TITLE": ""
+    },
+    "INDEX": {
+        "MENU": {
+            "RATE": "Rate",
+            "CALCULATOR": "Calculator",
+            "EVOLUTION": "Evolution",
+            "GAP": "Gap",
+            "COVERAGE": "Media Coverage",
+            "PREDICTION": "Prediction",
+            "API": "API",
+            "ABOUT": "About bluelytics"
+        },
+        "LANGUAGE": "Language",
+        "ANDROIDAPP": "Available on Google Play",
+        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/en_app_rgb_wo_45.png",
+        "CREDIT": "Created by"
+    },
+    "ABOUT": {
+        "TITLE": "About Bluelytics",
+        "DESC_1": "Bluelytics is a tool for live analysis of the Blue Dollar in Argentina.",
+        "DESC_2": "You can download the mobile app from <a href=\"https://play.google.com/store/apps/details?id=com.ionicframework.bluelyticsmobile363312\">Google Play</a>",
+        "DESC_3": "If you have feedback or want to follow the updates you can follow Bluelytics on <a href=\"http://www.facebook.com/bluelytics\">Facebook</a> and <a href=\"http://www.twitter.com/bluelytics\">Twitter</a>",
+        "DESC_4": "This web app was created by Pablo Seibelt, i have no contact with illegal markets, i only scrape the dollar values available at the following websites: <a href=\"http://www.lanacion.com.ar/dolar-hoy-t1369\">La Nacion</a>, <a href=\"http://www.ambito.com/economia/mercados/monedas/dolar/\">Ambito.com</a>, <a href=\"http://www.cronista.com/MercadosOnline/mercados.html\">Cronista.com</a>, and <a href=\"http://dolarblue.net/\">DolarBlue.net</a>, and then publish them on this web app.",
+        "DESC_5": "This is free software (AGPL) and it's available on github:",
+        "DESC_6": "<a href=\"http://www.github.com/sicarul/bluelytics\">http://www.github.com/sicarul/bluelytics</a> (Backend)",
+        "DESC_7": "<a href=\"http://www.github.com/sicarul/bluelytics_frontend\">http://www.github.com/sicarul/bluelytics_frontend</a> (Frontend)"
+    },
+    "API": {
+        "TITLE": "API JSON Dolar Blue",
+        "WARNING": "If you are a non-technical user, ignore this page.",
+        "DESCRIPTION": "The API exposed has no use terms, and doesn't require authentication, it's a simple JSON response.",
+        "METHODS": "Methods",
+        "LAST_PRICE": "Last price",
+        "BINDINGS": "Bindings",
+        "BINDINGS_DESCRIPTION": "The following bindings are available for the Bluelytics API",
+        "BINDINGS_TABLE": {
+            "LANGUAGE": "Technology",
+            "URL": "URL"
+        }
+    },
+    "CALCULATOR": {
+        "TITLE": "Blue Calculator",
+        "FOREIGN_CURR": "Foreign currency",
+        "VALUE_LOCAL": "Amount in Argentinian Pesos (ARS)",
+        "VALUE_FOREIGN": "Amount in foreign currency ({{code}})"
+    },
+    "EVOLUTION": {
+        "TITLE": "Blue Dollar Evolution"
+    },
+    "RATE": {
+        "TITLE": "Dollar in Argentina"
+    },
+    "WORDCLOUD": {
+        "TITLE": "Media coverage",
+        "OFFICIAL_TITLE": "Government-biased media",
+        "OFFICIAL_MEDIA": "Pagina 12 and Diario Registrado",
+        "OPPOSING_TITLE": "Antigovernment-biased media",
+        "OPPOSING_MEDIA": "Clarin and La Nacion"
+    }
+}

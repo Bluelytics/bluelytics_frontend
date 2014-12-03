@@ -1,0 +1,97 @@
+{
+    "COMMON": {
+        "DOLARES": {
+            "blue": "Dolar Blue",
+            "oficial": "Oficial",
+            "oficial_20": "Oficial Ahorro",
+            "oficial_35": "Oficial Tarjeta",
+            "dolarblue": {
+                "net": "DolarBlue.net"
+            },
+            "ambito_financiero": "Ambito Financiero",
+            "la_nacion": "La Nacion"
+        }
+    },
+    "FORECAST": {
+        "CHART": {
+            "MIN": "Valor min",
+            "AVG": "Valor predicho",
+            "MAX": "Valor max",
+            "TITLE": "Grafico"
+        },
+        "TITLE": "Predicción del Dolar Blue",
+        "TABLE": {
+            "TITLE": "Tabla de valores",
+            "MONTH": "Mes",
+            "MIN": "Valor minimo predicho",
+            "AVG": "Valor predicho",
+            "MAX": "Valor maximo predicho"
+        }
+    },
+    "GAP": {
+        "GAP": "Brecha",
+        "ABS_VALUE": "Diferencia absoluta (ARS)",
+        "PERC_VALUE": "Diferencia relativa (%)",
+        "TITLE": "Brecha dólar blue",
+        "COMPARE": "¿Cuantos Dólares (USD) utilizar para la comparacion?",
+        "EVOLUTION_TITLE": "Evolucion brecha cambiaria"
+    },
+    "INDEX": {
+        "MENU": {
+            "RATE": "Cotización",
+            "CALCULATOR": "Calculadora",
+            "EVOLUTION": "Evolución",
+            "GAP": "Brecha",
+            "COVERAGE": "Cobertura mediatica",
+            "PREDICTION": "Prediccion",
+            "API": "API",
+            "ABOUT": "Acerca de"
+        },
+        "LANGUAGE": "Lenguaje",
+        "ANDROIDAPP": "Disponible en Google Play",
+        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/es-419_generic_rgb_wo_45.png",
+        "CREDIT": "Creado por"
+    },
+    "ABOUT": {
+        "TITLE": "Acerca de Bluelytics",
+        "DESC_1": "Bluelytics es una herramienta de analisis vivo del Dolar Blue.",
+        "DESC_2": "Podes descargarte la aplicacion móvil para Android desde <a href=\"https://play.google.com/store/apps/details?id=com.ionicframework.bluelyticsmobile363312\">Google Play</a>",
+        "DESC_3": "Si tenes comentarios o queres seguir las novedades sin entrar en la pagina, te recomiendo sigas a Bluelytics en <a href=\"http://www.facebook.com/bluelytics\">Facebook</a> y <a href=\"http://www.twitter.com/bluelytics\">Twitter</a>",
+        "DESC_4": "Esta aplicacion web fue creada por Pablo Seibelt, no tengo contacto con ninguna cueva ni nada que se le parezca, unicamente descargo los valores disponibles en <a href=\"http://www.lanacion.com.ar/dolar-hoy-t1369\">La Nacion</a>, <a href=\"http://www.ambito.com/economia/mercados/monedas/dolar/\">Ambito.com</a>, <a href=\"http://www.cronista.com/MercadosOnline/mercados.html\">Cronista.com</a>, y <a href=\"http://dolarblue.net/\">DolarBlue.net</a> y los publico aqui.",
+        "DESC_5": "El codigo fuente del mismo es libre (AGPL) y esta disponible en:",
+        "DESC_6": "<a href=\"http://www.github.com/sicarul/bluelytics\">http://www.github.com/sicarul/bluelytics</a> (Backend)",
+        "DESC_7": "<a href=\"http://www.github.com/sicarul/bluelytics_frontend\">http://www.github.com/sicarul/bluelytics_frontend</a> (Frontend)"
+    },
+    "API": {
+        "TITLE": "API JSON Dolar Blue",
+        "WARNING": "Si usted no es un usuario tecnico, ignore esta pagina.",
+        "DESCRIPTION": "La API que esta disponible a continuacion es de libre uso, no requiere autenticacion, es un simple JSON.",
+        "METHODS": "Metodos",
+        "LAST_PRICE": "Ultimo precio",
+        "BINDINGS": "Bindings",
+        "BINDINGS_DESCRIPTION": "Estan disponibles los siguientes bindings para utilizar la API de Bluelytics",
+        "BINDINGS_TABLE": {
+            "LANGUAGE": "Tecnologia",
+            "URL": "URL"
+        }
+    },
+    "CALCULATOR": {
+        "TITLE": "Calculadora Blue",
+        "FOREIGN_CURR": "Moneda Extranjera:",
+        "VALUE_LOCAL": "Cantidad de pesos argentinos (ARS)",
+        "VALUE_FOREIGN": "Cantidad de moneda extranjera ({{code}})"
+    },
+    "EVOLUTION": {
+        "TITLE": "Evolucion Dólar Blue"
+    },
+    "RATE": {
+        "TITLE": "Dolar en Argentina"
+    },
+    "WORDCLOUD": {
+        "TITLE": "Cobertura mediática",
+        "OFFICIAL_TITLE": "Medios oficialistas",
+        "OFFICIAL_MEDIA": "Pagina 12 y Diario Registrado",
+        "OPPOSING_TITLE": "Medios opositores",
+        "OPPOSING_MEDIA": "Clarin y La Nacion"
+    }
+}
