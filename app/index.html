@@ -23,12 +23,12 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="bluelyticsFrontendApp">
+  <body ng-app="bluelyticsFrontendApp"  ng-controller="HeaderController">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="HeaderController">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" ng-init="isCollapsed = true" ng-click="isCollapsed = !isCollapsed">
@@ -44,46 +44,46 @@
         <ul class="nav navbar-nav navbar-right">
 
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: anyDolarActive()}">
-            <a href="#" data-animation="am-fade-and-scale" data-type="info" bs-tooltip="menuTooltips.cotizacion" data-placement="bottom-left">
-              <span class="glyphicon glyphicon-usd"></span> <span class="hidden-sm hidden-md hidden-lg">Cotización</span>
+            <a href="#" data-animation="am-fade-and-scale" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.RATE' | translate}}" data-placement="bottom-left">
+              <span class="glyphicon glyphicon-usd"></span> <span class="hidden-sm hidden-md hidden-lg" translate>INDEX.MENU.RATE</span>
             </a>
           </li>
 
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/calculator')}">
-            <a href="#/calculator" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip="menuTooltips.calculadora">
-              <span class="glyphicon glyphicon-transfer"></span> <span class="hidden-sm hidden-md hidden-lg">Calculadora</span>
+            <a href="#/calculator" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.CALCULATOR' | translate}}">
+              <span class="glyphicon glyphicon-transfer"></span> <span class="hidden-sm hidden-md hidden-lg" translate>INDEX.MENU.CALCULATOR</span>
             </a>
           </li>
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/evolution')}">
-            <a href="#/evolution" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip="menuTooltips.evolucion">
+            <a href="#/evolution" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.EVOLUTION' | translate}}">
               <span class="glyphicon glyphicon-signal"></span> <span class="hidden-sm hidden-md hidden-lg">Evolucion</span>
               </a>
           </li>
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/gap')}">
-            <a href="#/gap" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip="menuTooltips.brecha">
+            <a href="#/gap" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.GAP' | translate}}">
               <span class="glyphicon glyphicon-resize-horizontal"></span> <span class="hidden-sm hidden-md hidden-lg">Brecha</span>
             </a>
           </li>
 
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/wordcloud')}">
-            <a href="#/wordcloud" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip="menuTooltips.cobertura">
+            <a href="#/wordcloud" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.COVERAGE' | translate}}">
               <span class="glyphicon glyphicon-bullhorn"></span> <span class="hidden-sm hidden-md hidden-lg">Cobertura</span>
             </a>
           </li>
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/forecast')}">
-            <a href="#/forecast" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip="menuTooltips.prediccion">
+            <a href="#/forecast" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.PREDICTION' | translate}}">
               <span class="glyphicon glyphicon-eye-open"></span> <span class="hidden-sm hidden-md hidden-lg">Prediccion</span>
             </a>
           </li>
 
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/api')}">
-            <a href="#/api" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip="menuTooltips.api">
+            <a href="#/api" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.API' | translate}}">
               <span class="glyphicon glyphicon-cloud-download"></span> <span class="hidden-sm hidden-md hidden-lg">API</span>
             </a>
           </li>
 
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/about')}">
-            <a href="#/about" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip="menuTooltips.acerca">
+            <a href="#/about" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.ABOUT' | translate}}">
               <span class="glyphicon glyphicon-info-sign"></span> <span class="hidden-sm hidden-md hidden-lg">Acerca de
             </a>
           </li>
@@ -98,16 +98,41 @@
     <div class="mainContainer">
       <div class="mainAnimation" ng-view=""></div>
     </div>
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-user"></span> Creado por <a href="http://www.sicarul.com/about">Pablo Seibelt</a></p>
-        <p class="pull-right">
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="well">
+            <div class="row">
+              <div class="col-md-12">
+                  <span class="pull-right">{{'INDEX.LANGUAGE' | translate}}</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="btn-group pull-right" role="group" aria-label="languages">
+
+                  <button type="button" class="btn btn-default" ng-click="changeLanguage('es_AR')" ng-class="{'active': activeLang('es_AR')}"><img src="images/flag_ar.png"> ES</button>
+                  <button type="button" class="btn btn-default" ng-click="changeLanguage('en_US')" ng-class="{'active': activeLang('en_US')}"><img src="images/flag_us.png"> EN</button>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-md-offset-5">
+        <div class="well pull-right">
           <a href="https://play.google.com/store/apps/details?id=com.ionicframework.bluelyticsmobile363312">
-            <img alt="Disponible en Google Play"
-                 src="https://developer.android.com/images/brand/es-419_generic_rgb_wo_45.png" />
+            <img alt="{{'INDEX.ANDROIDAPP' | translate}}"
+                ng-src="{{'INDEX.ANDROIDAPP_IMAGE' | translate}}"/>
           </a>
           <a href="http://www.facebook.com/bluelytics" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
           <a href="http://www.twitter.com/bluelytics" target="_blank"><img src="images/twitter.png" alt="Twitter"></a>
-          </p>
+        </div>
+      </div>
+    </div>
+      <div class="footer">
+        <p><span class="glyphicon glyphicon-user"></span> {{'INDEX.CREDIT' | translate}} <a href="http://about.me/pabloseibelt" target="_blank">Pablo Seibelt</a></p>
+
+
       </div>
     </div>
 
@@ -185,6 +210,10 @@
     <script src="bower_components/angulartics/src/angulartics-woopra.js"></script>
     <script src="bower_components/angulartics/src/angulartics-marketo.js"></script>
     <script src="bower_components/angulartics/src/angulartics-intercom.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
     <!-- endbower -->
     <script src="bower_components/wordcloud2.js/src/wordcloud2.js"></script>
     <!-- endbuild -->

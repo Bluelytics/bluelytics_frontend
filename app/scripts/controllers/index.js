@@ -8,7 +8,7 @@
  * Controller of the bluelyticsFrontendApp
  */
  angular.module('bluelyticsFrontendApp')
-  .controller('HeaderController', ['$scope', '$location', function ($scope, $location) {
+  .controller('HeaderController', function ($scope, $location, $translate) {
 
     $scope.isActive = function (viewLocation) {
         return viewLocation === $location.path();
@@ -18,16 +18,18 @@
         return $location.path().slice(0, 7) === '/dolar/' || $location.path() === '/';
     };
 
-    $scope.menuTooltips = {
-      'cotizacion': {'title': 'Cotización'},
-      'calculadora': {'title': 'Calculadora'},
-      'evolucion': {'title': 'Evolución'},
-      'brecha': {'title': 'Brecha'},
-      'cobertura': {'title': 'Cobertura'},
-      'prediccion': {'title': 'Predicción'},
-      'api': {'title': 'API'},
-      'acerca': {'title': 'Acerca de'},
 
+    $scope.changeLanguage = function (langKey) {
+      $translate.use(langKey);
     };
 
-}]);
+    $scope.activeLang = function(langKey){
+
+      if ($translate.use() === langKey){
+        return true;
+      }else{
+        return false;
+      }
+    };
+
+});

@@ -8,7 +8,7 @@
  * Controller of the bluelyticsFrontendApp
  */
 angular.module('bluelyticsFrontendApp')
-  .controller('EvolutionCtrl', function ($scope, blueAPI, $window) {
+  .controller('EvolutionCtrl', function ($scope, blueAPI, $window, $translate, $rootScope) {
 
     var dateFormat = d3.time.format('%d/%m/%Y');
 
@@ -64,6 +64,22 @@ angular.module('bluelyticsFrontendApp')
         drawDots: false,
         columnsHGap: 5
       };
+
+
+      var translateLabels = function(){
+        $translate('COMMON.DOLARES.blue').then(function(t){
+          $scope.options.series[0].label = t;
+        });
+        $translate('COMMON.DOLARES.oficial').then(function(t){
+          $scope.options.series[1].label = t;
+        });
+      };
+
+      translateLabels();
+
+      $rootScope.$on('$translateChangeSuccess', function () {
+        translateLabels();
+      });
 
     });
 

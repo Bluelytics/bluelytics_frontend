@@ -40,7 +40,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all'],
+        tasks: ['i18nextract', 'newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
@@ -56,10 +56,20 @@ module.exports = function (grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
+      localeChange: {
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+        },
+        files: [
+          '<%= yeoman.app %>/locale/*.json',
+        ]
+
+      },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
+        tasks: ['i18nextract'],
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
@@ -346,7 +356,8 @@ module.exports = function (grunt) {
             '*.html',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
-            'fonts/*'
+            'fonts/*',
+            'locale/*.json'
           ]
         }, {
           expand: true,
@@ -399,14 +410,26 @@ module.exports = function (grunt) {
           }
         },
         'files': {
-          '.tmp/scripts/services/backendUrl.js': 
+          '.tmp/scripts/services/backendUrl.js':
             ['config/backendUrl.js.tpl']
         }
+      }
+    },
+
+    i18nextract: {
+      default_options: {
+        src: [ '<%= yeoman.app %>/scripts/**/*.js', '<%= yeoman.app %>/**/*.html', '<%= yeoman.app %>/index.html' ],
+        lang:     ['es_AR', 'en_US'],
+        dest:     '<%= yeoman.app %>/locale',
+        suffix: '.json',
+        namespace: true,
+        safeMode: true
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-template');
+  grunt.loadNpmTasks('grunt-angular-translate');
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -441,6 +464,7 @@ module.exports = function (grunt) {
     'clean:dist',
     'wiredep',
     'template',
+    'i18nextract',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',

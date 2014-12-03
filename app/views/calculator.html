@@ -1,10 +1,10 @@
 <div class="jumbotron">
-  <h1>Calculadora Blue</h1>
+  <h1 translate>CALCULATOR.TITLE</h1>
 <div class="row">
   <div class="col-md-12">
     <ul class="btn-group" ng-repeat="dolar in dolares">
       <button type="button" class="btn" ng-click="cambiarDolar(dolar.name)" ng-class="{ 'btn-primary': (dolar.name == dolar_activo), 'btn-default': (dolar.name != dolar_activo)}">
-        {{dolar.long_name}}
+        {{('COMMON.DOLARES.' + dolar.name) | translate}}
       </button>
     </ul>
   </div>
@@ -13,7 +13,7 @@
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6">
-    <label>Moneda extranjera:</label>
+    <label translate>CALCULATOR.FOREIGN_CURR</label>
 
     <ui-select ng-model="moneda.selected" ng-change="update_ext()" ng-disabled="disabled">
         <ui-select-match placeholder="Seleccione la moneda">{{$select.selected.name}}</ui-select-match>
@@ -39,7 +39,7 @@
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
       <div class="form-group">
-        <label class="control-label" for="currency_ars">Cantidad de pesos argentinos (ARS)</label>
+        <label class="control-label" for="currency_ars" translate>CALCULATOR.VALUE_LOCAL</label>
         <input ng-model="calculo_ars" ng-change="update_ext()" id="currency_ars" min="0" type="number" placeholder="Valor ARS" class="form-control">
       </div>
     </div>
@@ -48,7 +48,7 @@
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
       <div id="extform" class="form-group">
-        <label class="control-label" for="currency_ext">Cantidad de moneda extranjera ({{moneda.selected.code}})</label>
+        <label class="control-label" for="currency_ext" translate="CALCULATOR.VALUE_FOREIGN" translate-values="{code: moneda.selected.code}"></label>
         <input ng-model="calculo_ext" ng-change="update_ars()" id="currency_ext" min="0" type="number" placeholder="Valor Moneda Extranjera" class="form-control">
       </div>
     </div>

@@ -22,7 +22,8 @@ angular
     'ui.bootstrap-slider',
     'mgcrea.ngStrap',
     'angulartics',
-    'angulartics.google.analytics'
+    'angulartics.google.analytics',
+    'pascalprecht.translate'
   ])
   .config(function ($routeProvider, uiSelectConfig) {
     uiSelectConfig.theme = 'bootstrap';
@@ -70,4 +71,15 @@ angular
       html: true
     });
   })
+
+  .config(['$translateProvider', function($translateProvider) {
+
+    $translateProvider.useStaticFilesLoader({
+        prefix: 'locale/',
+        suffix: '.json'
+    })
+    .registerAvailableLanguageKeys(['es_AR', 'en_US'], {'en_*': 'en_US', 'es_*': 'es_AR'})
+    .determinePreferredLanguage()
+    .useLocalStorage();
+  }])
 ;

@@ -174,13 +174,11 @@ div#last_update p {
 }
 
 span.value{
-  font-size: 1.4em;
-  color: #800;
+  font-size: 1.3em;
 }
 
 span.perc{
-  font-size: 1.7em;
-  color: #008;
+  font-size: 1.4em;
 }
 
 span.decrement{
@@ -203,4 +201,8 @@ font-weight:bold;
 
 .tooltip.tooltip-info.bottom .tooltip-arrow, .tooltip.tooltip-info.bottom-left .tooltip-arrow, .tooltip.tooltip-info.bottom-right .tooltip-arrow {
 border-bottom-color: #35a1ff;
+}
+
+.table > thead > tr > th {
+  text-align:center;
 }

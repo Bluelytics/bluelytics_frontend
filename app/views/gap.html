@@ -1,12 +1,11 @@
 <div class="jumbotron" style="padding-bottom:100px;">
-  <h1 class="blue">Brecha dólar blue</h1>
-    <h2>(Estimación)</h2>
+  <h1 class="blue" translate>GAP.TITLE</h1>
 
     <div class="container">
     <div class="row">
     <div class="col-md-4 col-md-offset-4">
     <div id="baseform" class="form-group">
-      <label class="control-label" for="valorCompare">¿Cuantos Dólares (USD) utilizar para la comparacion?</label>
+      <label class="control-label" for="valorCompare" translate>GAP.COMPARE</label>
       <input ng-model="valorCompare" id="valorCompare" type="number" value="1" min="1" class="form-control">
     </div>
     </div>
@@ -14,21 +13,21 @@
     </div>
 
 
-<h3> Oficial vs Blue </h3>
-<span class="value">AR$ {{valorCompare * gap(valorDolarOficial, valorDolarBlue) |number:2}}</span>
-<span class="perc">({{ percFormat(percGap(valorDolarOficial, valorDolarBlue))  }})</span>
+<h3> <span translate>COMMON.DOLARES.oficial</span> vs <span translate>COMMON.DOLARES.blue</span> </h3>
+<span class="value label label-danger" bs-tooltip data-title="{{'GAP.ABS_VALUE' | translate}}">AR$ {{valorCompare * gap(valorDolarOficial, valorDolarBlue) |number:2}}</span>
+<span class="perc label label-primary" bs-tooltip data-title="{{'GAP.PERC_VALUE' | translate}}">({{ percFormat(percGap(valorDolarOficial, valorDolarBlue))  }})</span>
 
-<h3> Ahorro (+20%) vs Blue </h3>
-<span class="value">AR$ {{valorCompare * gap(valorDolarAhorro, valorDolarBlue) |number:2}}</span>
-<span class="perc">({{ percFormat(percGap(valorDolarAhorro, valorDolarBlue))  }})</span>
+<h3> <span translate>COMMON.DOLARES.oficial_20</span> vs <span translate>COMMON.DOLARES.blue</span> </h3>
+<span class="value label label-danger" bs-tooltip data-title="{{'GAP.ABS_VALUE' | translate}}">AR$ {{valorCompare * gap(valorDolarAhorro, valorDolarBlue) |number:2}}</span>
+<span class="perc label label-primary" bs-tooltip data-title="{{'GAP.PERC_VALUE' | translate}}">({{ percFormat(percGap(valorDolarAhorro, valorDolarBlue))  }})</span>
 
-<h3> Turista (+35%) vs Blue </h3>
-<span class="value">AR$ {{valorCompare * gap(valorDolarTarjeta, valorDolarBlue) |number:2}}</span>
-<span class="perc">({{ percFormat(percGap(valorDolarTarjeta, valorDolarBlue))  }})</span>
+<h3> <span translate>COMMON.DOLARES.oficial_35</span> vs <span translate>COMMON.DOLARES.blue</span> </h3>
+<span class="value label label-danger" bs-tooltip data-title="{{'GAP.ABS_VALUE' | translate}}">AR$ {{valorCompare * gap(valorDolarTarjeta, valorDolarBlue) |number:2}}</span>
+<span class="perc label label-primary" bs-tooltip data-title="{{'GAP.PERC_VALUE' | translate}}">({{ percFormat(percGap(valorDolarTarjeta, valorDolarBlue))  }})</span>
 
 <div class="container" style="height:400px;">
 
-<h2>Evolucion brecha cambiaria</h2>
+<h2 translate>GAP.EVOLUTION_TITLE</h2>
 
 <linechart data="filteredData" options="options" mode=""></linechart>
 <slider style="width:100%;" ng-model="filter.value" ng-change="filterData()" min="0" step="1" max="{{filter.maxValue}}" range="true" tooltip="hide"></slider>

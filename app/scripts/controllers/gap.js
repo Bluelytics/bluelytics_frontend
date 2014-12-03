@@ -8,7 +8,7 @@
  * Controller of the bluelyticsFrontendApp
  */
 angular.module('bluelyticsFrontendApp')
-  .controller('GapCtrl', function ($scope, blueAPI, $window) {
+  .controller('GapCtrl', function ($scope, blueAPI, $window, $translate, $rootScope) {
 
     var dateFormat = d3.time.format('%d/%m/%Y');
     /* Gap calculator */
@@ -109,6 +109,19 @@ angular.module('bluelyticsFrontendApp')
         drawDots: false,
         columnsHGap: 5
       };
+
+
+      var translateLabels = function(){
+        $translate('GAP.GAP').then(function(t){
+          $scope.options.series[0].label = t;
+        });
+      };
+
+      translateLabels();
+
+      $rootScope.$on('$translateChangeSuccess', function () {
+        translateLabels();
+      });
 
     });
 

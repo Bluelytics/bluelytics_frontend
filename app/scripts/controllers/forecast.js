@@ -8,7 +8,7 @@
  * Controller of the bluelyticsFrontendApp
  */
 angular.module('bluelyticsFrontendApp')
-  .controller('ForecastCtrl', function ($scope, blueAPI, _) {
+  .controller('ForecastCtrl', function ($scope, blueAPI, _, $translate, $rootScope) {
 
 
     var monthFormat = d3.time.format('%m/%Y');
@@ -48,6 +48,25 @@ angular.module('bluelyticsFrontendApp')
         drawDots: false,
         columnsHGap: 5
       };
+
+      var translateLabels = function(){
+        $translate('FORECAST.CHART.MIN').then(function(t){
+          $scope.options.series[0].label = t;
+        });
+        $translate('FORECAST.CHART.AVG').then(function(t){
+          $scope.options.series[1].label = t;
+        });
+        $translate('FORECAST.CHART.MAX').then(function(t){
+          $scope.options.series[2].label = t;
+        });
+      };
+
+      translateLabels();
+
+      $rootScope.$on('$translateChangeSuccess', function () {
+        translateLabels();
+      });
+
 
       $scope.tableData = _.map(value.forecast, function(d){
           d.date_month = monthFormat(new Date(d.date));

@@ -2,7 +2,7 @@
 
 
 
-  <h1>Dolar en Argentina</h1>
+  <h1 translate>RATE.TITLE</h1>
 
 <div class="prices" ng-repeat="dolar in dolares |filter:dolar_activo:true">
   <div class="row">
@@ -47,7 +47,7 @@
     <div class="col-md-12">
       <div class="btn-group" ng-repeat="dolar in dolares | filter:esBlue">
           <button class="btn" role="button" ng-class="{ 'btn-primary': (dolar.name == dolar_activo), 'btn-default': (dolar.name != dolar_activo)}" ng-click="cambiarDolar(dolar.name)">
-            {{dolar.long_name}}
+            {{('COMMON.DOLARES.' + dolar.name) | translate}}
           </button>
       </div>
     </div>
@@ -59,12 +59,12 @@
     <div class="col-md-12">
       <div class="btn-group" ng-repeat="dolar in dolares | filter:esOficial">
           <button class="btn" role="button" ng-class="{ 'btn-success': (dolar.name == dolar_activo), 'btn-default': (dolar.name != dolar_activo)}" ng-click="cambiarDolar(dolar.name)">
-            {{dolar.long_name}}
+            {{('COMMON.DOLARES.' + dolar.name) | translate}}
           </button>
       </div>
     </div>
   </div>
-  
+
 
 
 
