@@ -70,7 +70,10 @@
         "TITLE": "Blue Dollar Evolution"
     },
     "RATE": {
-        "TITLE": "Dollar in Argentina"
+        "TITLE": "Dollar in Argentina",
+        "BID": "Bid",
+        "AVG": "Average",
+        "ASK": "Ask"
     },
     "WORDCLOUD": {
         "TITLE": "Media coverage",

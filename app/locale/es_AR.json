@@ -70,7 +70,10 @@
         "TITLE": "Evolucion Dólar Blue"
     },
     "RATE": {
-        "TITLE": "Dolar en Argentina"
+        "TITLE": "Dolar en Argentina",
+        "BID": "Compra",
+        "AVG": "Intermedio",
+        "ASK": "Venta"
     },
     "WORDCLOUD": {
         "TITLE": "Cobertura mediática",

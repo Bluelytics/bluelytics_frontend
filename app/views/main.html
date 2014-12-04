@@ -6,7 +6,7 @@
 
 <div class="prices" ng-repeat="dolar in dolares |filter:dolar_activo:true">
   <div class="row">
-    <div class="col-md-5 name">Compra:</div>
+    <div class="col-md-5 name" translate>RATE.BID</div>
     <div class="col-md-6 value">
         {{dolar.compra | number:2}}
         <span ng-class="{ 'decrement': (dolar.compra_dif < 0), 'increment': (dolar.compra_dif > 0), 'equal': (dolar.compra_dif == 0)}">
@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-5 name">Intermedio:</div>
+    <div class="col-md-5 name" translate>RATE.AVG</div>
     <div class="col-md-6 value">
         {{dolar.avg | number:2}}
         <span ng-class="{ 'decrement': (dolar.avg_dif < 0), 'increment': (dolar.avg_dif > 0), 'equal': (dolar.avg_dif == 0)}">
@@ -30,7 +30,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-5 name">Venta:</div>
+    <div class="col-md-5 name" translate>RATE.ASK</div>
     <div class="col-md-6 value">
         {{dolar.venta | number:2}}
         <span ng-class="{ 'decrement': (dolar.venta_dif < 0), 'increment': (dolar.venta_dif > 0), 'equal': (dolar.venta_dif == 0)}">
