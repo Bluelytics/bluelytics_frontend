@@ -11,10 +11,10 @@ angular.module('bluelyticsFrontendApp')
   .controller('ForecastCtrl', function ($scope, blueAPI, _, $translate, $rootScope) {
 
 
-    var monthFormat = d3.time.format('%m/%Y');
+    var dateFormat = d3.time.format('%d/%m/%Y');
 
     $scope.tickX = function(d){
-                        return monthFormat(new Date(d));
+                        return dateFormat(new Date(d));
                     };
     $scope.tickY = function(d){
                         return d3.format('.02f')(d);
@@ -28,7 +28,7 @@ angular.module('bluelyticsFrontendApp')
 
       $scope.options = {
         axes: {
-          x: {key: 'date', type: 'date', labelFunction: function(d){return monthFormat(d);}},
+          x: {key: 'date', type: 'date', labelFunction: function(d){return dateFormat(d);}},
           y: {type: 'linear'},
         },
         series: [
@@ -39,7 +39,7 @@ angular.module('bluelyticsFrontendApp')
         tooltip: {
           mode: 'scrubber',
           formatter: function (x, y) {
-            return monthFormat(x) + ' : ' + y.toFixed(2);
+            return dateFormat(x) + ' : ' + y.toFixed(2);
           }
         },
         stacks: [],
@@ -69,7 +69,7 @@ angular.module('bluelyticsFrontendApp')
 
 
       $scope.tableData = _.map(value.forecast, function(d){
-          d.date_month = monthFormat(new Date(d.date));
+          d.date_month = dateFormat(new Date(d.date));
           return d;
         });
     });

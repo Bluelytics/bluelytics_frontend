@@ -23,10 +23,11 @@
         "TITLE": "Blue Dollar prediction",
         "TABLE": {
             "TITLE": "Table",
-            "MONTH": "Month",
+            "DAY": "Day",
             "MIN": "Minimun predicted",
             "AVG": "Predicted value",
-            "MAX": "Maximum predicted"
+            "MAX": "Maximum predicted",
+            "MONTH": "Month"
         }
     },
     "GAP": {

@@ -115,7 +115,7 @@ angular.module('bluelyticsFrontendApp')
              reorganized.history = [];
              for(i = 0; i < result[2].length; i++){
               reorganized.history.push({
-                'date': dateFormat.parse('01/' + result[2][i]),
+                'date': dateFormat.parse(result[2][i]),
                 'value': result[3].history[i]
               });
              }
@@ -123,7 +123,7 @@ angular.module('bluelyticsFrontendApp')
              reorganized.forecast = [];
              for(i = 0; i < result[0].length; i++){
               reorganized.forecast.push({
-                'date': dateFormat.parse('01/' + result[0][i]),
+                'date': dateFormat.parse(result[0][i]),
                 'value': result[1].mean[i],
                 'low': result[1].lower_80[i],
                 'high': result[1].upper_80[i]

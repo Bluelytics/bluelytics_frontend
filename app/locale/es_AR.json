@@ -23,10 +23,11 @@
         "TITLE": "Predicción del Dolar Blue",
         "TABLE": {
             "TITLE": "Tabla de valores",
-            "MONTH": "Mes",
+            "DAY": "Día",
             "MIN": "Valor minimo predicho",
             "AVG": "Valor predicho",
-            "MAX": "Valor maximo predicho"
+            "MAX": "Valor maximo predicho",
+            "MONTH": "Mes"
         }
     },
     "GAP": {
