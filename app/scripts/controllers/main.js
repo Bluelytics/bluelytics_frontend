@@ -9,9 +9,10 @@
  */
 angular.module('bluelyticsFrontendApp')
   .controller('MainCtrl', function ($scope, $routeParams, $location, blueAPI) {
-
+    $scope.loading = true;
     blueAPI.extended_last_price(function(value){
-        $scope.dolares = value;
+      $scope.loading = false;
+      $scope.dolares = value;
     });
 
     $scope.dolar_activo = 'blue';

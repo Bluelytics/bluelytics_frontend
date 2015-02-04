@@ -2,10 +2,109 @@
   <h1 class="blue" translate>API.TITLE</h1>
   <p class="alert alert-warning" translate>API.WARNING</p>
   <p translate>API.DESCRIPTION</p>
-  <h2 translate>API.METHODS</h2>
-  <h3 translate>API.LAST_PRICE</h2>
-  <a href='http://api.bluelytics.com.ar/json/last_price' target="_blank">http://api.bluelytics.com.ar/json/last_price</a>
+  <h2 translate>API.V2</h2>
+  <h3 translate>API.LAST_PRICE_V2</h3>
+  <a href="http://api.bluelytics.com.ar/v2/latest" target="_blank">http://api.bluelytics.com.ar/v2/latest</a>
+  <h4 translate>API.PARAMETERS</h4>
+  <p translate>API.PARAMETERS_TEXT</p>
+  <h4 translate>API.FORMAT</h4>
+  <p translate>API.FORMAT_TEXT</p>
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td class="api-head">last_update</td>
+        <td translate>API.LATEST_API.LAST_UPDATE</td>
+      </tr>
+      <tr>
+        <td class="api-head">oficial</td>
+        <td>
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td>value_buy</td>
+                <td translate>API.LATEST_API.OFICIAL.VALUE_BUY</td>
+              </tr>
+              <tr>
+                <td>value_avg</td>
+                <td translate>API.LATEST_API.OFICIAL.VALUE_AVG</td>
+              </tr>
+              <tr>
+                <td>value_sell</td>
+                <td translate>API.LATEST_API.OFICIAL.VALUE_SELL</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="api-head">oficial_euro</td>
+        <td>
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td>value_buy</td>
+                <td translate>API.LATEST_API.OFICIAL_EURO.VALUE_BUY</td>
+              </tr>
+              <tr>
+                <td>value_avg</td>
+                <td translate>API.LATEST_API.OFICIAL_EURO.VALUE_AVG</td>
+              </tr>
+              <tr>
+                <td>value_sell</td>
+                <td translate>API.LATEST_API.OFICIAL_EURO.VALUE_SELL</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="api-head">blue</td>
+        <td>
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td>value_buy</td>
+                <td translate>API.LATEST_API.BLUE.VALUE_BUY</td>
+              </tr>
+              <tr>
+                <td>value_avg</td>
+                <td translate>API.LATEST_API.BLUE.VALUE_AVG</td>
+              </tr>
+              <tr>
+                <td>value_sell</td>
+                <td translate>API.LATEST_API.BLUE.VALUE_SELL</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="api-head">blue_euro</td>
+        <td>
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td>value_buy</td>
+                <td translate>API.LATEST_API.BLUE_EURO.VALUE_BUY</td>
+              </tr>
+              <tr>
+                <td>value_avg</td>
+                <td translate>API.LATEST_API.BLUE_EURO.VALUE_AVG</td>
+              </tr>
+              <tr>
+                <td>value_sell</td>
+                <td translate>API.LATEST_API.BLUE_EURO.VALUE_SELL</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
+  <h2 translate>API.OLD_API</h2>
+  <h3 translate>API.LAST_PRICE</h3>
+  <a href='http://api.bluelytics.com.ar/json/last_price' target="_blank">http://api.bluelytics.com.ar/json/last_price</a>
 
   <h2 translate>API.BINDINGS</h2>
   <p translate>API.BINDINGS_DESCRIPTION</p>
@@ -19,15 +118,15 @@
   </thead>
   <tbody>
     <tr>
-      <td>Laravel (PHP)</td>
+      <td>Laravel (PHP) (API v1)</td>
       <td><a href="https://github.com/fedeisas/laravel-dolar-blue" target="_blank">fedeisas/laravel-dolar-blue</a></td>
     </tr>
     <tr>
-      <td>NodeJS (Javascript)</td>
+      <td>NodeJS (Javascript) (API v1)</td>
       <td><a href="https://github.com/matiu/dolar-blue" target="_blank">matiu/dolar-blue</a></td>
     </tr>
     <tr>
-      <td>Odoo (Python)</td>
+      <td>Odoo (Python) (API v1)</td>
       <td><a href="https://github.com/morrillo/currency_usd_update" target="_blank">morrillo/currency_usd_update</a></td>
     </tr>
   </tbody>

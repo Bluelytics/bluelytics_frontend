@@ -9,6 +9,7 @@
  */
 angular.module('bluelyticsFrontendApp')
   .controller('CalculatorCtrl', function ($scope, $filter, blueAPI) {
+    $scope.loading = true;
 
     $scope.moneda = {};
     $scope.calculo_ars = 0;
@@ -35,6 +36,7 @@ angular.module('bluelyticsFrontendApp')
 
 
     $scope.monedas = blueAPI.all_currencies.query({}, function(){
+      $scope.loading = false;
         for(var i = 0; i < $scope.monedas.length; i++){
             if($scope.monedas[i].code === 'USD'){
                 $scope.moneda.selected = $scope.monedas[i];

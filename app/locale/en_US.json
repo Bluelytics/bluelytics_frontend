@@ -44,22 +44,50 @@
         "DESC_2": "You can download the mobile app from <a href=\"https://play.google.com/store/apps/details?id=com.ionicframework.bluelyticsmobile363312\">Google Play</a>",
         "DESC_3": "If you have feedback or want to follow the updates you can follow Bluelytics on <a href=\"http://www.facebook.com/bluelytics\">Facebook</a> and <a href=\"http://www.twitter.com/bluelytics\">Twitter</a>",
         "DESC_4": "This web app was created by Pablo Seibelt, i have no contact with illegal markets, i only scrape the dollar values available at the following websites: <a href=\"http://www.lanacion.com.ar/dolar-hoy-t1369\">La Nacion</a>, <a href=\"http://www.ambito.com/economia/mercados/monedas/dolar/\">Ambito.com</a>, <a href=\"http://www.cronista.com/MercadosOnline/mercados.html\">Cronista.com</a>, and <a href=\"http://dolarblue.net/\">DolarBlue.net</a>, and then publish them on this web app.",
-        "DESC_5": "This is free software (AGPL) and it's available on github:",
-        "DESC_6": "<a href=\"http://www.github.com/sicarul/bluelytics\">http://www.github.com/sicarul/bluelytics</a> (Backend)",
-        "DESC_7": "<a href=\"http://www.github.com/sicarul/bluelytics_frontend\">http://www.github.com/sicarul/bluelytics_frontend</a> (Frontend)"
+        "DESC_5": "This is free software (AGPL) and it's available on github:"
     },
     "API": {
         "TITLE": "API JSON Dolar Blue",
         "WARNING": "If you are a non-technical user, ignore this page.",
         "DESCRIPTION": "The API exposed has no use terms, and doesn't require authentication, it's a simple JSON response.",
-        "METHODS": "Methods",
+        "V2": "Current API (v2)",
+        "LAST_PRICE_V2": "Latest values",
+        "PARAMETERS": "Optional parameters",
+        "PARAMETERS_TEXT": "The URL as it is specified responds with a JSON object, if you need a JSONP response (For example to populate a widget) you can add ?callback=name, where name is any string. This is done automatically for example by jQuery when using the JSONP protocol.",
+        "FORMAT": "Response format",
+        "FORMAT_TEXT": "The response is a JSON object with the following attributes",
+        "LATEST_API": {
+            "OFICIAL": {
+                "VALUE_SELL": "Official Dollar sell value",
+                "VALUE_BUY": "Official Dollar buy value",
+                "VALUE_AVG": "Official Dollar average value"
+            },
+            "OFICIAL_EURO": {
+                "VALUE_SELL": "Official Euro sell value",
+                "VALUE_BUY": "Official Euro buy value",
+                "VALUE_AVG": "Official Euro average value"
+            },
+            "BLUE": {
+                "VALUE_SELL": "Blue Dollar sell value",
+                "VALUE_BUY": "Blue Dollar buy value",
+                "VALUE_AVG": "Blue Dollar average value"
+            },
+            "BLUE_EURO": {
+                "VALUE_SELL": "Blue Euro sell value",
+                "VALUE_BUY": "Blue Euro buy value",
+                "VALUE_AVG": "Blue Euro average value"
+            },
+            "LAST_UPDATE": "Latest update for reported values"
+        },
+        "OLD_API": "Old API (v1)",
+        "LAST_PRICE": "Last price",
         "BINDINGS": "Bindings",
         "BINDINGS_DESCRIPTION": "The following bindings are available for the Bluelytics API",
-        "LAST_PRICE": "Last price",
         "BINDINGS_TABLE": {
             "LANGUAGE": "Technology",
             "URL": "URL"
-        }
+        },
+        "METHODS": "Methods"
     },
     "CALCULATOR": {
         "TITLE": "Blue Calculator",

@@ -9,7 +9,7 @@
  */
 angular.module('bluelyticsFrontendApp')
   .controller('ForecastCtrl', function ($scope, blueAPI, _, $translate, $rootScope) {
-
+    $scope.loading = true;
 
     var dateFormat = d3.time.format('%d/%m/%Y');
 
@@ -22,7 +22,7 @@ angular.module('bluelyticsFrontendApp')
 
 
     blueAPI.forecast_data(function(value){
-
+      $scope.loading = false;
 
       $scope.data = value.forecast;
 

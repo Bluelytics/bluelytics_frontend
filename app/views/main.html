@@ -4,6 +4,8 @@
 
   <h1 translate>RATE.TITLE</h1>
 
+  <div ng-if="loading"><img src="images/loading.gif" style="width:32px;"></div>
+
 <div class="prices" ng-repeat="dolar in dolares |filter:dolar_activo:true">
   <div class="row">
     <div class="col-md-5 name" translate>RATE.BID</div>

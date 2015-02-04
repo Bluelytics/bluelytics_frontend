@@ -1,7 +1,7 @@
 {
     "COMMON": {
         "DOLARES": {
-            "blue": "Dolar Blue",
+            "blue": "Dólar Blue",
             "oficial": "Oficial",
             "oficial_20": "Oficial Ahorro",
             "oficial_35": "Oficial Tarjeta",
@@ -20,7 +20,7 @@
             "MAX": "Valor max",
             "TITLE": "Grafico"
         },
-        "TITLE": "Predicción del Dolar Blue",
+        "TITLE": "Predicción del Dólar Blue",
         "TABLE": {
             "TITLE": "Tabla de valores",
             "DAY": "Día",
@@ -40,26 +40,54 @@
     },
     "ABOUT": {
         "TITLE": "Acerca de Bluelytics",
-        "DESC_1": "Bluelytics es una herramienta de analisis vivo del Dolar Blue.",
+        "DESC_1": "Bluelytics es una herramienta de analisis vivo del Dólar Blue.",
         "DESC_2": "Podes descargarte la aplicacion móvil para Android desde <a href=\"https://play.google.com/store/apps/details?id=com.ionicframework.bluelyticsmobile363312\">Google Play</a>",
         "DESC_3": "Si tenes comentarios o queres seguir las novedades sin entrar en la pagina, te recomiendo sigas a Bluelytics en <a href=\"http://www.facebook.com/bluelytics\">Facebook</a> y <a href=\"http://www.twitter.com/bluelytics\">Twitter</a>",
         "DESC_4": "Esta aplicacion web fue creada por Pablo Seibelt, no tengo contacto con ninguna cueva ni nada que se le parezca, unicamente descargo los valores disponibles en <a href=\"http://www.lanacion.com.ar/dolar-hoy-t1369\">La Nacion</a>, <a href=\"http://www.ambito.com/economia/mercados/monedas/dolar/\">Ambito.com</a>, <a href=\"http://www.cronista.com/MercadosOnline/mercados.html\">Cronista.com</a>, y <a href=\"http://dolarblue.net/\">DolarBlue.net</a> y los publico aqui.",
-        "DESC_5": "El codigo fuente del mismo es libre (AGPL) y esta disponible en:",
-        "DESC_6": "<a href=\"http://www.github.com/sicarul/bluelytics\">http://www.github.com/sicarul/bluelytics</a> (Backend)",
-        "DESC_7": "<a href=\"http://www.github.com/sicarul/bluelytics_frontend\">http://www.github.com/sicarul/bluelytics_frontend</a> (Frontend)"
+        "DESC_5": "El codigo fuente del mismo es libre (AGPL) y esta disponible en:"
     },
     "API": {
-        "TITLE": "API JSON Dolar Blue",
+        "TITLE": "API JSON Dólar Blue",
         "WARNING": "Si usted no es un usuario tecnico, ignore esta pagina.",
         "DESCRIPTION": "La API que esta disponible a continuacion es de libre uso, no requiere autenticacion, es un simple JSON.",
-        "METHODS": "Metodos",
+        "V2": "API Actual (v2)",
+        "LAST_PRICE_V2": "Ultimos valores",
+        "PARAMETERS": "Parametros opcionales",
+        "PARAMETERS_TEXT": "La URL tal cual esta especificada devuelve una respuesta JSON, si necesita una respuesta JSONP (Por ejemplo para un widget) puede agregar ?callback=nombre, donde nombre es una cadena de caracteres arbitraria. Esto lo hace automaticamente por ejemplo jQuery al solicitar un JSONP.",
+        "FORMAT": "Formato de la respuesta",
+        "FORMAT_TEXT": "La respuesta es un objeto JSON con los siguientes atributos",
+        "LATEST_API": {
+            "OFICIAL": {
+                "VALUE_SELL": "Valor de venta del dólar oficial",
+                "VALUE_BUY": "Valor de compra del dólar oficial",
+                "VALUE_AVG": "Valor promedio del dólar oficial"
+            },
+            "OFICIAL_EURO": {
+                "VALUE_SELL": "Valor de venta del euro oficial",
+                "VALUE_BUY": "Valor de compra del euro oficial",
+                "VALUE_AVG": "Valor promedio del euro oficial"
+            },
+            "BLUE": {
+                "VALUE_SELL": "Valor de venta del dólar blue",
+                "VALUE_BUY": "Valor de compra del dólar blue",
+                "VALUE_AVG": "Valor promedio del dólar blue"
+            },
+            "BLUE_EURO": {
+                "VALUE_SELL": "Valor de venta del euro blue",
+                "VALUE_BUY": "Valor de compra del euro blue",
+                "VALUE_AVG": "Valor promedio del euro blue"
+            },
+            "LAST_UPDATE": "Ultima actualizacion del valor reportado"
+        },
+        "OLD_API": "API anterior (v1)",
+        "LAST_PRICE": "Ultimo precio",
         "BINDINGS": "Bindings",
         "BINDINGS_DESCRIPTION": "Estan disponibles los siguientes bindings para utilizar la API de Bluelytics",
-        "LAST_PRICE": "Ultimo precio",
         "BINDINGS_TABLE": {
             "LANGUAGE": "Tecnologia",
             "URL": "URL"
-        }
+        },
+        "METHODS": "Metodos"
     },
     "CALCULATOR": {
         "TITLE": "Calculadora Blue",
@@ -71,7 +99,7 @@
         "TITLE": "Evolucion Dólar Blue"
     },
     "RATE": {
-        "TITLE": "Dolar en Argentina",
+        "TITLE": "Dólar en Argentina",
         "BID": "Compra",
         "AVG": "Intermedio",
         "ASK": "Venta"

@@ -9,7 +9,7 @@
  */
 angular.module('bluelyticsFrontendApp')
   .controller('WordcloudCtrl', function ($scope, blueAPI) {
-
+    $scope.loading = true;
     var opts = function (list){
       return {
               list: list,
@@ -28,6 +28,7 @@ angular.module('bluelyticsFrontendApp')
     };
 
     $scope.wordsOficialistas = blueAPI.wordcloud_oficialistas.query({}, function(value){
+      $scope.loading = false;
       var canvas = $('div#cloud_oficialista > canvas');
       new WordCloud(canvas[0], opts(convertResources(value)) );
     });

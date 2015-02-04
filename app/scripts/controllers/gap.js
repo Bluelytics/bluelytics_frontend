@@ -9,7 +9,7 @@
  */
 angular.module('bluelyticsFrontendApp')
   .controller('GapCtrl', function ($scope, blueAPI, $window, $translate, $rootScope) {
-
+    $scope.loading = true;
     var dateFormat = d3.time.format('%d/%m/%Y');
     /* Gap calculator */
 
@@ -56,7 +56,7 @@ angular.module('bluelyticsFrontendApp')
     /* Requests */
 
     blueAPI.extended_last_price(function(dolares){
-
+      $scope.loading = false;
         for(var i = 0; i < dolares.length; i++){
             var dolar = dolares[i];
             switch(dolar.name){
