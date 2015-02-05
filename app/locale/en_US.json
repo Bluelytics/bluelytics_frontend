@@ -1,4 +1,29 @@
 {
+    "ANALYSIS": {
+        "VARIABLES": {
+            "Reservas": "Reserves",
+            "CER": "CER",
+            "CambioRef": "Reference USD Rate",
+            "BADLAR": "BADLAR",
+            "TasasInteres30Dias": "Interest rate 30 days",
+            "TasasInteresEntrePrivadas": "Interest rate private sector",
+            "PrestamosAPrivados": "Loan to privates",
+            "OtrosDepositos": "Other deposits",
+            "APlazo": "Term deposits",
+            "CajasAhorro": "Savings accounts",
+            "CuentasCorrientes": "Current accounts",
+            "DepositosFinancieras": "Financial companies deposits",
+            "LEBAC": "LEBAC",
+            "DepositosBCRA": "BCRA Deposits",
+            "EfectivoFinanciero": "Financial cas",
+            "BilletesPublico": "Cash in public",
+            "Circulacion": "Cash circulation",
+            "BaseMonetaria": "Monetary base",
+            "Asistencia": "Assistance"
+        },
+        "TITLE": "BCRA Variables analysis",
+        "DESCRIPTION": "Click on the relevant variable to see it's evolution. This data is official from the central bank of Argentina (Banco Central de la Republica Argentina)."
+    },
     "COMMON": {
         "DOLARES": {
             "blue": "Blue Dollar",
@@ -119,6 +144,7 @@
             "GAP": "Gap",
             "COVERAGE": "Media Coverage",
             "PREDICTION": "Prediction",
+            "ANALYSIS": "Analysis",
             "API": "API",
             "ABOUT": "About bluelytics"
         },

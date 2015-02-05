@@ -30,6 +30,10 @@ angular.module('bluelyticsFrontendApp')
       query: {method:'GET', isArray:false, cache:true}
     });
 
+    var analysis_data_resource = $resource( backendUrl + 'data/graphs/bcra.json', {}, {
+      query: {method:'GET', isArray:true, cache:true}
+    });
+
     var wordcloud_oficialistas_resource = $resource( backendUrl + 'data/words/oficialistas.json', {}, {
       query: {method:'GET', isArray:true, cache:true}
     });
@@ -100,6 +104,7 @@ angular.module('bluelyticsFrontendApp')
         'last_price': last_price_resource,
         'all_currencies': all_currencies_resource,
         'graph_data': graph_data_resource,
+        'analysis_data': analysis_data_resource,
         'wordcloud_oficialistas': wordcloud_oficialistas_resource,
         'wordcloud_oposicion': wordcloud_oposicion_resource,
 

@@ -1,4 +1,29 @@
 {
+    "ANALYSIS": {
+        "VARIABLES": {
+            "Reservas": "Reservas",
+            "CER": "CER",
+            "CambioRef": "Dolar referencia BCRA",
+            "BADLAR": "BADLAR",
+            "TasasInteres30Dias": "Tasas de interes a 30 dias",
+            "TasasInteresEntrePrivadas": "Tasas de interes entre privadas",
+            "PrestamosAPrivados": "Prestamos a privados",
+            "OtrosDepositos": "Otros depositos",
+            "APlazo": "A plazo",
+            "CajasAhorro": "Cajas de ahorro",
+            "CuentasCorrientes": "Cuentas corrientes",
+            "DepositosFinancieras": "Depositos de financieras",
+            "LEBAC": "LEBAC",
+            "DepositosBCRA": "Depositos BCRA",
+            "EfectivoFinanciero": "Efectivo financiero",
+            "BilletesPublico": "Efectivo en poder publico",
+            "Circulacion": "Circulacion de efectivo",
+            "BaseMonetaria": "Base monetaria",
+            "Asistencia": "Asistencia"
+        },
+        "TITLE": "Analisis de variables del BCRA",
+        "DESCRIPTION": "Haga click en el nombre de la variable para ver su evolucion. Estos datos son oficiales del Banco Central de la Republica Argentina."
+    },
     "COMMON": {
         "DOLARES": {
             "blue": "Dólar Blue",
@@ -119,6 +144,7 @@
             "GAP": "Brecha",
             "COVERAGE": "Cobertura mediatica",
             "PREDICTION": "Prediccion",
+            "ANALYSIS": "Análisis",
             "API": "API",
             "ABOUT": "Acerca de"
         },

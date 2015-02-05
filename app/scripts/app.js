@@ -61,6 +61,10 @@ angular
         templateUrl: 'views/api.html',
         controller: 'ApiCtrl'
       })
+      .when('/analysis', {
+        templateUrl: 'views/analysis.html',
+        controller: 'AnalysisCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

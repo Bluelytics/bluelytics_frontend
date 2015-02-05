@@ -76,6 +76,12 @@
             </a>
           </li>
 
+          <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/analysis')}">
+            <a href="#/analysis" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.ANALYSIS' | translate}}">
+              <span class="glyphicon glyphicon-search"></span> <span class="hidden-sm hidden-md hidden-lg"> {{'INDEX.MENU.ANALYSIS' | translate }}</span>
+            </a>
+          </li>
+
           <li ng-click="isCollapsed = !isCollapsed" ng-class="{ active: isActive('/api')}">
             <a href="#/api" data-animation="am-fade-and-scale" data-placement="bottom-left" data-type="info" bs-tooltip data-title="{{'INDEX.MENU.API' | translate}}">
               <span class="glyphicon glyphicon-cloud-download"></span> <span class="hidden-sm hidden-md hidden-lg"> {{'INDEX.MENU.API' | translate }}</span>
@@ -232,6 +238,7 @@
         <script src="scripts/controllers/api.js"></script>
         <script src="scripts/services/backendUrl.js"></script>
         <script src="scripts/views/templates.js"></script>
+        <script src="scripts/controllers/analysis.js"></script>
         <!-- endbuild -->
 
 
