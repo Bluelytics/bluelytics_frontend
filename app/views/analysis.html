@@ -1,0 +1,19 @@
+<div class="jumbotron" style="height:800px; padding-bottom:100px;">
+  <div class="container" style="height:400px;">
+
+    <h1 translate>ANALYSIS.TITLE</h1>
+    <div ng-if="loading"><img src="images/loading.gif" style="width:32px;"></div>
+
+    <p translate>ANALYSIS.DESCRIPTION</p>
+
+    <ul class="nav nav-pills">
+      <li role="presentation" ng-class="{'active': field === activeField}" ng-repeat="field in fields">
+        <a href ng-click="ChooseField(field)">{{'ANALYSIS.VARIABLES.' + field | translate}}</a>
+      </li>
+    </ul>
+
+    <linechart data="filteredData" options="options" mode=""></linechart>
+    <slider style="width:100%;" ng-model="filter.value" ng-change="filterData()" min="0" step="1" max="{{filter.maxValue}}" range="true" tooltip="hide"></slider>
+
+  </div>
+</div>
