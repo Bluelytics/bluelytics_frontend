@@ -19,7 +19,8 @@
             "BilletesPublico": "Cash in public",
             "Circulacion": "Cash circulation",
             "BaseMonetaria": "Monetary base",
-            "Asistencia": "Assistance"
+            "Asistencia": "Assistance",
+            "DolarImplicito": "Implicit Dollar"
         },
         "TITLE": "BCRA Variables analysis",
         "DESCRIPTION": "Click on the relevant variable to see it's evolution. This data is official from the central bank of Argentina (Banco Central de la Republica Argentina)."

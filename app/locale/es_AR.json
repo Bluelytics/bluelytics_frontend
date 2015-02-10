@@ -19,7 +19,8 @@
             "BilletesPublico": "Efectivo en poder publico",
             "Circulacion": "Circulacion de efectivo",
             "BaseMonetaria": "Base monetaria",
-            "Asistencia": "Asistencia"
+            "Asistencia": "Asistencia",
+            "DolarImplicito": "Dolar Implicito"
         },
         "TITLE": "Analisis de variables del BCRA",
         "DESCRIPTION": "Haga click en el nombre de la variable para ver su evolucion. Estos datos son oficiales del Banco Central de la Republica Argentina."

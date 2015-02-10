@@ -32,7 +32,7 @@ angular.module('bluelyticsFrontendApp')
       $scope.filteredData = $scope.data.slice(start,end+1);
     };
 
-    $scope.fields = ['CER','CambioRef','BADLAR','TasasInteres30Dias','TasasInteresEntrePrivadas','PrestamosAPrivados','OtrosDepositos','APlazo','CajasAhorro','CuentasCorrientes','DepositosFinancieras','LEBAC','DepositosBCRA','EfectivoFinanciero','BilletesPublico','Circulacion','BaseMonetaria','Asistencia','Reservas'];
+    $scope.fields = ['CER','CambioRef','BADLAR','TasasInteres30Dias','TasasInteresEntrePrivadas','PrestamosAPrivados','OtrosDepositos','APlazo','CajasAhorro','CuentasCorrientes','DepositosFinancieras','LEBAC','DepositosBCRA','EfectivoFinanciero','BilletesPublico','Circulacion','BaseMonetaria','Asistencia','Reservas', 'DolarImplicito'];
     $scope.activeField = '';
 
     $scope.ChooseField = function(field){
@@ -74,6 +74,8 @@ angular.module('bluelyticsFrontendApp')
 
       $scope.activeField = field;
     }
+
+    
 
     blueAPI.analysis_data.query({}, function(data){
       $scope.loading = false;
