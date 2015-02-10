@@ -61,7 +61,7 @@ angular.module('bluelyticsFrontendApp')
 
       var translateLabels = function(){
         var f = 'ANALYSIS.VARIABLES.' + field
-        $translate('ANALYSIS.VARIABLES.Reservas').then(function(t){
+        $translate(f).then(function(t){
           $scope.options.series[0].label = t;
         });
       };
@@ -75,7 +75,7 @@ angular.module('bluelyticsFrontendApp')
       $scope.activeField = field;
     }
 
-    
+
 
     blueAPI.analysis_data.query({}, function(data){
       $scope.loading = false;
