@@ -1,30 +1,4 @@
 {
-    "ANALYSIS": {
-        "VARIABLES": {
-            "Reservas": "Reserves",
-            "CER": "CER",
-            "CambioRef": "Reference USD Rate",
-            "BADLAR": "BADLAR",
-            "TasasInteres30Dias": "Interest rate 30 days",
-            "TasasInteresEntrePrivadas": "Interest rate private sector",
-            "PrestamosAPrivados": "Loan to privates",
-            "OtrosDepositos": "Other deposits",
-            "APlazo": "Term deposits",
-            "CajasAhorro": "Savings accounts",
-            "CuentasCorrientes": "Current accounts",
-            "DepositosFinancieras": "Financial companies deposits",
-            "LEBAC": "LEBAC",
-            "DepositosBCRA": "BCRA Deposits",
-            "EfectivoFinanciero": "Financial cas",
-            "BilletesPublico": "Cash in public",
-            "Circulacion": "Cash circulation",
-            "BaseMonetaria": "Monetary base",
-            "Asistencia": "Assistance",
-            "DolarImplicito": "Implicit Dollar"
-        },
-        "TITLE": "BCRA Variables analysis",
-        "DESCRIPTION": "Click on the relevant variable to see it's evolution. This data is official from the central bank of Argentina (Banco Central de la Republica Argentina)."
-    },
     "COMMON": {
         "DOLARES": {
             "blue": "Blue Dollar",
@@ -64,6 +38,23 @@
         "COMPARE": "Dollars to compare",
         "EVOLUTION_TITLE": "Gap evolution chart"
     },
+    "INDEX": {
+        "MENU": {
+            "RATE": "Rate",
+            "CALCULATOR": "Calculator",
+            "EVOLUTION": "Evolution",
+            "GAP": "Gap",
+            "COVERAGE": "Media Coverage",
+            "PREDICTION": "Prediction",
+            "ANALYSIS": "Analysis",
+            "API": "API",
+            "ABOUT": "About bluelytics"
+        },
+        "LANGUAGE": "Language",
+        "ANDROIDAPP": "Available on Google Play",
+        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/en_app_rgb_wo_45.png",
+        "CREDIT": "Created by"
+    },
     "ABOUT": {
         "TITLE": "About Bluelytics",
         "DESC_1": "Bluelytics is a tool for live analysis of the Blue Dollar in Argentina.",
@@ -71,6 +62,32 @@
         "DESC_3": "If you have feedback or want to follow the updates you can follow Bluelytics on <a href=\"http://www.facebook.com/bluelytics\">Facebook</a> and <a href=\"http://www.twitter.com/bluelytics\">Twitter</a>",
         "DESC_4": "This web app was created by Pablo Seibelt, i have no contact with illegal markets, i only scrape the dollar values available at the following websites: <a href=\"http://www.lanacion.com.ar/dolar-hoy-t1369\">La Nacion</a>, <a href=\"http://www.ambito.com/economia/mercados/monedas/dolar/\">Ambito.com</a>, <a href=\"http://www.cronista.com/MercadosOnline/mercados.html\">Cronista.com</a>, and <a href=\"http://dolarblue.net/\">DolarBlue.net</a>, and then publish them on this web app.",
         "DESC_5": "This is free software (AGPL) and it's available on github:"
+    },
+    "ANALYSIS": {
+        "TITLE": "BCRA Variables analysis",
+        "DESCRIPTION": "Click on the relevant variable to see it's evolution. This data is official from the central bank of Argentina (Banco Central de la Republica Argentina).",
+        "VARIABLES": {
+            "Reservas": "Reserves",
+            "CER": "CER",
+            "CambioRef": "Reference USD Rate",
+            "BADLAR": "BADLAR",
+            "TasasInteres30Dias": "Interest rate 30 days",
+            "TasasInteresEntrePrivadas": "Interest rate private sector",
+            "PrestamosAPrivados": "Loan to privates",
+            "OtrosDepositos": "Other deposits",
+            "APlazo": "Term deposits",
+            "CajasAhorro": "Savings accounts",
+            "CuentasCorrientes": "Current accounts",
+            "DepositosFinancieras": "Financial companies deposits",
+            "LEBAC": "LEBAC",
+            "DepositosBCRA": "BCRA Deposits",
+            "EfectivoFinanciero": "Financial cas",
+            "BilletesPublico": "Cash in public",
+            "Circulacion": "Cash circulation",
+            "BaseMonetaria": "Monetary base",
+            "Asistencia": "Assistance",
+            "DolarImplicito": "Implicit Dollar"
+        }
     },
     "API": {
         "TITLE": "API JSON Dolar Blue",
@@ -83,27 +100,27 @@
         "FORMAT": "Response format",
         "FORMAT_TEXT": "The response is a JSON object with the following attributes",
         "LATEST_API": {
+            "LAST_UPDATE": "Latest update for reported values",
             "OFICIAL": {
-                "VALUE_SELL": "Official Dollar sell value",
                 "VALUE_BUY": "Official Dollar buy value",
-                "VALUE_AVG": "Official Dollar average value"
+                "VALUE_AVG": "Official Dollar average value",
+                "VALUE_SELL": "Official Dollar sell value"
             },
             "OFICIAL_EURO": {
-                "VALUE_SELL": "Official Euro sell value",
                 "VALUE_BUY": "Official Euro buy value",
-                "VALUE_AVG": "Official Euro average value"
+                "VALUE_AVG": "Official Euro average value",
+                "VALUE_SELL": "Official Euro sell value"
             },
             "BLUE": {
-                "VALUE_SELL": "Blue Dollar sell value",
                 "VALUE_BUY": "Blue Dollar buy value",
-                "VALUE_AVG": "Blue Dollar average value"
+                "VALUE_AVG": "Blue Dollar average value",
+                "VALUE_SELL": "Blue Dollar sell value"
             },
             "BLUE_EURO": {
-                "VALUE_SELL": "Blue Euro sell value",
                 "VALUE_BUY": "Blue Euro buy value",
-                "VALUE_AVG": "Blue Euro average value"
-            },
-            "LAST_UPDATE": "Latest update for reported values"
+                "VALUE_AVG": "Blue Euro average value",
+                "VALUE_SELL": "Blue Euro sell value"
+            }
         },
         "OLD_API": "Old API (v1)",
         "LAST_PRICE": "Last price",
@@ -136,22 +153,5 @@
         "OFFICIAL_MEDIA": "Pagina 12 and Diario Registrado",
         "OPPOSING_TITLE": "Antigovernment-biased media",
         "OPPOSING_MEDIA": "Clarin and La Nacion"
-    },
-    "INDEX": {
-        "MENU": {
-            "RATE": "Rate",
-            "CALCULATOR": "Calculator",
-            "EVOLUTION": "Evolution",
-            "GAP": "Gap",
-            "COVERAGE": "Media Coverage",
-            "PREDICTION": "Prediction",
-            "ANALYSIS": "Analysis",
-            "API": "API",
-            "ABOUT": "About bluelytics"
-        },
-        "LANGUAGE": "Language",
-        "ANDROIDAPP": "Available on Google Play",
-        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/en_app_rgb_wo_45.png",
-        "CREDIT": "Created by"
     }
 }
