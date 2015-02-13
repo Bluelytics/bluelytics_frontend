@@ -12,6 +12,7 @@ angular.module('bluelyticsFrontendApp')
     $scope.loading = true;
 
     var dateFormat = d3.time.format('%d/%m/%Y');
+    var isoDateFormat = d3.time.format('%Y-%m-%d');
 
     $scope.tickX = function(d){
       return dateFormat(new Date(d));
@@ -86,7 +87,7 @@ angular.module('bluelyticsFrontendApp')
       }
 
       $scope.data = _.chain(evData).map(function(val){
-        val.date = new Date(val.date);
+        val.date = isoDateFormat.parse(val.date);
         return val;
       }).sortBy('date').value();
 

@@ -38,6 +38,23 @@
         "COMPARE": "¿Cuantos Dólares (USD) utilizar para la comparacion?",
         "EVOLUTION_TITLE": "Evolución brecha cambiaria"
     },
+    "INDEX": {
+        "MENU": {
+            "RATE": "Cotización",
+            "CALCULATOR": "Calculadora",
+            "EVOLUTION": "Evolución",
+            "GAP": "Brecha",
+            "COVERAGE": "Cobertura mediatica",
+            "PREDICTION": "Prediccion",
+            "ANALYSIS": "Análisis",
+            "API": "API",
+            "ABOUT": "Acerca de"
+        },
+        "LANGUAGE": "Lenguaje",
+        "ANDROIDAPP": "Disponible en Google Play",
+        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/es-419_generic_rgb_wo_45.png",
+        "CREDIT": "Creado por"
+    },
     "ABOUT": {
         "TITLE": "Acerca de Bluelytics",
         "DESC_1": "Bluelytics es una herramienta de analisis vivo del Dólar Blue.",
@@ -83,27 +100,27 @@
         "FORMAT": "Formato de la respuesta",
         "FORMAT_TEXT": "La respuesta es un objeto JSON con los siguientes atributos",
         "LATEST_API": {
+            "LAST_UPDATE": "Ultima actualizacion del valor reportado",
             "OFICIAL": {
-                "VALUE_SELL": "Valor de venta del dólar oficial",
                 "VALUE_BUY": "Valor de compra del dólar oficial",
-                "VALUE_AVG": "Valor promedio del dólar oficial"
+                "VALUE_AVG": "Valor promedio del dólar oficial",
+                "VALUE_SELL": "Valor de venta del dólar oficial"
             },
             "OFICIAL_EURO": {
-                "VALUE_SELL": "Valor de venta del euro oficial",
                 "VALUE_BUY": "Valor de compra del euro oficial",
-                "VALUE_AVG": "Valor promedio del euro oficial"
+                "VALUE_AVG": "Valor promedio del euro oficial",
+                "VALUE_SELL": "Valor de venta del euro oficial"
             },
             "BLUE": {
-                "VALUE_SELL": "Valor de venta del dólar blue",
                 "VALUE_BUY": "Valor de compra del dólar blue",
-                "VALUE_AVG": "Valor promedio del dólar blue"
+                "VALUE_AVG": "Valor promedio del dólar blue",
+                "VALUE_SELL": "Valor de venta del dólar blue"
             },
             "BLUE_EURO": {
-                "VALUE_SELL": "Valor de venta del euro blue",
                 "VALUE_BUY": "Valor de compra del euro blue",
-                "VALUE_AVG": "Valor promedio del euro blue"
-            },
-            "LAST_UPDATE": "Ultima actualizacion del valor reportado"
+                "VALUE_AVG": "Valor promedio del euro blue",
+                "VALUE_SELL": "Valor de venta del euro blue"
+            }
         },
         "OLD_API": "API anterior (v1)",
         "LAST_PRICE": "Ultimo precio",
@@ -136,22 +153,5 @@
         "OFFICIAL_MEDIA": "Pagina 12 y Diario Registrado",
         "OPPOSING_TITLE": "Medios opositores",
         "OPPOSING_MEDIA": "Clarin y La Nacion"
-    },
-    "INDEX": {
-        "MENU": {
-            "RATE": "Cotización",
-            "CALCULATOR": "Calculadora",
-            "EVOLUTION": "Evolución",
-            "GAP": "Brecha",
-            "COVERAGE": "Cobertura mediatica",
-            "PREDICTION": "Prediccion",
-            "ANALYSIS": "Análisis",
-            "API": "API",
-            "ABOUT": "Acerca de"
-        },
-        "LANGUAGE": "Lenguaje",
-        "ANDROIDAPP": "Disponible en Google Play",
-        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/es-419_generic_rgb_wo_45.png",
-        "CREDIT": "Creado por"
     }
 }
