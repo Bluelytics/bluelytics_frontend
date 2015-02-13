@@ -1,30 +1,4 @@
 {
-    "ANALYSIS": {
-        "VARIABLES": {
-            "Reservas": "Reservas",
-            "CER": "CER",
-            "CambioRef": "Dolar referencia BCRA",
-            "BADLAR": "BADLAR",
-            "TasasInteres30Dias": "Tasas de interes a 30 dias",
-            "TasasInteresEntrePrivadas": "Tasas de interes entre privadas",
-            "PrestamosAPrivados": "Prestamos a privados",
-            "OtrosDepositos": "Otros depositos",
-            "APlazo": "A plazo",
-            "CajasAhorro": "Cajas de ahorro",
-            "CuentasCorrientes": "Cuentas corrientes",
-            "DepositosFinancieras": "Depositos de financieras",
-            "LEBAC": "LEBAC",
-            "DepositosBCRA": "Depositos BCRA",
-            "EfectivoFinanciero": "Efectivo financiero",
-            "BilletesPublico": "Efectivo en poder publico",
-            "Circulacion": "Circulacion de efectivo",
-            "BaseMonetaria": "Base monetaria",
-            "Asistencia": "Asistencia",
-            "DolarImplicito": "Dolar Implicito"
-        },
-        "TITLE": "Analisis de variables del BCRA",
-        "DESCRIPTION": "Haga click en el nombre de la variable para ver su evolucion. Estos datos son oficiales del Banco Central de la Republica Argentina."
-    },
     "COMMON": {
         "DOLARES": {
             "blue": "Dólar Blue",
@@ -71,6 +45,32 @@
         "DESC_3": "Si tenes comentarios o queres seguir las novedades sin entrar en la pagina, te recomiendo sigas a Bluelytics en <a href=\"http://www.facebook.com/bluelytics\">Facebook</a> y <a href=\"http://www.twitter.com/bluelytics\">Twitter</a>",
         "DESC_4": "Esta aplicacion web fue creada por Pablo Seibelt, no tengo contacto con ninguna cueva ni nada que se le parezca, unicamente descargo los valores disponibles en <a href=\"http://www.lanacion.com.ar/dolar-hoy-t1369\">La Nacion</a>, <a href=\"http://www.ambito.com/economia/mercados/monedas/dolar/\">Ambito.com</a>, <a href=\"http://www.cronista.com/MercadosOnline/mercados.html\">Cronista.com</a>, y <a href=\"http://dolarblue.net/\">DolarBlue.net</a> y los publico aqui.",
         "DESC_5": "El codigo fuente del mismo es libre (AGPL) y esta disponible en:"
+    },
+    "ANALYSIS": {
+        "TITLE": "Analisis de variables del BCRA",
+        "DESCRIPTION": "Haga click en el nombre de la variable para ver su evolucion. Estos datos son oficiales del Banco Central de la Republica Argentina.",
+        "VARIABLES": {
+            "Reservas": "Reservas",
+            "CER": "CER",
+            "CambioRef": "Dolar referencia BCRA",
+            "BADLAR": "BADLAR",
+            "TasasInteres30Dias": "Tasas de interes a 30 dias",
+            "TasasInteresEntrePrivadas": "Tasas de interes entre privadas",
+            "PrestamosAPrivados": "Prestamos a privados",
+            "OtrosDepositos": "Otros depositos",
+            "APlazo": "A plazo",
+            "CajasAhorro": "Cajas de ahorro",
+            "CuentasCorrientes": "Cuentas corrientes",
+            "DepositosFinancieras": "Depositos de financieras",
+            "LEBAC": "LEBAC",
+            "DepositosBCRA": "Depositos BCRA",
+            "EfectivoFinanciero": "Efectivo financiero",
+            "BilletesPublico": "Efectivo en poder publico",
+            "Circulacion": "Circulacion de efectivo",
+            "BaseMonetaria": "Base monetaria",
+            "Asistencia": "Asistencia",
+            "DolarImplicito": "Dolar Implicito"
+        }
     },
     "API": {
         "TITLE": "API JSON Dólar Blue",

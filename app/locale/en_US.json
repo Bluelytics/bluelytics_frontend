@@ -1,30 +1,4 @@
 {
-    "ANALYSIS": {
-        "VARIABLES": {
-            "Reservas": "Reserves",
-            "CER": "CER",
-            "CambioRef": "Reference USD Rate",
-            "BADLAR": "BADLAR",
-            "TasasInteres30Dias": "Interest rate 30 days",
-            "TasasInteresEntrePrivadas": "Interest rate private sector",
-            "PrestamosAPrivados": "Loan to privates",
-            "OtrosDepositos": "Other deposits",
-            "APlazo": "Term deposits",
-            "CajasAhorro": "Savings accounts",
-            "CuentasCorrientes": "Current accounts",
-            "DepositosFinancieras": "Financial companies deposits",
-            "LEBAC": "LEBAC",
-            "DepositosBCRA": "BCRA Deposits",
-            "EfectivoFinanciero": "Financial cas",
-            "BilletesPublico": "Cash in public",
-            "Circulacion": "Cash circulation",
-            "BaseMonetaria": "Monetary base",
-            "Asistencia": "Assistance",
-            "DolarImplicito": "Implicit Dollar"
-        },
-        "TITLE": "BCRA Variables analysis",
-        "DESCRIPTION": "Click on the relevant variable to see it's evolution. This data is official from the central bank of Argentina (Banco Central de la Republica Argentina)."
-    },
     "COMMON": {
         "DOLARES": {
             "blue": "Blue Dollar",
@@ -71,6 +45,32 @@
         "DESC_3": "If you have feedback or want to follow the updates you can follow Bluelytics on <a href=\"http://www.facebook.com/bluelytics\">Facebook</a> and <a href=\"http://www.twitter.com/bluelytics\">Twitter</a>",
         "DESC_4": "This web app was created by Pablo Seibelt, i have no contact with illegal markets, i only scrape the dollar values available at the following websites: <a href=\"http://www.lanacion.com.ar/dolar-hoy-t1369\">La Nacion</a>, <a href=\"http://www.ambito.com/economia/mercados/monedas/dolar/\">Ambito.com</a>, <a href=\"http://www.cronista.com/MercadosOnline/mercados.html\">Cronista.com</a>, and <a href=\"http://dolarblue.net/\">DolarBlue.net</a>, and then publish them on this web app.",
         "DESC_5": "This is free software (AGPL) and it's available on github:"
+    },
+    "ANALYSIS": {
+        "TITLE": "BCRA Variables analysis",
+        "DESCRIPTION": "Click on the relevant variable to see its evolution. This is official data from the central bank of Argentina (Banco Central de la Republica Argentina).",
+        "VARIABLES": {
+            "Reservas": "Reserves",
+            "CER": "CER",
+            "CambioRef": "Reference USD Rate",
+            "BADLAR": "BADLAR",
+            "TasasInteres30Dias": "Interest rate 30 days",
+            "TasasInteresEntrePrivadas": "Interest rate private sector",
+            "PrestamosAPrivados": "Loan to privates",
+            "OtrosDepositos": "Other deposits",
+            "APlazo": "Term deposits",
+            "CajasAhorro": "Savings accounts",
+            "CuentasCorrientes": "Current accounts",
+            "DepositosFinancieras": "Financial companies deposits",
+            "LEBAC": "LEBAC",
+            "DepositosBCRA": "BCRA Deposits",
+            "EfectivoFinanciero": "Financial cas",
+            "BilletesPublico": "Cash in public",
+            "Circulacion": "Cash circulation",
+            "BaseMonetaria": "Monetary base",
+            "Asistencia": "Assistance",
+            "DolarImplicito": "Implicit Dollar"
+        }
     },
     "API": {
         "TITLE": "API JSON Dolar Blue",
