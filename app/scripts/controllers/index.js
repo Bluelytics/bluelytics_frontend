@@ -24,20 +24,22 @@
     };
 
 
-    $scope.toggleLeft = function() {
-      $mdSidenav('left').toggle()
-                        .then(function(){
-                        });
+    $scope.openLeft = function() {
+      $mdSidenav('left').open();
+    };
+    $scope.closeLeft = function() {
+      $mdSidenav('left').close();
     };
 
-    $scope.toggleRight = function() {
-      $mdSidenav('right').toggle()
-                        .then(function(){
-                        });
+    $scope.openRight = function() {
+      $mdSidenav('right').open();
+    };
+    $scope.closeRight = function() {
+      $mdSidenav('right').close();
     };
 
     $scope.navigateTo = function(url) {
-      $scope.toggleLeft();
+      $scope.closeLeft();
       $state.go(url);
     };
 

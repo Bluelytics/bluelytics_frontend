@@ -85,6 +85,7 @@
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <!-- endbower -->
     <script src="bower_components/wordcloud2.js/src/wordcloud2.js"></script>
     <!-- endbuild -->
@@ -93,7 +94,7 @@
   <body ng-app="bluelyticsFrontendApp"  ng-controller="HeaderController" ng-cloak>
 
     <md-toolbar layout="row">
-      <md-button class="menu" hide-gt-md ng-click="toggleLeft()">
+      <md-button class="menu" hide-gt-md ng-click="openLeft()">
         <md-icon md-svg-icon="navigation:menu" ></md-icon>
       </md-button>
       <h1> <span>Bluelytics <img src="images/mobile-icon-32.png" hide-gt-sm> <img src="images/mobile-icon.png" hide-sm></a> </span></h1>
@@ -105,7 +106,7 @@
         <img src="images/flag_us.png"></img>
       </md-button>
 
-      <md-button class="menu" ng-click="toggleRight()">
+      <md-button class="menu" ng-click="openRight()">
         <md-icon md-svg-icon="navigation:more_vert"></md-icon>
       </md-button>
     </md-toolbar>
@@ -124,6 +125,14 @@
                   <md-button flex ng-class="{ active: isActive(item.url)}">
                     <md-icon md-svg-icon="{{item.icon}}" style="width:24px;"></md-icon>
                     <span>{{item.name | translate}}</span>
+                  </md-button>
+                </md-item-content>
+              </md-item>
+              <md-item hide-gt-md>
+                <md-item-content>
+                  <md-button flex ng-click="closeLeft()">
+                    <md-icon md-svg-icon="navigation:close" style="width:24px;"></md-icon>
+                    <span translate>COMMON.CLOSE</span>
                   </md-button>
                 </md-item-content>
               </md-item>
@@ -173,6 +182,14 @@
                   </md-button>
                 </md-item-content>
               </md-item>
+              <md-item>
+                <md-item-content>
+                  <md-button flex ng-click="closeRight()">
+                    <md-icon md-svg-icon="navigation:close" style="width:24px;"></md-icon>
+                    <span translate>COMMON.CLOSE</span>
+                  </md-button>
+                </md-item-content>
+              </md-item>
             </md-list>
           </md-content>
         </md-sidenav>
@@ -188,6 +205,12 @@
 
        ga('create', 'UA-322483-2');
        ga('require', 'displayfeatures');
+
+       if ('addEventListener' in document) {
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        }
     </script>
 
     <!-- build:js(.) scripts/oldieshim.js -->

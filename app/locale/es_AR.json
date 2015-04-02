@@ -12,7 +12,8 @@
             "la_nacion": "La Nacion",
             "elcronista": "El Cronista"
         },
-        "SLIDER": "Cambiar el periodo a revisar"
+        "SLIDER": "Cambiar el periodo a revisar",
+        "CLOSE": "Cerrar"
     },
     "FORECAST": {
         "CHART": {

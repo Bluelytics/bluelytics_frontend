@@ -12,7 +12,8 @@
             "la_nacion": "La Nacion",
             "elcronista": "El Cronista"
         },
-        "SLIDER": "Change the time range here"
+        "SLIDER": "Change the time range here",
+        "CLOSE": "Close"
     },
     "FORECAST": {
         "CHART": {
