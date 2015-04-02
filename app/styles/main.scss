@@ -7,6 +7,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 h1 {
   margin-left:10px;
 }
+@media (max-width: 768px) {
+  h1{
+    font-size:22px;
+  }
+}
 
 div.price{
   margin-bottom:10px;

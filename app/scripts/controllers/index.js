@@ -37,8 +37,8 @@
     };
 
     $scope.navigateTo = function(url) {
-      $state.go(url);
       $scope.toggleLeft();
+      $state.go(url);
     };
 
     $scope.menuoptions = [
