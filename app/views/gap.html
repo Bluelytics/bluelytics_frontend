@@ -1,39 +1,71 @@
-<div class="jumbotron" style="padding-bottom:100px;">
-  <h1 class="blue" translate>GAP.TITLE</h1>
+  <h2 translate>GAP.TITLE</h2>
 
-  <div ng-if="loading"><img src="images/loading.gif" style="width:32px;"></div>
+  <div ng-if="loading" layout="row" layout-sm="column" layout-align="space-around">
+  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
 
-    <div class="container">
-    <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-    <div id="baseform" class="form-group">
-      <label class="control-label" for="valorCompare" translate>GAP.COMPARE</label>
-      <input ng-model="valorCompare" id="valorCompare" type="number" value="1" min="1" class="form-control">
+
+
+    <div layout="row" layout-align="space-around center" md-padding>
+      <md-input-container>
+        <label translate="GAP.COMPARE"></label>
+        <input required type="number" step="any" ng-model="valorCompare" min="1">
+      </md-input-container>
     </div>
-    </div>
-    </div>
-    </div>
+
+<div layout="column" layout-align="space-around center">
+
+  <md-subheader class="md-primary"><span translate>COMMON.DOLARES.oficial</span> vs <span translate>COMMON.DOLARES.blue</span></md-subheader>
+  <div flex layout="row" layout-align="space-between center">
+    <md-button class="md-raised md-primary">
+      <md-tooltip><span translate>GAP.ABS_VALUE</span></md-tooltip>
+      <span>AR$ {{valorCompare * gap(valorDolarOficial, valorDolarBlue) |number:2}}</span>
+    </md-button>
+      <md-button class="md-raised md-accent">
+        <md-tooltip><span translate>GAP.PERC_VALUE</span></md-tooltip>
+        <span>({{ percFormat(percGap(valorDolarOficial, valorDolarBlue))  }})</span>
+      </md-button>
+  </div>
+  <md-divider></md-divider>
+
+  <md-subheader class="md-primary"><span translate>COMMON.DOLARES.oficial_20</span> vs <span translate>COMMON.DOLARES.blue</span></md-subheader>
+
+  <div flex layout="row" layout-align="space-between center">
+    <md-button class="md-raised md-primary">
+      <md-tooltip><span translate>GAP.ABS_VALUE</span></md-tooltip>
+      <span>AR$ {{valorCompare * gap(valorDolarAhorro, valorDolarBlue) |number:2}}</span>
+    </md-button>
+      <md-button class="md-raised md-accent">
+        <md-tooltip><span translate>GAP.PERC_VALUE</span></md-tooltip>
+        <span>({{ percFormat(percGap(valorDolarAhorro, valorDolarBlue))  }})</span>
+      </md-button>
+  </div>
+
+  <md-subheader class="md-primary"> <span translate>COMMON.DOLARES.oficial_35</span> vs <span translate>COMMON.DOLARES.blue</span> </md-subheader>
+
+  <div flex layout="row" layout-align="space-between center">
+    <md-button class="md-raised md-primary">
+      <md-tooltip><span translate>GAP.ABS_VALUE</span></md-tooltip>
+      <span>AR$ {{valorCompare * gap(valorDolarTarjeta, valorDolarBlue) |number:2}}</span>
+    </md-button>
+      <md-button class="md-raised md-accent">
+        <md-tooltip><span translate>GAP.PERC_VALUE</span></md-tooltip>
+        <span>({{ percFormat(percGap(valorDolarTarjeta, valorDolarBlue))  }})</span>
+      </md-button>
+  </div>
+</div>
 
 
-<h3> <span translate>COMMON.DOLARES.oficial</span> vs <span translate>COMMON.DOLARES.blue</span> </h3>
-<span class="value label label-danger" bs-tooltip data-title="{{'GAP.ABS_VALUE' | translate}}">AR$ {{valorCompare * gap(valorDolarOficial, valorDolarBlue) |number:2}}</span>
-<span class="perc label label-primary" bs-tooltip data-title="{{'GAP.PERC_VALUE' | translate}}">({{ percFormat(percGap(valorDolarOficial, valorDolarBlue))  }})</span>
 
-<h3> <span translate>COMMON.DOLARES.oficial_20</span> vs <span translate>COMMON.DOLARES.blue</span> </h3>
-<span class="value label label-danger" bs-tooltip data-title="{{'GAP.ABS_VALUE' | translate}}">AR$ {{valorCompare * gap(valorDolarAhorro, valorDolarBlue) |number:2}}</span>
-<span class="perc label label-primary" bs-tooltip data-title="{{'GAP.PERC_VALUE' | translate}}">({{ percFormat(percGap(valorDolarAhorro, valorDolarBlue))  }})</span>
-
-<h3> <span translate>COMMON.DOLARES.oficial_35</span> vs <span translate>COMMON.DOLARES.blue</span> </h3>
-<span class="value label label-danger" bs-tooltip data-title="{{'GAP.ABS_VALUE' | translate}}">AR$ {{valorCompare * gap(valorDolarTarjeta, valorDolarBlue) |number:2}}</span>
-<span class="perc label label-primary" bs-tooltip data-title="{{'GAP.PERC_VALUE' | translate}}">({{ percFormat(percGap(valorDolarTarjeta, valorDolarBlue))  }})</span>
-
-<div class="container" style="height:400px;">
-
-<h2 translate>GAP.EVOLUTION_TITLE</h2>
+<h3 translate>GAP.EVOLUTION_TITLE</h3>
+<div style="height:400px;">
 
 <linechart data="filteredData" options="options" mode=""></linechart>
-<slider style="width:100%;" ng-model="filter.value" ng-change="filterData()" min="0" step="1" max="{{filter.maxValue}}" range="true" tooltip="hide"></slider>
-<br><br>
-</div>
+<md-content class="md-padding" style="height: 50px; padding: 24px;">
+  <md-tooltip>
+    <span translate>COMMON.SLIDER</span>
+  </md-tooltip>
+  <slider style="width:100%;" ng-model="filter.value" ng-change="filterData()" min="0" step="1" max="{{filter.maxValue}}" range="true" tooltip="hide"></slider>
+<md-content>
 
 </div>

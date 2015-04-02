@@ -37,7 +37,16 @@ angular.module('bluelyticsFrontendApp')
       } else if(value < 0){
         return 'action:trending_down';
       }
-    }
+    };
 
+    $scope.classFor = function(value){
+      if(value === 0){
+        return 'neutral';
+      } else if(value > 0){
+        return 'up';
+      } else if(value < 0){
+        return 'down';
+      }
+    };
 
   });

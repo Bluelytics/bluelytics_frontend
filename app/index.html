@@ -90,7 +90,7 @@
     <!-- endbuild -->
 
   </head>
-  <body ng-app="bluelyticsFrontendApp"  ng-controller="HeaderController">
+  <body ng-app="bluelyticsFrontendApp"  ng-controller="HeaderController" ng-cloak>
 
     <md-toolbar layout="row">
       <md-button class="menu" hide-gt-md ng-click="toggleLeft()">
@@ -163,6 +163,13 @@
                 <md-item-content>
                   <md-button flex href="http://www.twitter.com/bluelytics" target="_blank">
                     <img src="images/twitter.png" alt="Twitter">
+                  </md-button>
+                </md-item-content>
+              </md-item>
+              <md-item>
+                <md-item-content>
+                  <md-button flex href="http://www.sicarul.com" target="_blank">
+                    <span translate>INDEX.CREDIT</span> Pablo Seibelt
                   </md-button>
                 </md-item-content>
               </md-item>

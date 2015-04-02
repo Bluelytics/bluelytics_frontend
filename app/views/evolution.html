@@ -1,11 +1,18 @@
-    <div class="jumbotron" style="height:600px; padding-bottom:100px;">
-    <div class="container" style="height:400px;">
 
-        <h1 translate>EVOLUTION.TITLE</h1>
-        <div ng-if="loading"><img src="images/loading.gif" style="width:32px;"></div>
-
-        <linechart data="filteredData" options="options" mode=""></linechart>
-        <slider style="width:100%;" ng-model="filter.value" ng-change="filterData()" min="0" step="1" max="{{filter.maxValue}}" range="true" tooltip="hide"></slider>
-
-    </div>
+<h2 translate>EVOLUTION.TITLE</h2>
+<div ng-if="loading" layout="row" layout-sm="column" layout-align="space-around">
+  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
 </div>
+
+<div style="height:400px;">
+  <linechart data="filteredData" options="options" mode=""></linechart>
+</div>
+
+<md-content class="md-padding" style="height: 50px; padding: 24px;">
+  <md-tooltip>
+    <span translate>COMMON.SLIDER</span>
+  </md-tooltip>
+<slider style="width:100%;" ng-model="filter.value" ng-change="filterData()" min="0" step="1" max="{{filter.maxValue}}" range="true" tooltip="hide">
+
+</slider>
+<md-content>

@@ -1,7 +1,4 @@
-  <h2 translate>RATE.TITLE</h2>
-
-  <div ng-if="loading"><img src="images/loading.gif" style="width:32px;"></div>
-
+<h2 translate>RATE.TITLE</h2>
 
 <md-tabs md-selected="selectedIndex" md-border-bottom>
   <md-tab ng-repeat="dolar in dolares | orderBy:esBlue"
@@ -12,7 +9,8 @@
           <div flex="40" class="name" translate>RATE.BID</div>
           <div flex="60" class="value_container">
               <span class="value">{{dolar.compra | number:2}}</span>
-              <span ng-class="{ 'decrement': (dolar.compra_dif < 0), 'increment': (dolar.compra_dif > 0), 'equal': (dolar.compra_dif == 0)}">
+              <span class="trend {{ classFor(dolar.compra_dif) }}">
+              <md-tooltip><span translate>RATE.DIFFERENCE</span></md-tooltip>
                 <md-icon md-svg-icon="{{ iconFor(dolar.compra_dif)}}"></md-icon>
                   ({{dolar.compra_dif | number:2}})
               </span>
@@ -25,7 +23,8 @@
           <div flex="40" class="name" translate>RATE.AVG</div>
           <div flex="60" class="value_container">
               <span class="value">{{dolar.avg | number:2}}</span>
-              <span ng-class="{ 'decrement': (dolar.avg_dif < 0), 'increment': (dolar.avg_dif > 0), 'equal': (dolar.avg_dif == 0)}">
+              <span class="trend {{ classFor(dolar.avg_dif) }}">
+              <md-tooltip><span translate>RATE.DIFFERENCE</span></md-tooltip>
                 <md-icon md-svg-icon="{{ iconFor(dolar.avg_dif)}}"></md-icon>
                   ({{dolar.avg_dif | number:2}})
               </span>
@@ -38,7 +37,8 @@
           <div flex="40" class="name" translate>RATE.ASK</div>
           <div flex="60" class="value_container">
               <span class="value">{{dolar.venta | number:2}}</span>
-              <span ng-class="{ 'decrement': (dolar.venta_dif < 0), 'increment': (dolar.venta_dif > 0), 'equal': (dolar.venta_dif == 0)}">
+              <span class="trend {{ classFor(dolar.venta_dif) }}">
+              <md-tooltip><span translate>RATE.DIFFERENCE</span></md-tooltip>
                 <md-icon md-svg-icon="{{ iconFor(dolar.venta_dif)}}"></md-icon>
                 ({{dolar.venta_dif | number:2}})
               </span>
@@ -48,3 +48,7 @@
     </div>
   </md-tab>
 </md-tabs>
+
+<div ng-if="loading" layout="row" layout-sm="column" layout-align="space-around">
+  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>

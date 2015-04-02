@@ -8,6 +8,6 @@
  * Controller of the bluelyticsFrontendApp
  */
 angular.module('bluelyticsFrontendApp')
-  .controller('ApiCtrl', function ($scope) {
-    
+  .controller('ApiCtrl', function () {
+
   });

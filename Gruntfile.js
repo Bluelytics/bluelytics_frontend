@@ -88,7 +88,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          open: false,
+          open: true,
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
@@ -329,6 +329,7 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             'images/{,*/}*.{webp}',
+            'images/material-design/*.svg',
             'fonts/*',
             'locale/*.json'
           ]
@@ -363,7 +364,7 @@ module.exports = function (grunt) {
       dist: [
         'compass:dist',
         'imagemin',
-        'svgmin'
+        //'svgmin'
       ]
     },
 
@@ -402,9 +403,9 @@ module.exports = function (grunt) {
 
     ngtemplates: {
       bluelyticsFrontendApp: {
-        cwd: "<%= yeoman.app %>",
-        src: "views/**.html",
-        dest: "app/scripts/views/templates.js",
+        cwd: '<%= yeoman.app %>',
+        src: 'views/**.html',
+        dest: 'app/scripts/views/templates.js',
         options:    {
           htmlmin:  { collapseWhitespace: true, conservativeCollapse: true, collapseBooleanAttributes: true, removeCommentsFromCDATA: true, removeOptionalTags: true }
         }
@@ -453,7 +454,7 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
-    'cdnify',
+    //'cdnify',
     'cssmin',
     'uglify',
     'filerev',

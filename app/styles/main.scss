@@ -34,3 +34,28 @@ div.price > .value_container > .trend {
   margin-top:auto;
   margin-bottom:auto;
 }
+
+div.price > .value_container > .trend.up  {
+  color:#087b02;
+}
+
+div.price > .value_container > .trend.down  {
+  color:#7b0000;
+}
+
+div.price > .value_container > .trend.neutral  {
+  color:#383838;
+}
+
+.calc_rates > p{
+  font-size:1.2em;
+  font-weight:bold;
+}
+
+h2, h3, h4, h5{
+  text-align:center;
+}
+
+.infopage p {
+  text-align:center;
+}

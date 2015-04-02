@@ -1,22 +1,28 @@
-<div class="jumbotron">
-  <h1 translate>CALCULATOR.TITLE</h1>
-  <div ng-if="loading"><img src="images/loading.gif" style="width:32px;"></div>
-<div class="row">
-  <div class="col-md-12">
-    <ul class="btn-group" ng-repeat="dolar in dolares">
-      <button type="button" class="btn" ng-click="cambiarDolar(dolar.name)" ng-class="{ 'btn-primary': (dolar.name == dolar_activo), 'btn-default': (dolar.name != dolar_activo)}">
-        {{('COMMON.DOLARES.' + dolar.name) | translate}}
-      </button>
-    </ul>
-  </div>
+
+  <h2 translate>CALCULATOR.TITLE</h2>
+
+    <div ng-if="loading" layout="row" layout-sm="column" layout-align="space-around">
+      <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+<span ng-if="!loading">
+
+<div layout="row" layout-sm="column" layout-align="space-around">
+  <md-tabs md-selected="selectedIndex" md-border-bottom md-stretch-tabs="always">
+    <md-tab ng-repeat="dolar in dolares"
+            label="{{('COMMON.DOLARES.' + dolar.name) | translate}}"
+            md-on-select="cambiarDolar(dolar.name)">
+      <div flex>
+      </div>
+    </md-tab>
+  </md-tabs>
 </div>
 
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
+<div layout="row" layout-align="center center">
+  <div>
     <label translate>CALCULATOR.FOREIGN_CURR</label>
 
-    <ui-select ng-model="moneda.selected" ng-change="update_ext()" ng-disabled="disabled">
+    <ui-select style="min-width:300px;" ng-model="moneda.selected" ng-change="update_ext()" ng-disabled="disabled">
         <ui-select-match placeholder="Seleccione la moneda">{{$select.selected.name}}</ui-select-match>
         <ui-select-choices repeat="moneda in monedas | filter: $select.search">
           <div ng-bind-html="moneda.name + ' (' + moneda.code + ')' | highlight: $select.search">
@@ -25,34 +31,25 @@
         </ui-select-choices>
     </ui-select>
   </div>
-  <div class="col-md-3"></div>
 </div>
 
-<div class="row">
-  <div class="col-md-6">
-    <p id="calculation_blue">{{valor_dolar | number:2}} ARS &#8776; 1 USD</p>
-  </div>
-  <div class="col-md-6">
-    <p id="calculation_ext">1 USD &#8776; {{moneda.selected.value |number:2}} {{moneda.selected.code}}</p>
-  </div>
+<div layout="column" layout-align="space-around center" md-padding class="calc_rates">
+  <p>{{valor_dolar | number:2}} ARS &#8776; 1 USD</p>
+  <p>1 USD &#8776; {{moneda.selected.value |number:2}} {{moneda.selected.code}}</p>
 </div>
 
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <div class="form-group">
-        <label class="control-label" for="currency_ars" translate>CALCULATOR.VALUE_LOCAL</label>
-        <input ng-model="calculo_ars" ng-change="update_ext()" id="currency_ars" min="0" type="number" placeholder="Valor ARS" class="form-control">
-      </div>
-    </div>
-  </div>
+<md-divider></md-divider>
 
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <div id="extform" class="form-group">
-        <label class="control-label" for="currency_ext" translate="CALCULATOR.VALUE_FOREIGN" translate-values="{code: moneda.selected.code}"></label>
-        <input ng-model="calculo_ext" ng-change="update_ars()" id="currency_ext" min="0" type="number" placeholder="Valor Moneda Extranjera" class="form-control">
-      </div>
-    </div>
-  </div>
 
+<div layout="column" layout-align="space-around center" md-padding class="calc_rates">
+  <md-input-container>
+    <label translate="CALCULATOR.VALUE_LOCAL"></label>
+    <input required type="number" ng-change="update_ext()" step="any" name="rate" ng-model="calculo.ars" min="0">
+  </md-input-container>
+
+  <md-input-container>
+    <label translate="CALCULATOR.VALUE_FOREIGN" translate-values="{code: moneda.selected.code}"></label>
+    <input required type="number" ng-change="update_ars()" step="any" name="rate" ng-model="calculo.ext" min="0">
+  </md-input-container>
 </div>
+</span>

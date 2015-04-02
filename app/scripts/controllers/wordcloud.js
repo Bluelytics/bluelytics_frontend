@@ -14,7 +14,7 @@ angular.module('bluelyticsFrontendApp')
       return {
               list: list,
               fontFamily: 'sans',
-              backgroundColor: '#eee'
+              backgroundColor: '#fff'
             };
     };
 

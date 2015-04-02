@@ -11,7 +11,8 @@
             "ambito_financiero": "Ambito Financiero",
             "la_nacion": "La Nacion",
             "elcronista": "El Cronista"
-        }
+        },
+        "SLIDER": "Change the time range here"
     },
     "FORECAST": {
         "CHART": {
@@ -32,11 +33,11 @@
     },
     "GAP": {
         "GAP": "Gap",
+        "TITLE": "Gap",
         "ABS_VALUE": "Absolute gap in AR$",
         "PERC_VALUE": "Relative gap in percentage",
-        "TITLE": "Gap",
-        "COMPARE": "Dollars to compare",
-        "EVOLUTION_TITLE": "Gap evolution chart"
+        "EVOLUTION_TITLE": "Gap evolution chart",
+        "COMPARE": "Dollars to compare"
     },
     "ABOUT": {
         "TITLE": "About Bluelytics",
@@ -48,7 +49,7 @@
     },
     "ANALYSIS": {
         "TITLE": "BCRA Variables analysis",
-        "DESCRIPTION": "Click on the relevant variable to see its evolution. This is official data from the central bank of Argentina (Banco Central de la Republica Argentina).",
+        "DESCRIPTION": "Choose a variable from the list to see its evolution. This is official data from the central bank of Argentina (Banco Central de la Republica Argentina).",
         "VARIABLES": {
             "Reservas": "Reserves",
             "CER": "CER",
@@ -127,6 +128,7 @@
     "RATE": {
         "TITLE": "Dollar in Argentina",
         "BID": "Bid",
+        "DIFFERENCE": "Difference with yesterday's value",
         "AVG": "Average",
         "ASK": "Ask"
     },
@@ -152,7 +154,7 @@
             "API": "API",
             "ABOUT": "About bluelytics"
         },
-        "LANGUAGE": "Language",
-        "CREDIT": "Created by"
+        "CREDIT": "Created by",
+        "LANGUAGE": "Language"
     }
 }

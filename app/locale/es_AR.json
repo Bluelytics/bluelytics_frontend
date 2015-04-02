@@ -11,7 +11,8 @@
             "ambito_financiero": "Ambito Financiero",
             "la_nacion": "La Nacion",
             "elcronista": "El Cronista"
-        }
+        },
+        "SLIDER": "Cambiar el periodo a revisar"
     },
     "FORECAST": {
         "CHART": {
@@ -32,11 +33,11 @@
     },
     "GAP": {
         "GAP": "Brecha",
+        "TITLE": "Brecha dólar blue",
         "ABS_VALUE": "Diferencia absoluta (ARS)",
         "PERC_VALUE": "Diferencia relativa (%)",
-        "TITLE": "Brecha dólar blue",
-        "COMPARE": "¿Cuantos Dólares (USD) utilizar para la comparacion?",
-        "EVOLUTION_TITLE": "Evolución brecha cambiaria"
+        "EVOLUTION_TITLE": "Evolución brecha cambiaria",
+        "COMPARE": "¿Cuantos Dólares (USD) utilizar para la comparacion?"
     },
     "ABOUT": {
         "TITLE": "Acerca de Bluelytics",
@@ -48,7 +49,7 @@
     },
     "ANALYSIS": {
         "TITLE": "Analisis de variables del BCRA",
-        "DESCRIPTION": "Haga click en el nombre de la variable para ver su evolucion. Estos datos son oficiales del Banco Central de la Republica Argentina.",
+        "DESCRIPTION": "Seleccione una variable de la lista para ver su evolucion. Estos datos son oficiales del Banco Central de la Republica Argentina.",
         "VARIABLES": {
             "Reservas": "Reservas",
             "CER": "CER",
@@ -127,6 +128,7 @@
     "RATE": {
         "TITLE": "Dólar en Argentina",
         "BID": "Compra",
+        "DIFFERENCE": "Diferencia con el valor de ayer",
         "AVG": "Intermedio",
         "ASK": "Venta"
     },
@@ -152,7 +154,7 @@
             "API": "API",
             "ABOUT": "Acerca de"
         },
-        "LANGUAGE": "Lenguaje",
-        "CREDIT": "Creado por"
+        "CREDIT": "Creado por",
+        "LANGUAGE": "Lenguaje"
     }
 }

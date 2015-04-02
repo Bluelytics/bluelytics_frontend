@@ -1,18 +1,18 @@
-<div class="jumbotron">
-  <h1 translate>WORDCLOUD.TITLE</h1>
+  <h2 translate>WORDCLOUD.TITLE</h2>
 
-  <div ng-if="loading"><img src="images/loading.gif" style="width:32px;"></div>
-  
-  <div class="row">
-    <div class="col-md-6">
+  <div ng-if="loading" layout="row" layout-sm="column" layout-align="space-around">
+  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+
+  <div layout-gt-sm="row" layout-sm="column" layout-align="space-around center">
+    <div flex layout="column" layout-align="space-around center">
       <h2 translate>WORDCLOUD.OFFICIAL_TITLE</h2>
-      <div class="cloud" id="cloud_oficialista"><canvas></canvas></div>
+      <div id="cloud_oficialista"><canvas></canvas></div>
       <small translate>WORDCLOUD.OFFICIAL_MEDIA</small>
     </div>
-    <div class="col-md-6">
+    <div flex layout="column" layout-align="space-around center">
       <h2 translate>WORDCLOUD.OPPOSING_TITLE</h2>
-      <div class="cloud" id="cloud_oposicion"><canvas></canvas></div>
+      <div id="cloud_oposicion"><canvas></canvas></div>
       <small translate>WORDCLOUD.OPPOSING_MEDIA</small>
     </div>
   </div>
-</div>

@@ -1,16 +1,16 @@
-<div class="jumbotron">
-  <h1 translate>FORECAST.TITLE</h1>
+<h2 translate>FORECAST.TITLE</h2>
 
-  <div ng-if="loading"><img src="images/loading.gif" style="width:32px;"></div>
+<div ng-if="loading" layout="row" layout-sm="column" layout-align="space-around">
+<md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
 
+<h3 translate>FORECAST.CHART.TITLE</h3>
 
-<h2 translate>FORECAST.CHART.TITLE</h2>
-
-<div class="container" style="height:400px;">
+<div style="height:400px;">
   <linechart data="data" options="options" mode=""></linechart>
 </div>
 
-<h2 translate>FORECAST.TABLE.TITLE</h2>
+<h3 translate>FORECAST.TABLE.TITLE</h3>
 <table class="table" id="table_forecast">
 <thead>
   <tr>
@@ -29,5 +29,3 @@
     </tr>
 </tbody>
 </table>
-
-</div>
