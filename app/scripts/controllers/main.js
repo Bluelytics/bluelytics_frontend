@@ -8,18 +8,14 @@
  * Controller of the bluelyticsFrontendApp
  */
 angular.module('bluelyticsFrontendApp')
-  .controller('MainCtrl', function ($scope, $routeParams, $location, blueAPI) {
+  .controller('MainCtrl', function ($scope, $location, blueAPI) {
     $scope.loading = true;
+    $scope.selectedIndex = 3;
+
     blueAPI.extended_last_price(function(value){
       $scope.loading = false;
       $scope.dolares = value;
     });
-
-    $scope.dolar_activo = 'blue';
-
-    $scope.cambiarDolar = function (dolar){
-      $scope.dolar_activo = dolar;
-    };
 
     $scope.esOficial = function(dolar){
       if (dolar.name.indexOf('oficial') > -1) {
@@ -32,6 +28,16 @@ angular.module('bluelyticsFrontendApp')
     $scope.esBlue = function(dolar){
       return !$scope.esOficial(dolar);
     };
+
+    $scope.iconFor = function(value){
+      if(value === 0){
+        return 'action:trending_neutral';
+      } else if(value > 0){
+        return 'action:trending_up';
+      } else if(value < 0){
+        return 'action:trending_down';
+      }
+    }
 
 
   });

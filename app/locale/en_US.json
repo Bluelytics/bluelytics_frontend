@@ -138,7 +138,10 @@
         "OPPOSING_MEDIA": "Clarin and La Nacion"
     },
     "INDEX": {
+        "ANDROIDAPP": "Available on Google Play",
+        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/en_app_rgb_wo_45.png",
         "MENU": {
+            "TITLE": "Menu",
             "RATE": "Rate",
             "CALCULATOR": "Calculator",
             "EVOLUTION": "Evolution",
@@ -150,8 +153,6 @@
             "ABOUT": "About bluelytics"
         },
         "LANGUAGE": "Language",
-        "ANDROIDAPP": "Available on Google Play",
-        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/en_app_rgb_wo_45.png",
         "CREDIT": "Created by"
     }
 }

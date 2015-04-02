@@ -1,73 +1,50 @@
-<div class="jumbotron">
-
-
-
-  <h1 translate>RATE.TITLE</h1>
+  <h2 translate>RATE.TITLE</h2>
 
   <div ng-if="loading"><img src="images/loading.gif" style="width:32px;"></div>
 
-<div class="prices" ng-repeat="dolar in dolares |filter:dolar_activo:true">
-  <div class="row">
-    <div class="col-md-5 name" translate>RATE.BID</div>
-    <div class="col-md-6 value">
-        {{dolar.compra | number:2}}
-        <span ng-class="{ 'decrement': (dolar.compra_dif < 0), 'increment': (dolar.compra_dif > 0), 'equal': (dolar.compra_dif == 0)}">
-            (
-            <span class="glyphicon" ng-class="{ 'glyphicon-arrow-down': (dolar.compra_dif < 0), 'glyphicon-arrow-up': (dolar.compra_dif > 0), 'glyphicon-minus': (dolar.compra_dif == 0)}"></span>
-            {{dolar.compra_dif | number:2}}
-            )
-        </span>
+
+<md-tabs md-selected="selectedIndex" md-border-bottom>
+  <md-tab ng-repeat="dolar in dolares | orderBy:esBlue"
+          label="{{('COMMON.DOLARES.' + dolar.name) | translate}}">
+    <div flex>
+
+        <div layout="row" class="price">
+          <div flex="40" class="name" translate>RATE.BID</div>
+          <div flex="60" class="value_container">
+              <span class="value">{{dolar.compra | number:2}}</span>
+              <span ng-class="{ 'decrement': (dolar.compra_dif < 0), 'increment': (dolar.compra_dif > 0), 'equal': (dolar.compra_dif == 0)}">
+                <md-icon md-svg-icon="{{ iconFor(dolar.compra_dif)}}"></md-icon>
+                  ({{dolar.compra_dif | number:2}})
+              </span>
+          </div>
+        </div>
+
+        <md-divider></md-divider>
+
+        <div layout="row" class="price">
+          <div flex="40" class="name" translate>RATE.AVG</div>
+          <div flex="60" class="value_container">
+              <span class="value">{{dolar.avg | number:2}}</span>
+              <span ng-class="{ 'decrement': (dolar.avg_dif < 0), 'increment': (dolar.avg_dif > 0), 'equal': (dolar.avg_dif == 0)}">
+                <md-icon md-svg-icon="{{ iconFor(dolar.avg_dif)}}"></md-icon>
+                  ({{dolar.avg_dif | number:2}})
+              </span>
+          </div>
+        </div>
+
+        <md-divider></md-divider>
+
+        <div layout="row" class="price">
+          <div flex="40" class="name" translate>RATE.ASK</div>
+          <div flex="60" class="value_container">
+              <span class="value">{{dolar.venta | number:2}}</span>
+              <span ng-class="{ 'decrement': (dolar.venta_dif < 0), 'increment': (dolar.venta_dif > 0), 'equal': (dolar.venta_dif == 0)}">
+                <md-icon md-svg-icon="{{ iconFor(dolar.venta_dif)}}"></md-icon>
+                ({{dolar.venta_dif | number:2}})
+              </span>
+          </div>
+        </div>
+
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-5 name" translate>RATE.AVG</div>
-    <div class="col-md-6 value">
-        {{dolar.avg | number:2}}
-        <span ng-class="{ 'decrement': (dolar.avg_dif < 0), 'increment': (dolar.avg_dif > 0), 'equal': (dolar.avg_dif == 0)}">
-            (
-            <span class="glyphicon" ng-class="{ 'glyphicon-arrow-down': (dolar.avg_dif < 0), 'glyphicon-arrow-up': (dolar.avg_dif > 0), 'glyphicon-minus': (dolar.avg_dif == 0)}"></span>
-            {{dolar.avg_dif | number:2}}
-            )
-        </span>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-5 name" translate>RATE.ASK</div>
-    <div class="col-md-6 value">
-        {{dolar.venta | number:2}}
-        <span ng-class="{ 'decrement': (dolar.venta_dif < 0), 'increment': (dolar.venta_dif > 0), 'equal': (dolar.venta_dif == 0)}">
-            (
-            <span class="glyphicon" ng-class="{ 'glyphicon-arrow-down': (dolar.venta_dif < 0), 'glyphicon-arrow-up': (dolar.venta_dif > 0), 'glyphicon-minus': (dolar.venta_dif == 0)}"></span>
-            {{dolar.venta_dif | number:2}}
-            )
-        </span>
-    </div>
-  </div>
-</div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="btn-group" ng-repeat="dolar in dolares | filter:esBlue">
-          <button class="btn" role="button" ng-class="{ 'btn-primary': (dolar.name == dolar_activo), 'btn-default': (dolar.name != dolar_activo)}" ng-click="cambiarDolar(dolar.name)">
-            {{('COMMON.DOLARES.' + dolar.name) | translate}}
-          </button>
-      </div>
-    </div>
-  </div>
-
-  <br>
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="btn-group" ng-repeat="dolar in dolares | filter:esOficial">
-          <button class="btn" role="button" ng-class="{ 'btn-success': (dolar.name == dolar_activo), 'btn-default': (dolar.name != dolar_activo)}" ng-click="cambiarDolar(dolar.name)">
-            {{('COMMON.DOLARES.' + dolar.name) | translate}}
-          </button>
-      </div>
-    </div>
-  </div>
-
-
-
-
-</div>
+  </md-tab>
+</md-tabs>

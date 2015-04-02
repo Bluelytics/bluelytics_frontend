@@ -69,7 +69,7 @@ module.exports = function (grunt) {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
-        tasks: ['i18nextract', 'ngtemplates'],
+        tasks: ['ngtemplates'],
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',

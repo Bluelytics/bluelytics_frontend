@@ -138,7 +138,10 @@
         "OPPOSING_MEDIA": "Clarin y La Nacion"
     },
     "INDEX": {
+        "ANDROIDAPP": "Disponible en Google Play",
+        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/es-419_generic_rgb_wo_45.png",
         "MENU": {
+            "TITLE": "Menu",
             "RATE": "Cotización",
             "CALCULATOR": "Calculadora",
             "EVOLUTION": "Evolución",
@@ -150,8 +153,6 @@
             "ABOUT": "Acerca de"
         },
         "LANGUAGE": "Lenguaje",
-        "ANDROIDAPP": "Disponible en Google Play",
-        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/es-419_generic_rgb_wo_45.png",
         "CREDIT": "Creado por"
     }
 }

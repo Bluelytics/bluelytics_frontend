@@ -3,210 +3,34 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
 // endbower
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+
+h1 {
+  margin-left:10px;
 }
 
-/* Space out content a bit */
-body { padding-top: 70px; }
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  h1 {
-    font-family: 'Ruda', sans-serif;
-    color: #229;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
-
-/* Responsive: Small devices */
-@media (max-width:360px) {
-  body{
-    background:$jumbotron-bg;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-
-  /* Animations */
-  .prices.ng-enter {
-    animation: lightSpeedIn 0.5s;
-  }
-
-  .mainContainer{
-    position:relative;
-  }
-
-  .mainAnimation.ng-enter {
-    animation: zoomIn 1s;
-  }
-
-}
-
-/* Responsive: Big screen */
-@media screen and (min-width: 1000px) {
-  .container {
-    max-width: 950px;
-  }
-}
-
-/* Responsive: Wide screen */
-@media screen and (min-width: 1280px) {
-  .container {
-    max-width: 1250px;
-  }
-}
-
-
-div.prices div.row {
+div.price{
   margin-bottom:10px;
-  div{
-    font-size:1.45em;
-  }
-  div.value{
-    color:#2211cc;
-  }
+  margin-top:10px;
 }
 
-@media (min-width: 996px) {
-  div.prices div.row{
-    div.name{
-      text-align: right;
-    }
-  }
-
-  div.prices div.row{
-    div.value{
-      text-align:left;
-    }
-  }
+div.price > .name{
+  font-size:1.3em;
+  text-align:right;
+  margin-top:auto;
+  margin-bottom:auto;
 }
 
-.navbar-brand {
-  font-family: 'Roboto Slab', serif;
-  padding-bottom:0px;
-  padding-top:10px;
-}
-
-
-div#last_update {
-  margin-top:15px;
-}
-
-div#last_update p {
-  font-size:0.9em;
-  font-weight: bold;
-  font-style: italic;
-}
-
-.footer p{
-  float:left;
-}
-.footer > div {
-  float:right;
-}
-
-span.value{
-  font-size: 1.3em;
-}
-
-span.perc{
-  font-size: 1.4em;
-}
-
-span.decrement{
-  color:#c00;
-}
-span.increment{
-  color:#0c0;
-}
-span.equal{
-  color:#777;
-}
-
-.tooltip.tooltip-info .tooltip-inner {
-background-color: #35a1ff;
-border-color: #005b69;
-color: #ffffff;
-font-size:1.3em;
-font-weight:bold;
-}
-
-.tooltip.tooltip-info.bottom .tooltip-arrow, .tooltip.tooltip-info.bottom-left .tooltip-arrow, .tooltip.tooltip-info.bottom-right .tooltip-arrow {
-border-bottom-color: #35a1ff;
-}
-
-.table > thead > tr > th {
-  text-align:center;
-}
-
-td.api-head{
+div.price > .value_container{
   font-weight:bold;
+  padding-left:15px;
+}
+
+div.price > .value_container > .value {
+  font-size:1.7em;
+}
+
+div.price > .value_container > .trend {
+  font-size:1.4em;
+  margin-top:auto;
+  margin-bottom:auto;
 }
