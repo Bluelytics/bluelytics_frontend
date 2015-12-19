@@ -28,31 +28,6 @@
   </div>
   <md-divider></md-divider>
 
-  <md-subheader class="md-primary"><span translate>COMMON.DOLARES.oficial_20</span> vs <span translate>COMMON.DOLARES.blue</span></md-subheader>
-
-  <div flex layout="row" layout-align="space-between center">
-    <md-button class="md-raised md-primary">
-      <md-tooltip><span translate>GAP.ABS_VALUE</span></md-tooltip>
-      <span>AR$ {{valorCompare * gap(valorDolarAhorro, valorDolarBlue) |number:2}}</span>
-    </md-button>
-      <md-button class="md-raised md-accent">
-        <md-tooltip><span translate>GAP.PERC_VALUE</span></md-tooltip>
-        <span>({{ percFormat(percGap(valorDolarAhorro, valorDolarBlue))  }})</span>
-      </md-button>
-  </div>
-
-  <md-subheader class="md-primary"> <span translate>COMMON.DOLARES.oficial_35</span> vs <span translate>COMMON.DOLARES.blue</span> </md-subheader>
-
-  <div flex layout="row" layout-align="space-between center">
-    <md-button class="md-raised md-primary">
-      <md-tooltip><span translate>GAP.ABS_VALUE</span></md-tooltip>
-      <span>AR$ {{valorCompare * gap(valorDolarTarjeta, valorDolarBlue) |number:2}}</span>
-    </md-button>
-      <md-button class="md-raised md-accent">
-        <md-tooltip><span translate>GAP.PERC_VALUE</span></md-tooltip>
-        <span>({{ percFormat(percGap(valorDolarTarjeta, valorDolarBlue))  }})</span>
-      </md-button>
-  </div>
 </div>
 
 
