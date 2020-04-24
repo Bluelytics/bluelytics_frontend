@@ -10,7 +10,7 @@
 angular.module('bluelyticsFrontendApp')
   .controller('MainCtrl', function ($scope, $location, blueAPI) {
     $scope.loading = true;
-    $scope.selectedIndex = 0;
+    $scope.selectedIndex = 2;
 
     blueAPI.extended_last_price(function(value){
       $scope.loading = false;

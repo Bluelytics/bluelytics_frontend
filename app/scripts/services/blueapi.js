@@ -22,7 +22,7 @@ angular.module('bluelyticsFrontendApp')
       query: {method:'GET', isArray:true, cache:true}
     });
 
-    var all_currencies_resource = $resource( backendUrl + 'api/all_currencies', {}, {
+    var all_currencies_resource = $resource( backendUrl + '/data/json/currency.json', {}, {
       query: {method:'GET', isArray:true, cache:true}
     });
 
@@ -31,14 +31,6 @@ angular.module('bluelyticsFrontendApp')
     });
 
     var analysis_data_resource = $resource( backendUrl + 'data/graphs/bcra.json', {}, {
-      query: {method:'GET', isArray:true, cache:true}
-    });
-
-    var wordcloud_oficialistas_resource = $resource( backendUrl + 'data/words/oficialistas.json', {}, {
-      query: {method:'GET', isArray:true, cache:true}
-    });
-
-    var wordcloud_oposicion_resource = $resource( backendUrl + 'data/words/oposicion.json', {}, {
       query: {method:'GET', isArray:true, cache:true}
     });
 
@@ -105,8 +97,6 @@ angular.module('bluelyticsFrontendApp')
         'all_currencies': all_currencies_resource,
         'graph_data': graph_data_resource,
         'analysis_data': analysis_data_resource,
-        'wordcloud_oficialistas': wordcloud_oficialistas_resource,
-        'wordcloud_oposicion': wordcloud_oposicion_resource,
 
         'forecast_data': function obtainData(callback){
           var mycall = callback;

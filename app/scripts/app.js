@@ -58,11 +58,6 @@ angular
       templateUrl: 'views/gap.html',
       controller: 'GapCtrl'
     })
-    .state('wordcloud', {
-      url: '/wordcloud',
-      templateUrl: 'views/wordcloud.html',
-      controller: 'WordcloudCtrl'
-    })
     .state('forecast', {
       url: '/forecast',
       templateUrl: 'views/forecast.html',

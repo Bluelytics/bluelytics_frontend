@@ -65,19 +65,9 @@
         icon: 'action:settings_ethernet'
       },
       {
-        url:'wordcloud',
-        name: 'INDEX.MENU.COVERAGE',
-        icon: 'av:hearing'
-      },
-      {
         url:'forecast',
         name: 'INDEX.MENU.PREDICTION',
         icon: 'action:trending_up'
-      },
-      {
-        url:'analysis',
-        name: 'INDEX.MENU.ANALYSIS',
-        icon: 'action:visibility'
       },
       {
         url:'api',

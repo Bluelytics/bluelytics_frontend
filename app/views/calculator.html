@@ -7,8 +7,8 @@
 
 <span ng-if="!loading">
 
-<div layout="row" layout-sm="column" layout-align="space-around">
-  <md-tabs md-selected="selectedIndex" md-border-bottom md-stretch-tabs="always">
+<div layout="row" layout-sm="column" layout-align="center center">
+  <md-tabs md-selected="selectedIndex" md-border-bottom>
     <md-tab ng-repeat="dolar in dolares"
             label="{{('COMMON.DOLARES.' + dolar.name) | translate}}"
             md-on-select="cambiarDolar(dolar.name)">
