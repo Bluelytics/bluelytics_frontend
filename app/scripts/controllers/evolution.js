@@ -11,7 +11,7 @@ angular.module('bluelyticsFrontendApp')
   .controller('EvolutionCtrl', function ($scope, blueAPI, $window, $translate, $rootScope) {
     $scope.loading = true;
 
-    var dateFormat = d3.time.format('%d/%m/%Y');
+    var dateFormat = d3.time.format.utc('%d/%m/%Y');
 
     $scope.tickX = function(d){
                         return dateFormat(new Date(d));

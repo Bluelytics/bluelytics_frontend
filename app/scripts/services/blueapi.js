@@ -12,7 +12,7 @@ angular.module('bluelyticsFrontendApp')
     var graph_evolution_data = null;
     var graph_gap_data = null;
 
-    var dateFormat = d3.time.format('%d/%m/%Y');
+    var dateFormat = d3.time.format.utc('%d/%m/%Y');
 
     var percGap = function percGap(ofi, blue){
         return (blue - ofi) / ofi;
@@ -27,7 +27,7 @@ angular.module('bluelyticsFrontendApp')
     });
 
     var graph_data_resource = $resource( backendUrl + 'data/graphs/evolution.json', {}, {
-      query: {method:'GET', isArray:false, cache:true}
+      query: {method:'GET', isArray:true, cache:true}
     });
 
     var analysis_data_resource = $resource( backendUrl + 'data/graphs/bcra.json', {}, {
@@ -49,24 +49,16 @@ angular.module('bluelyticsFrontendApp')
 
 
     function groupGraphData(rawData){
-        var allData = [];
-
         var transformRawData = function transformRawData(raw){
           return _.chain(raw).map(function(b){
             var tmp_date = new Date(b.date);
             b.epoch = tmp_date.getTime()/1000;
             b.datepart = dateFormat(tmp_date);
-            b.source = key;
             return b;
           }).value();
         };
 
-        for(var key in rawData){
-            if(rawData.hasOwnProperty(key) && key !== '$promise' && key !== '$resolved'){
-                allData = allData.concat(transformRawData(rawData[key]));
-              }
-          }
-
+        var allData = transformRawData(rawData);
 
         var dataByDate = _.groupBy(allData, function(a){return a.datepart;});
 
