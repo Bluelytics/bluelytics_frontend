@@ -13,12 +13,10 @@ angular.module('bluelyticsFrontendApp')
     var dateFormat = d3.time.format('%d/%m/%Y');
     /* Gap calculator */
 
-    $scope.valorCompare = 1;
+    $scope.valorCompare = 200;
 
     $scope.valorDolarBlue = 0;
     $scope.valorDolarOficial = 0;
-    $scope.valorDolarAhorro = 0;
-    $scope.valorDolarTarjeta = 0;
 
     $scope.gap = function gap(ofi, blue){
         return blue - ofi;
@@ -57,23 +55,8 @@ angular.module('bluelyticsFrontendApp')
 
     blueAPI.extended_last_price(function(dolares){
       $scope.loading = false;
-        for(var i = 0; i < dolares.length; i++){
-            var dolar = dolares[i];
-            switch(dolar.name){
-                case 'oficial':
-                    $scope.valorDolarOficial = dolar.avg;
-                    break;
-                case 'oficial_20':
-                    $scope.valorDolarAhorro = dolar.avg;
-                    break;
-                case 'oficial_35':
-                    $scope.valorDolarTarjeta = dolar.avg;
-                    break;
-                case 'blue':
-                    $scope.valorDolarBlue = dolar.avg;
-                    break;
-            }
-        }
+      $scope.valorDolarOficial = dolares.oficial.value_avg;
+      $scope.valorDolarBlue = dolares.blue.value_avg;
     });
 
     blueAPI.graph_gap_data(function(data){

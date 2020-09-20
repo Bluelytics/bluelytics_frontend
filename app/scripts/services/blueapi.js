@@ -18,11 +18,11 @@ angular.module('bluelyticsFrontendApp')
         return (blue - ofi) / ofi;
     };
 
-    var last_price_resource = $resource( backendUrl + 'api/last_price', {}, {
-      query: {method:'GET', isArray:true, cache:true}
+    var last_price_resource = $resource( backendUrl + 'v2/latest', {}, {
+      query: {method:'GET', isArray:false, cache:true}
     });
 
-    var all_currencies_resource = $resource( backendUrl + '/data/json/currency.json', {}, {
+    var all_currencies_resource = $resource( backendUrl + 'data/json/currency.json', {}, {
       query: {method:'GET', isArray:true, cache:true}
     });
 
@@ -30,22 +30,6 @@ angular.module('bluelyticsFrontendApp')
       query: {method:'GET', isArray:true, cache:true}
     });
 
-    var analysis_data_resource = $resource( backendUrl + 'data/graphs/bcra.json', {}, {
-      query: {method:'GET', isArray:true, cache:true}
-    });
-
-    var forecast_dates = $resource( backendUrl + 'data/forecast/json_dates_forecasted.json', {}, {
-      query: {method:'GET', isArray:true, cache:true}
-    });
-    var forecast_values = $resource( backendUrl + 'data/forecast/json_forecasted.json', {}, {
-      query: {method:'GET', isArray:false, cache:true}
-    });
-    var forecast_dates_history = $resource( backendUrl + 'data/forecast/json_dates_history.json', {}, {
-      query: {method:'GET', isArray:true, cache:true}
-    });
-    var forecast_values_history = $resource( backendUrl + 'data/forecast/json_history.json', {}, {
-      query: {method:'GET', isArray:false, cache:true}
-    });
 
 
     function groupGraphData(rawData){
@@ -88,55 +72,12 @@ angular.module('bluelyticsFrontendApp')
         'last_price': last_price_resource,
         'all_currencies': all_currencies_resource,
         'graph_data': graph_data_resource,
-        'analysis_data': analysis_data_resource,
 
-        'forecast_data': function obtainData(callback){
-          var mycall = callback;
-          $q.all([forecast_dates.query().$promise, forecast_values.query().$promise,
-            forecast_dates_history.query().$promise, forecast_values_history.query().$promise])
-           .then( function(result) {
-
-             var reorganized = {};
-             var i;
-
-             reorganized.history = [];
-             for(i = 0; i < result[2].length; i++){
-              reorganized.history.push({
-                'date': dateFormat.parse(result[2][i]),
-                'value': result[3].history[i]
-              });
-             }
-
-             reorganized.forecast = [];
-             for(i = 0; i < result[0].length; i++){
-              reorganized.forecast.push({
-                'date': dateFormat.parse(result[0][i]),
-                'value': result[1].mean[i],
-                'low': result[1].lower_80[i],
-                'high': result[1].upper_80[i]
-              });
-             }
-
-
-             mycall(reorganized);
-           });
-        },
 
         'extended_last_price': function extended_last_price(callback){
             var mycall = callback;
             last_price_resource.query({}, function(value){
-                var newDolares = [];
-
-                for(var i = 0; i < value.length;i++){
-                    var dolar = value[i];
-                    dolar.compra_dif = dolar.compra - dolar.compra_ayer;
-                    dolar.venta_dif = dolar.venta - dolar.venta_ayer;
-                    dolar.avg = (dolar.compra + dolar.venta) / 2;
-                    dolar.avg_ayer = (dolar.compra_ayer + dolar.venta_ayer) / 2;
-                    dolar.avg_dif = dolar.avg - dolar.avg_ayer;
-                    newDolares.push(dolar);
-                }
-
+                
                 mycall(value);
             });
         },

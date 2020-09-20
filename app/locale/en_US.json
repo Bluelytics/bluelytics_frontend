@@ -17,23 +17,6 @@
         "SLIDER": "Change the time range here",
         "CLOSE": "Close"
     },
-    "FORECAST": {
-        "CHART": {
-            "MIN": "Min value",
-            "AVG": "Predicted value",
-            "MAX": "Max value",
-            "TITLE": "Chart"
-        },
-        "TITLE": "Blue Dollar prediction",
-        "TABLE": {
-            "TITLE": "Table",
-            "DAY": "Day",
-            "MIN": "Minimun predicted",
-            "AVG": "Predicted value",
-            "MAX": "Maximum predicted",
-            "MONTH": "Month"
-        }
-    },
     "GAP": {
         "GAP": "Gap",
         "TITLE": "Gap",
@@ -45,8 +28,8 @@
     "ABOUT": {
         "TITLE": "About Bluelytics",
         "DESC_1": "Bluelytics is a tool for live analysis of the Blue Dollar in Argentina.",
-        "DESC_2": "You can download the mobile app from <a href=\"https://play.google.com/store/apps/details?id=com.ionicframework.bluelyticsmobile363312\">Google Play</a>",
-        "DESC_3": "If you have feedback or want to follow the updates you can follow Bluelytics on <a href=\"http://www.facebook.com/bluelytics\">Facebook</a> and <a href=\"http://www.twitter.com/bluelytics\">Twitter</a>",
+        "DESC_2": "You can download the mobile app from <a href=\"https://play.google.com/store/apps/details?id=com.bluelytics.mobileapp\">Google Play</a>",
+        "DESC_3": "If you have feedback or want to follow the updates you can follow Bluelytics on <a href=\"https://www.facebook.com/bluelytics\">Facebook</a> and <a href=\"https://www.twitter.com/bluelytics\">Twitter</a>",
         "DESC_4": "This web app was created by Pablo Seibelt, i have no contact with any underground traders, i only scrape the dollar values available at other websites and then publish them on this web app.",
         "DESC_5": "This is free software (AGPL) and it's available on github:"
     },
@@ -131,13 +114,14 @@
     "RATE": {
         "TITLE": "Dollar in Argentina",
         "BID": "Bid",
-        "DIFFERENCE": "Difference with yesterday's value",
         "AVG": "Average",
-        "ASK": "Ask"
+        "ASK": "Ask",
+        "TAX_PAIS": "Taxes (+65%)",
+        "DIFFERENCE": "Difference with yesterday's value"
     },
     "INDEX": {
         "ANDROIDAPP": "Available on Google Play",
-        "ANDROIDAPP_IMAGE": "http://developer.android.com/images/brand/en_app_rgb_wo_45.png",
+        "ANDROIDAPP_IMAGE": "https://developer.android.com/images/brand/en_app_rgb_wo_45.png",
         "MENU": {
             "TITLE": "Menu",
             "RATE": "Rate",
@@ -152,6 +136,9 @@
         },
         "CREDIT": "Created by",
         "LANGUAGE": "Language"
+    },
+    "TAX": {
+        "PAIS": ""
     },
     "WORDCLOUD": {
         "TITLE": "",

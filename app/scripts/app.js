@@ -58,11 +58,6 @@ angular
       templateUrl: 'views/gap.html',
       controller: 'GapCtrl'
     })
-    .state('forecast', {
-      url: '/forecast',
-      templateUrl: 'views/forecast.html',
-      controller: 'ForecastCtrl'
-    })
     .state('api', {
       url: '/api',
       templateUrl: 'views/api.html',

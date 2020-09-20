@@ -19,9 +19,6 @@ angular.module('bluelyticsFrontendApp')
 
     $scope.update_ars = function update_ars(){
         if($scope.valor_dolar && $scope.moneda.selected){
-          console.log($scope.calculo.ext);
-          console.log($scope.calculo.ext / $scope.moneda.selected.value);
-          console.log($scope.valor_dolar);
             $scope.calculo.ars =  parseFloat( (($scope.calculo.ext / $scope.moneda.selected.value) * $scope.valor_dolar).toFixed(2));
         }
     };
@@ -33,11 +30,11 @@ angular.module('bluelyticsFrontendApp')
     };
 
     blueAPI.extended_last_price(function(value){
-        $scope.dolares = $filter('filter')(value, function(dolar){
-            return (dolar.name === 'oficial' || dolar.name === 'blue' || dolar.name === 'oficial_20' || dolar.name === 'oficial_35');
-        }, true);
+        $scope.dolares = value;
         $scope.cambiarDolar('blue');
     });
+
+    $scope.dolares_keys = ['blue', 'oficial']
 
 
     $scope.monedas = blueAPI.all_currencies.query({}, function(){
@@ -52,14 +49,9 @@ angular.module('bluelyticsFrontendApp')
 
 
     $scope.cambiarDolar = function cambiarDolar(newVal){
-        for(var i = 0; i < $scope.dolares.length; i++){
-            var dolar = $scope.dolares[i];
-            if(dolar.name === newVal){
-                $scope.dolar_activo = newVal;
-                $scope.valor_dolar = dolar.avg;
-                $scope.update_ext();
-            }
-        }
+        $scope.dolar_activo = $scope.dolares[newVal];
+        $scope.valor_dolar = $scope.dolar_activo.value_avg;
+        $scope.update_ext();
     };
 
 

@@ -9,9 +9,9 @@
 
 <div layout="row" layout-sm="column" layout-align="center center">
   <md-tabs md-selected="selectedIndex" md-border-bottom>
-    <md-tab ng-repeat="dolar in dolares"
-            label="{{('COMMON.DOLARES.' + dolar.name) | translate}}"
-            md-on-select="cambiarDolar(dolar.name)">
+    <md-tab ng-repeat="dolar in dolares_keys"
+            label="{{('COMMON.DOLARES.' + dolar) | translate}}"
+            md-on-select="cambiarDolar(dolar)">
       <div flex>
       </div>
     </md-tab>

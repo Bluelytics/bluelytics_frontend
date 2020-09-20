@@ -65,11 +65,6 @@
         icon: 'action:settings_ethernet'
       },
       {
-        url:'forecast',
-        name: 'INDEX.MENU.PREDICTION',
-        icon: 'action:trending_up'
-      },
-      {
         url:'api',
         name: 'INDEX.MENU.API',
         icon: 'file:cloud'

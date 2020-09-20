@@ -10,11 +10,14 @@
 angular.module('bluelyticsFrontendApp')
   .controller('MainCtrl', function ($scope, $location, blueAPI) {
     $scope.loading = true;
-    $scope.selectedIndex = 2;
+    $scope.selectedIndex = 1;
 
     blueAPI.extended_last_price(function(value){
       $scope.loading = false;
       $scope.dolares = value;
+      delete $scope.dolares.last_update;
+      delete $scope.dolares.oficial_euro;
+      delete $scope.dolares.blue_euro;
     });
 
     $scope.esOficial = function(dolar){

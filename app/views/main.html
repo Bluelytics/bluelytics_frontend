@@ -3,33 +3,23 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <md-tabs md-selected="selectedIndex" md-border-bottom>
-      <md-tab ng-repeat="dolar in dolares | orderBy:esBlue"
-              label="{{('COMMON.DOLARES.' + dolar.name) | translate}}">
+      <md-tab ng-repeat="(dname, dolar) in dolares"
+              label="{{('COMMON.DOLARES.' + dname) | translate}}">
         <div flex>
 
             <div layout="row" class="price">
               <div flex="40" class="name" translate>RATE.BID</div>
               <div flex="60" class="value_container">
-                  <span class="value">{{dolar.compra | number:2}}</span>
-                  <span class="trend {{ classFor(dolar.compra_dif) }}">
-                  <md-tooltip><span translate>RATE.DIFFERENCE</span></md-tooltip>
-                    <md-icon md-svg-icon="{{ iconFor(dolar.compra_dif)}}"></md-icon>
-                      ({{dolar.compra_dif | number:2}})
-                  </span>
+                  <span class="value">{{dolar.value_buy | number:2}}</span>
               </div>
             </div>
 
             <md-divider></md-divider>
 
-            <div layout="row" class="price">
+            <div ng-if='dname == "blue"' layout="row" class="price">
               <div flex="40" class="name" translate>RATE.AVG</div>
               <div flex="60" class="value_container">
-                  <span class="value">{{dolar.avg | number:2}}</span>
-                  <span class="trend {{ classFor(dolar.avg_dif) }}">
-                  <md-tooltip><span translate>RATE.DIFFERENCE</span></md-tooltip>
-                    <md-icon md-svg-icon="{{ iconFor(dolar.avg_dif)}}"></md-icon>
-                      ({{dolar.avg_dif | number:2}})
-                  </span>
+                  <span class="value">{{dolar.value_avg | number:2}}</span>
               </div>
             </div>
 
@@ -38,11 +28,11 @@
             <div layout="row" class="price">
               <div flex="40" class="name" translate>RATE.ASK</div>
               <div flex="60" class="value_container">
-                  <span class="value">{{dolar.venta | number:2}}</span>
-                  <span class="trend {{ classFor(dolar.venta_dif) }}">
-                  <md-tooltip><span translate>RATE.DIFFERENCE</span></md-tooltip>
-                    <md-icon md-svg-icon="{{ iconFor(dolar.venta_dif)}}"></md-icon>
-                    ({{dolar.venta_dif | number:2}})
+                  <span class="value">{{dname == 'oficial' ? dolar.value_sell * 1.65 : dolar.value_sell | number:2}}</span>
+                  <span ng-if='dname == "oficial"' class="tax">
+                  <md-tooltip><span translate>RATE.TAX_PAIS</span></md-tooltip>
+                    <md-icon md-svg-icon="warning"></md-icon>
+                    (+30%)
                   </span>
               </div>
             </div>
