@@ -26,7 +26,7 @@ angular.module('bluelyticsFrontendApp')
       query: {method:'GET', isArray:true, cache:true}
     });
 
-    var graph_data_resource = $resource( backendUrl + 'data/graphs/evolution.json', {}, {
+    var graph_data_resource = $resource( backendUrl + 'v2/evolution.json', {}, {
       query: {method:'GET', isArray:true, cache:true}
     });
 
@@ -48,11 +48,11 @@ angular.module('bluelyticsFrontendApp')
 
         var finalGrouped = _.chain(dataByDate).map(function(d){
           var max_oficial = _.max(d, function(val){
-            if (val.source === 'Oficial'){return val.value;} else {return 0;}
-          }).value;
+            if (val.source === 'Oficial'){return val.value_sell;} else {return 0;}
+          }).value_sell;
 
           var sum_blue = _.reduce(d, function(memo, sum){
-            if (sum.source !== 'Oficial'){ return memo + sum.value;} else {return memo;}
+            if (sum.source !== 'Oficial'){ return memo + sum.value_sell;} else {return memo;}
           }, 0);
 
           var count_blue = _.chain(d).filter(function(c) {

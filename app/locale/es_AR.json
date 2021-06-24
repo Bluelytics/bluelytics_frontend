@@ -92,6 +92,16 @@
                 "VALUE_SELL": "Valor de venta del euro blue"
             }
         },
+        "JSON_EVOLUTION_API": "Toda la data historica (JSON)",
+        "EVOLUTION": {
+            "DAYS_PARAM": "El parametro GET opcional 'days' te permite bajar los ultimos X dias en vez de toda la historia.",
+            "DAY": "Dia de este precio",
+            "TYPE": "Tipo de tasa de cambio (Oficial o Blue)",
+            "SELL": "Valor de venta, el valor promedio que pide un vendedor",
+            "BUY": "Valor de compra, el valor promedio que ofrece un comprador"
+        },
+        "ARRAY_ITEMS": "Objetos de lista (array)",
+        "CSV_EVOLUTION_API": "Toda la data historica (CSV)",
         "OLD_API": "API anterior (v1)",
         "LAST_PRICE": "Ultimo precio",
         "BINDINGS": "Bindings",

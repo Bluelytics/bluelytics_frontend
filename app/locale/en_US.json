@@ -92,6 +92,16 @@
                 "VALUE_SELL": "Blue Euro sell value"
             }
         },
+        "JSON_EVOLUTION_API": "All historical data (JSON)",
+        "EVOLUTION": {
+            "DAYS_PARAM": "Optional GET parameter 'days' allows you to get last X days instead of all history.",
+            "DAY": "Day for this exchange rate",
+            "TYPE": "Type of exchange rate (Oficial is the government rate, Blue is the free market)",
+            "SELL": "Sell (ask) value, average rate asked for by sellers",
+            "BUY": "Buy (bid) value, average rate bidded for by buyers"
+        },
+        "ARRAY_ITEMS": "Array items",
+        "CSV_EVOLUTION_API": "All historical data (CSV)",
         "OLD_API": "Old API (v1)",
         "LAST_PRICE": "Last price",
         "BINDINGS": "Bindings",
