@@ -4,7 +4,7 @@
   "dependencies": {},
   "devDependencies": {
     "gifsicle": "^5.0.0",
-    "grunt": "^1.1.0",
+    "grunt": "^1.5.3",
     "grunt-angular-templates": "^1.2.0",
     "grunt-angular-translate": "^0.3.0",
     "grunt-autoprefixer": "^3.0.4",
