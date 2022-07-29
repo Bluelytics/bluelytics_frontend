@@ -28,11 +28,11 @@
             <div layout="row" class="price">
               <div flex="40" class="name" translate>RATE.ASK</div>
               <div flex="60" class="value_container">
-                  <span class="value">{{dname == 'oficial' ? dolar.value_sell * 1.65 : dolar.value_sell | number:2}}</span>
+                  <span class="value">{{dname == 'oficial' ? dolar.value_sell * 1.75 : dolar.value_sell | number:2}}</span>
                   <span ng-if='dname == "oficial"' class="tax">
                   <md-tooltip><span translate>RATE.TAX_PAIS</span></md-tooltip>
                     <md-icon md-svg-icon="warning"></md-icon>
-                    (+65%)
+                    (+75%)
                   </span>
               </div>
             </div>

@@ -126,7 +126,7 @@
         "BID": "Bid",
         "AVG": "Average",
         "ASK": "Ask",
-        "TAX_PAIS": "Taxes (+65%)",
+        "TAX_PAIS": "Taxes (+75%)",
         "DIFFERENCE": "Difference with yesterday's value"
     },
     "INDEX": {
