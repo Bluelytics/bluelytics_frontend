@@ -1,7 +1,7 @@
   <div class="infopage">
   <h3 class="blue" translate>API.TITLE</h3>
   <div layout="row" layout-align="center center">
-    <md-button ui-sref="rates" class="md-warn" translate>API.WARNING</md-button>
+    <md-button ui-sref="rates" class="md-warn"><span translate>API.WARN</span></md-button>
   </div>
   <p translate>API.DESCRIPTION</p>
   <h3 translate>API.V2</h3>
@@ -9,7 +9,6 @@
   <p><a href="https://api.bluelytics.com.ar/v2/latest" target="_blank">https://api.bluelytics.com.ar/v2/latest</a></p>
   <h5 translate>API.PARAMETERS</h5>
   <p translate>API.PARAMETERS_TEXT</p>
-  <h5 translate>API.FORMAT</h5>
   <p translate>API.FORMAT_TEXT</p>
   <table class="table table-striped">
     <tbody>
@@ -103,6 +102,57 @@
       </tr>
     </tbody>
   </table>
+
+  <h4 translate>API.HISTORICAL_PRICE_V2</h4>
+  <p><a href="https://api.bluelytics.com.ar/v2/historical?day=2023-08-01" target="_blank">https://api.bluelytics.com.ar/v2/historical?day=YYYY-MM-DD</a></p>
+  <p translate>API.FORMAT_TEXT</p>
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td class="api-head">oficial</td>
+        <td>
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td>value_buy</td>
+                <td translate>API.LATEST_API.OFICIAL.VALUE_BUY</td>
+              </tr>
+              <tr>
+                <td>value_avg</td>
+                <td translate>API.LATEST_API.OFICIAL.VALUE_AVG</td>
+              </tr>
+              <tr>
+                <td>value_sell</td>
+                <td translate>API.LATEST_API.OFICIAL.VALUE_SELL</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="api-head">blue</td>
+        <td>
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <td>value_buy</td>
+                <td translate>API.LATEST_API.BLUE.VALUE_BUY</td>
+              </tr>
+              <tr>
+                <td>value_avg</td>
+                <td translate>API.LATEST_API.BLUE.VALUE_AVG</td>
+              </tr>
+              <tr>
+                <td>value_sell</td>
+                <td translate>API.LATEST_API.BLUE.VALUE_SELL</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
 
 
   <h4 translate>API.JSON_EVOLUTION_API</h4>

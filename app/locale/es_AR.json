@@ -61,13 +61,12 @@
     },
     "API": {
         "TITLE": "API JSON Dólar Blue",
-        "WARNING": "Si usted no es un usuario tecnico, ignore esta pagina.",
+        "WARN": "Si usted no es un usuario tecnico, ignore esta pagina.",
         "DESCRIPTION": "La API que esta disponible a continuacion es de libre uso, no requiere autenticacion, es un simple JSON.",
         "V2": "API Actual (v2)",
         "LAST_PRICE_V2": "Ultimos valores",
         "PARAMETERS": "Parametros opcionales",
         "PARAMETERS_TEXT": "La URL tal cual esta especificada devuelve una respuesta JSON, si necesita una respuesta JSONP (Por ejemplo para un widget) puede agregar ?callback=nombre, donde nombre es una cadena de caracteres arbitraria. Esto lo hace automaticamente por ejemplo jQuery al solicitar un JSONP.",
-        "FORMAT": "Formato de la respuesta",
         "FORMAT_TEXT": "La respuesta es un objeto JSON con los siguientes atributos",
         "LATEST_API": {
             "LAST_UPDATE": "Ultima actualizacion del valor reportado",
@@ -92,6 +91,7 @@
                 "VALUE_SELL": "Valor de venta del euro blue"
             }
         },
+        "HISTORICAL_PRICE_V2": "Valor historico de un dia especifico",
         "JSON_EVOLUTION_API": "Toda la data historica (JSON)",
         "EVOLUTION": {
             "DAYS_PARAM": "El parametro GET opcional 'days' te permite bajar los ultimos X dias en vez de toda la historia.",
@@ -110,6 +110,7 @@
             "LANGUAGE": "Tecnologia",
             "URL": "URL"
         },
+        "FORMAT": "Formato de la respuesta",
         "METHODS": "Metodos"
     },
     "CALCULATOR": {
@@ -132,6 +133,7 @@
     "INDEX": {
         "ANDROIDAPP": "Disponible en Google Play",
         "ANDROIDAPP_IMAGE": "https://developer.android.com/images/brand/es-419_generic_rgb_wo_45.png",
+        "IOSAPP": "Disponible en App Store",
         "MENU": {
             "TITLE": "Menu",
             "RATE": "Cotización",
@@ -146,15 +148,5 @@
         },
         "CREDIT": "Creado por",
         "LANGUAGE": "Lenguaje"
-    },
-    "TAX": {
-        "PAIS": ""
-    },
-    "WORDCLOUD": {
-        "TITLE": "",
-        "OFFICIAL_TITLE": "",
-        "OFFICIAL_MEDIA": "",
-        "OPPOSING_TITLE": "",
-        "OPPOSING_MEDIA": ""
     }
 }

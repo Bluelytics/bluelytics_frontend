@@ -61,13 +61,12 @@
     },
     "API": {
         "TITLE": "API JSON Dolar Blue",
-        "WARNING": "If you are a non-technical user, ignore this page.",
+        "WARN": "If you are a non-technical user, ignore this page.",
         "DESCRIPTION": "The API exposed has no use terms, and doesn't require authentication, it's a simple JSON response.",
         "V2": "Current API (v2)",
         "LAST_PRICE_V2": "Latest values",
         "PARAMETERS": "Optional parameters",
         "PARAMETERS_TEXT": "The URL as it is specified responds with a JSON object, if you need a JSONP response (For example to populate a widget) you can add ?callback=name, where name is any string. This is done automatically for example by jQuery when using the JSONP protocol.",
-        "FORMAT": "Response format",
         "FORMAT_TEXT": "The response is a JSON object with the following attributes",
         "LATEST_API": {
             "LAST_UPDATE": "Latest update for reported values",
@@ -92,6 +91,7 @@
                 "VALUE_SELL": "Blue Euro sell value"
             }
         },
+        "HISTORICAL_PRICE_V2": "Historical value for a specific day",
         "JSON_EVOLUTION_API": "All historical data (JSON)",
         "EVOLUTION": {
             "DAYS_PARAM": "Optional GET parameter 'days' allows you to get last X days instead of all history.",
@@ -110,6 +110,7 @@
             "LANGUAGE": "Technology",
             "URL": "URL"
         },
+        "FORMAT": "Response format",
         "METHODS": "Methods"
     },
     "CALCULATOR": {
@@ -132,6 +133,7 @@
     "INDEX": {
         "ANDROIDAPP": "Available on Google Play",
         "ANDROIDAPP_IMAGE": "https://developer.android.com/images/brand/en_app_rgb_wo_45.png",
+        "IOSAPP": "Available on App Store",
         "MENU": {
             "TITLE": "Menu",
             "RATE": "Rate",
@@ -146,15 +148,5 @@
         },
         "CREDIT": "Created by",
         "LANGUAGE": "Language"
-    },
-    "TAX": {
-        "PAIS": ""
-    },
-    "WORDCLOUD": {
-        "TITLE": "",
-        "OFFICIAL_TITLE": "",
-        "OFFICIAL_MEDIA": "",
-        "OPPOSING_TITLE": "",
-        "OPPOSING_MEDIA": ""
     }
 }
